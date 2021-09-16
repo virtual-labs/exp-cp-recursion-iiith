@@ -2,9 +2,3 @@ Sometimes solving a big problem may require us to solve smaller problems of simi
 
 For writing a recursive code for a problem, we simply call a function inside the definition of the same function. Thus the definition of GNU (the source of much free software) is said to be recursive because GNU stands for 'GNU's Not Unix', i.e. GNU is part of the definition of GNU! Or maybe two mirrors placed parallely! The nested images are a form of infinite recursion.
 
-
-#### Objective
-
-
-- To understand that some problems can be broken down into smaller similar problems.
-- To solve such problems using recursive procedures.
