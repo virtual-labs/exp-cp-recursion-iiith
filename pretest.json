@@ -1,0 +1,43 @@
+[{
+		"question": "1. How many stars will the following code output for a given positive value of n: <br/>  <img src='images/code1.png'>",
+		"answers": {
+			"a": "n",
+			"b": "n^2",
+			"c": "n(n-1)/2",
+			"d": "n(n+1)/2"
+		},
+		"correctAnswer": "d"
+	},
+
+	{
+		"question": "2. For every recursive solution, there is a corresponding iterative solution?",
+		"answers": {
+			"a": "True",
+			"b": "False"
+		},
+		"correctAnswer": "a"
+	},
+
+	{
+		"question": "3. What will be the ouptut of the following function call: fun2(20); where fun2 is defined as:  <br/>  <img src='images/code3.png'>",
+		"answers": {
+			"a": "20 40 60 80 60 40 20",
+			"b": "80 60 40 20",
+			"c": "20 40 60 80 80 60 40 20",
+			"d": "20 40 60 80"
+		},
+		"correctAnswer": "c"
+	},
+
+	{
+		"question": "4. What will be the ouptut of the following function call: fun3(100); where fun3 is defined as:  <br/>  <img src='images/code4.png'>",
+		"answers": {
+			"a": "6",
+			"b": "7",
+			"c": "5",
+			"d": "4"
+		},
+		"correctAnswer": "a"
+	}
+
+]
