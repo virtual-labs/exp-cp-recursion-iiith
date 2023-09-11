@@ -1,1 +1,29 @@
-/* You CSS goes in here */
+.v-content-container,
+.v-datalist-container,
+.v-instruction-container {
+    border: .2rem solid #ff0000;
+    border-radius: 1rem;
+    justify-content: flex-start;
+}
+
+.demo-separator {
+    height: 32px;
+}
+
+.lang-selector {
+    background-color: transparent;
+    border: .2rem solid #ff0000;
+    border-radius: 1rem;
+    box-sizing: border-box;
+    cursor: pointer;
+    outline: 0;
+    padding-top: 5px;
+    padding-bottom: 5px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+}

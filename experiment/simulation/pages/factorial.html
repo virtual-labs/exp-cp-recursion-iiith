@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recursion | VLabs</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/virtual-labs/virtual-style@0.0.8-b/css/style.min.css">
+    <link rel="stylesheet" type="text/css" href="../css/main.css" />
+</head>
+
+<body>
+    <div class="mdl-layout mdl-js-layout mdl-layout--fixed-drawer">
+        <div class="mdl-layout__drawer">
+            <span class="mdl-layout-title">Problems</span>
+            <nav class="mdl-navigation">
+                <a class="mdl-navigation__link" href="#">Visualize Towers of Hanoi</a>
+                <a class="mdl-navigation__link" href="./factorial.html">Factorial of Number</a>
+                <a class="mdl-navigation__link" href="#">Fibonacci series</a>
+            </nav>
+        </div>
+        <main class="mdl-layout__content">
+            <div class="demo-separator"></div>
+            <div class="mdl-grid">
+                <div class="mdl-cell mdl-cell--8-col mdl-cell--8-col-tablet mdl-cell--4-col-phone">
+                    <div class="v-collapsible-instruction-container v-instruction-container">
+                        <div class="v-collapsible is-size-5" id="task-description">
+                            Instructions
+                        </div>
+                        <div class="v-content" style="text-align: left; padding-left: 10%; padding-right: 10%;">
+                            <ul style="list-style: disc;">
+                                <li>Some points here...</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="mdl-cell mdl-cell--4-col mdl-cell--4-col-tablet mdl-cell--4-col-phone">
+                    <select id="lang-selector" class="lang-selector is-size-5">
+                        <option value="" disabled selected>Select a language</option>
+                        <option value="C">C</option>
+                        <option value="PY">Python</option>
+                        <option value="JS">JS?</option>
+                    </select>
+                </div>
+            </div>
+            <div class="mdl-grid">
+                <div class="mdl-cell mdl-cell--6-col mdl-cell--8-col-tablet mdl-cell--4-col-phone">
+                    <div class="v-datalist-container" style="min-height: 500px;">
+                        <div class="v-datalist-title">
+                            Code Block
+                        </div>
+                        <div id="container">
+                        </div>
+                    </div>
+                </div>
+                <div class="mdl-cell mdl-cell--6-col mdl-cell--8-col-tablet mdl-cell--4-col-phone">
+                    <div class="v-datalist-container" style="min-height: 250px;">
+                        <div class="v-datalist-title">
+                            <div class="columns is-centered">
+                                <div class="column">
+                                    Stack
+                                </div>
+                                <div class="column">
+                                    Max Size: <u>5</u>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="container">
+                        </div>
+                    </div>
+                    <div class="demo-separator mdl-cell--1-col"></div>
+                    <div class="v-datalist-container" style="min-height: 150px;">
+                        <div class="v-datalist-title">
+                            Variables
+                        </div>
+                        <div id="container">
+                        </div>
+                    </div>
+                    <div class="demo-separator mdl-cell--1-col"></div>
+                    <div class="v-datalist-container" style="min-height: 50px;">
+                        <div id="container">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.teal-deep_purple.min.css" />
+    <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/gh/virtual-labs/virtual-style@0.0.8-b/js/script.js"></script>
+</body>
+
+</html>

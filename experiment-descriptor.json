@@ -35,11 +35,18 @@
       "content-type": "text"
     },
     {
-      "target": "simulation.html",
-      "source": "simulation/index.html",
-      "label": "Simulation",
+      "target": "practice.html",
+      "source": "simulation/new.html",
+      "label": "Practice",
       "unit-type": "task",
       "content-type": "simulation"
+    },
+    {
+      "target": "assignment.html",
+      "source": "assignment.md",
+      "label": "Assignment",
+      "unit-type": "task",
+      "content-type": "text"
     },
     {
       "target": "posttest.html",
