@@ -15,3 +15,7 @@ In this lab, we will explore the concept of recursion through interactive exerci
 By the end of this lab, you will have gained hands-on experience in visualizing recursive code and understanding its inner workings. You will also develop problem-solving skills that will serve you well in your future.
 
 So let's get started and discover the magic of recursion together!
+
+> ### Pre-requisite
+
+To get the most out of this lab, you should be familiar with the basics of programming in `Python/C/JavaScript`. You should also be comfortable with using functions and loops to solve problems.
