@@ -23,7 +23,7 @@
     {
       "target": "pretest.html",
       "source": "pretest.json",
-      "label": "Pretest",
+      "label": "Pre-Test",
       "unit-type": "task",
       "content-type": "assesment"
     },
@@ -51,14 +51,14 @@
     {
       "target": "posttest.html",
       "source": "posttest.json",
-      "label": "Posttest",
+      "label": "Post-Test",
       "unit-type": "task",
       "content-type": "assesment"
     },
     {
       "target": "references.html",
       "source": "references.md",
-      "label": "References",
+      "label": "Further Readings/References",
       "unit-type": "task",
       "content-type": "text"
     }
