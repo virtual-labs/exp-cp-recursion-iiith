@@ -1,12 +1,13 @@
 [
-{"question":"1. What will be the ouptut of the following function call: fun3(100); where fun3 is defined as: <br/>  <img src='images/code5.png'>",
-"answers":{
-            "a":"13",
-            "b":"14",
-            "c":"3",
-            "d":"7"
-          },
-
-"correctAnswer":"a"}
-
+  {
+    "question": "1. What will be the ouptut of the following function call: fun3(100); where fun3 is defined as: <br/>  <img src='images/code5.png'>",
+    "answers": {
+      "a": "13",
+      "b": "14",
+      "c": "3",
+      "d": "7"
+    },
+    "correctAnswer": "a",
+    "difficulty": "beginner"
+  }
 ]
