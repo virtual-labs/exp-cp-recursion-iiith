@@ -1,6 +1,8 @@
 ***Recursion*** is a programming technique where a function calls itself repeatedly until it reaches a stopping criterion. In other words, a function solves a problem by breaking it down into smaller sub-problems of the same type, and then solving those sub-problems using the same function. This process continues until the sub-problems are small enough to be solved directly, without calling the function again.
 
-Let's consider a very simple example: Calculating the sum of numbers from 1 to n. We can write a recursive function like this:
+To illustrate this concept, let's consider an example. Imagine you have a set of nesting dolls, where each doll is placed inside another slightly larger doll. The smallest doll is the base case, and we want to find out how many dolls are in total. A recursive approach would involve defining a function that takes the current doll and its contents (other dollars), and then calls itself with the next smaller doll and its contents. By doing so, we continue to break down the problem into smaller sub-problems until we reach the base case, which is the smallest doll with no contents.
+
+Let's consider another very simple example: Calculating the sum of numbers from 1 to n. We can write a recursive function like this:
 
 ```
 sum(n):
