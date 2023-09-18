@@ -21,9 +21,9 @@
       "content-type": "text"
     },
     {
-      "target": "pretest.html",
-      "source": "pretest.json",
-      "label": "Pre-Test",
+      "target": "theory-test.html",
+      "source": "theory.json",
+      "label": "Theory-Test",
       "unit-type": "task",
       "content-type": "assesment"
     },
@@ -49,9 +49,9 @@
       "content-type": "text"
     },
     {
-      "target": "posttest.html",
+      "target": "practical-test.html",
       "source": "posttest.json",
-      "label": "Post-Test",
+      "label": "Practical-Test",
       "unit-type": "task",
       "content-type": "assesment"
     },

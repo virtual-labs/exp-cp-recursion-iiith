@@ -1,0 +1,341 @@
+{
+    "version": 2.0,
+    "questions": [
+        {
+            "question": "1. What is recursion in computer science?",
+            "answers": {
+                "a": "A programming error",
+                "b": "A loop construct",
+                "c": "A function calling itself",
+                "d": "A data structure"
+            },
+            "correctAnswer": "c",
+            "explanations": {
+                "a": "",
+                "b": "",
+                "c": "",
+                "d": ""
+            },
+            "difficulty": "beginner"
+        },
+        {
+            "question": "2. What is the purpose of a base case in a recursive function?",
+            "answers": {
+                "a": "To provide a starting point for the recursive calls",
+                "b": "To handle the edge cases",
+                "c": "To optimize the function for better performance",
+                "d": "To make the function more readable"
+            },
+            "correctAnswer": "b",
+            "explanations": {
+                "a": "",
+                "b": "",
+                "c": "",
+                "d": ""
+            },
+            "difficulty": "beginner"
+        },
+        {
+            "question": "3. What is the main difference between recursive and iterative solutions?",
+            "answers": {
+                "a": "Recursive solutions use loops, while iterative solutions use function calls",
+                "b": "Recursive solutions use function calls, while iterative solutions use loops",
+                "c": "Recursive solutions are faster, while iterative solutions are slower",
+                "d": "Recursive solutions are less efficient, while iterative solutions are more efficient"
+            },
+            "correctAnswer": "b",
+            "explanations": {
+                "a": "",
+                "b": "",
+                "c": "",
+                "d": ""
+            },
+            "difficulty": "beginner"
+        },
+        {
+            "question": "4. For every recursive solution, there is a corresponding iterative solution?",
+            "answers": {
+                "a": "True",
+                "b": "False"
+            },
+            "correctAnswer": "a",
+            "explanations": {
+                "a": "",
+                "b": ""
+            },
+            "difficulty": "beginner"
+        },
+        {
+            "question": "5. What is the advantage of using recursion over iteration?",
+            "answers": {
+                "a": "Recursion is generally faster than iteration",
+                "b": "Recursion is easier to understand and implement than iteration",
+                "c": "Recursion uses less memory than iteration",
+                "d": "Recursion is more flexible than iteration"
+            },
+            "correctAnswer": "b",
+            "explanations": {
+                "a": "",
+                "b": "",
+                "c": "",
+                "d": ""
+            },
+            "difficulty": "beginner"
+        },
+        {
+            "question": "6. Which of the following is NOT a characteristic of recursion?",
+            "answers": {
+                "a": "A function calling itself repeatedly",
+                "b": "A function solving a problem by breaking it down into smaller sub-problems",
+                "c": "A function having a fixed number of iterations",
+                "d": "A function with a terminating condition"
+            },
+            "correctAnswer": "c",
+            "explanations": {
+                "a": "",
+                "b": "",
+                "c": "",
+                "d": ""
+            },
+            "difficulty": "intermediate"
+        },
+        {
+            "question": "7. In a recursive function, what happens when the base case is not reached?",
+            "answers": {
+                "a": "The function will continue to call itself infinitely",
+                "b": "The function will throw an error",
+                "c": "The function will return a default value",
+                "d": "The function will terminate immediately"
+            },
+            "correctAnswer": "a",
+            "explanations": {
+                "a": "",
+                "b": "",
+                "c": "",
+                "d": ""
+            },
+            "difficulty": "intermediate"
+        },
+        {
+            "question": "8. How can we avoid a stack overflow error in a recursive function?",
+            "answers": {
+                "a": "By ensuring that the function has a base case",
+                "b": "By limiting the number of recursive calls",
+                "c": "By using iteration instead of recursion",
+                "d": "By increasing the size of the stack"
+            },
+            "correctAnswer": "a",
+            "explanations": {
+                "a": "",
+                "b": "",
+                "c": "",
+                "d": ""
+            },
+            "difficulty": "intermediate"
+        },
+        {
+            "question": "9. Can recursion be used to solve dynamic programming problems?",
+            "answers": {
+                "a": "Yes, recursion is well suited for dynamic programming problems",
+                "b": "No, recursion is not suitable for dynamic programming problems",
+                "c": "Sometimes, depending on the specific problem",
+                "d": "Only if the problem has a small number of inputs"
+            },
+            "correctAnswer": "c",
+            "explanations": {
+                "a": "",
+                "b": "",
+                "c": "",
+                "d": ""
+            },
+            "difficulty": "intermediate"
+        },
+        {
+            "question": "10. How do we determine the optimal depth of recursion in a recursive function?",
+            "answers": {
+                "a": "By trial and error",
+                "b": "By analyzing the time complexity of the function",
+                "c": "By looking at the base case",
+                "d": "By checking the documentation"
+            },
+            "correctAnswer": "b",
+            "explanations": {
+                "a": "",
+                "b": "",
+                "c": "",
+                "d": ""
+            },
+            "difficulty": "intermediate"
+        },
+        {
+            "question": "11. Can recursion be used to solve problems with multiple correct solutions?",
+            "answers": {
+                "a": "Yes, recursion can be used to find all possible solutions",
+                "b": "No, recursion can only find one solution",
+                "c": "Sometimes, depending on the specific problem",
+                "d": "Only if the problem has a unique solution"
+            },
+            "correctAnswer": "a",
+            "explanations": {
+                "a": "",
+                "b": "",
+                "c": "",
+                "d": ""
+            },
+            "difficulty": "intermediate"
+        },
+        {
+            "question": "12. What is the main advantage of using recursion over iteration in some cases?",
+            "answers": {
+                "a": "Recursion is always faster",
+                "b": "Recursion uses less memory",
+                "c": "Recursion can solve problems that are hard to express iteratively",
+                "d": "Recursion is easier to implement"
+            },
+            "correctAnswer": "c",
+            "explanations": {
+                "a": "",
+                "b": "",
+                "c": "",
+                "d": ""
+            },
+            "difficulty": "intermediate"
+        },
+        {
+            "question": "13. What is the purpose of a recursive function's 'stack'?",
+            "answers": {
+                "a": "To store local variables",
+                "b": "To keep track of function calls",
+                "c": "To store global variables",
+                "d": "To hold the return value"
+            },
+            "correctAnswer": "b",
+            "explanations": {
+                "a": "",
+                "b": "",
+                "c": "",
+                "d": ""
+            },
+            "difficulty": "intermediate"
+        },
+        {
+            "question": "14. In recursive algorithms, what is meant by 'tail recursion'?",
+            "answers": {
+                "a": "A type of recursion that is slower than regular recursion",
+                "b": "A recursive call that appears at the end of a function and doesn't require any further computation after the recursive call returns",
+                "c": "A recursive call that occurs within a loop",
+                "d": "A type of recursion that uses a tail data structure"
+            },
+            "correctAnswer": "b",
+            "explanations": {
+                "a": "",
+                "b": "",
+                "c": "",
+                "d": ""
+            },
+            "difficulty": "advanced"
+        },
+        {
+            "question": "15. How can you optimize a recursive function to reduce the overhead of function calls?",
+            "answers": {
+                "a": "By making the recursive calls non-tail recursive",
+                "b": "By using global variables instead of local variables",
+                "c": "By using memoization or dynamic programming techniques",
+                "d": "By removing the base case"
+            },
+            "correctAnswer": "c",
+            "explanations": {
+                "a": "",
+                "b": "",
+                "c": "",
+                "d": ""
+            },
+            "difficulty": "advanced"
+        },
+        {
+            "question": "16. What is the time complexity of a recursive function that makes n recursive calls?",
+            "answers": {
+                "a": "O(2^n)",
+                "b": "O(log n)",
+                "c": "O(n^2)",
+                "d": "O(n)"
+            },
+            "correctAnswer": "d",
+            "explanations": {
+                "a": "",
+                "b": "",
+                "c": "",
+                "d": ""
+            },
+            "difficulty": "advanced"
+        },
+        {
+            "question": "17. What is the concept of 'tree recursion'?",
+            "answers": {
+                "a": "A recursion that models a tree structure with multiple branches",
+                "b": "A recursion that only works with binary trees",
+                "c": "A recursion that creates a tree-like data structure",
+                "d": "A recursion that uses a stack data structure"
+            },
+            "correctAnswer": "a",
+            "explanations": {
+                "a": "",
+                "b": "",
+                "c": "",
+                "d": ""
+            },
+            "difficulty": "advanced"
+        },
+        {
+            "question": "18. When is it appropriate to use recursion over iteration, and vice versa, in solving problems?",
+            "answers": {
+                "a": "Recursion is always preferred over iteration for all types of problems.",
+                "b": "Recursion is preferred when a problem can be naturally divided into smaller subproblems, and iteration is preferred for problems with a fixed number of steps.",
+                "c": "Recursion is preferred when memory usage is a concern, and iteration is preferred for time-critical tasks.",
+                "d": "Recursion and iteration are interchangeable, and the choice depends on personal preference."
+            },
+            "correctAnswer": "b",
+            "explanations": {
+                "a": "",
+                "b": "",
+                "c": "",
+                "d": ""
+            },
+            "difficulty": "advanced"
+        },
+        {
+            "question": "19. In the context of recursion, what is 'tail call optimization,' and why is it important?",
+            "answers": {
+                "a": "Tail call optimization is a method for making recursive functions easier to understand, but it doesn't have any impact on performance.",
+                "b": "Tail call optimization is a term used in functional programming, and it doesn't apply to recursion in imperative languages.",
+                "c": "Tail call optimization is a way to convert recursive functions into iterative functions, making them more efficient.",
+                "d": "Tail call optimization is a technique to make recursive calls more efficient, and it is important because it reduces the risk of stack overflow errors."
+            },
+            "correctAnswer": "d",
+            "explanations": {
+                "a": "",
+                "b": "",
+                "c": "",
+                "d": ""
+            },
+            "difficulty": "advanced"
+        },
+        {
+            "question": "20. Explain the concept of 'mutual recursion' in programming and provide an example scenario where it might be applied.",
+            "answers": {
+                "a": "Mutual recursion is when two recursive functions call each other, and it is commonly used in algorithms for sorting and searching.",
+                "b": "Mutual recursion is when a recursive function calls itself multiple times within a single iteration, optimizing performance.",
+                "c": "Mutual recursion is a technique to replace recursion with iteration for better efficiency.",
+                "d": "Mutual recursion is an outdated concept and is no longer relevant in modern programming."
+            },
+            "correctAnswer": "a",
+            "explanations": {
+                "a": "",
+                "b": "",
+                "c": "",
+                "d": ""
+            },
+            "difficulty": "advanced"
+        }
+    ]
+}

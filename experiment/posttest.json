@@ -1,13 +1,35 @@
 [
-  {
-    "question": "1. What will be the ouptut of the following function call: fun3(100); where fun3 is defined as: <br/>  <img src='images/code5.png'>",
-    "answers": {
-      "a": "13",
-      "b": "14",
-      "c": "3",
-      "d": "7"
+    {
+        "question": "1. How many stars will the following code output for a given positive value of n: <br/>  <img src='images/code1.png'>",
+        "answers": {
+            "a": "n",
+            "b": "n^2",
+            "c": "n(n-1)/2",
+            "d": "n(n+1)/2"
+        },
+        "correctAnswer": "d",
+        "difficulty": "beginner"
     },
-    "correctAnswer": "a",
-    "difficulty": "beginner"
-  }
+    {
+        "question": "2. What will be the ouptut of the following function call: fun2(20); where fun2 is defined as:  <br/>  <img src='images/code3.png'>",
+        "answers": {
+            "a": "20 40 60 80 60 40 20",
+            "b": "80 60 40 20",
+            "c": "20 40 60 80 80 60 40 20",
+            "d": "20 40 60 80"
+        },
+        "correctAnswer": "c",
+        "difficulty": "beginner"
+    },
+    {
+        "question": "3. What will be the ouptut of the following function call: fun3(100); where fun3 is defined as:  <br/>  <img src='images/code4.png'>",
+        "answers": {
+            "a": "6",
+            "b": "7",
+            "c": "5",
+            "d": "4"
+        },
+        "correctAnswer": "a",
+        "difficulty": "beginner"
+    }
 ]
