@@ -22,7 +22,7 @@
     },
     {
       "target": "theory-test.html",
-      "source": "theory.json",
+      "source": "theorytest.json",
       "label": "Theory-Test",
       "unit-type": "task",
       "content-type": "assesment"
@@ -50,7 +50,7 @@
     },
     {
       "target": "practical-test.html",
-      "source": "posttest.json",
+      "source": "practicaltest.json",
       "label": "Practical-Test",
       "unit-type": "task",
       "content-type": "assesment"
