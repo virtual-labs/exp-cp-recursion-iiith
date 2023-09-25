@@ -14,13 +14,6 @@
       "content-type": "video"
     },
     {
-      "target": "objective.html",
-      "source": "objective.md",
-      "label": "Objective",
-      "unit-type": "task",
-      "content-type": "text"
-    },
-    {
       "target": "theory-test.html",
       "source": "theorytest.json",
       "label": "Theory-Test",
