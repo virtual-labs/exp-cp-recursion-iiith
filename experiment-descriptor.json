@@ -29,7 +29,7 @@
     },
     {
       "target": "practice.html",
-      "source": "simulation/new.html",
+      "source": "simulation/index.html",
       "label": "Practice",
       "unit-type": "task",
       "content-type": "simulation"
