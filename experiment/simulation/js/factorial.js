@@ -1,4 +1,11 @@
-const maxStackDepth = 5;
+let maxStackDepth = 5;
+
+function changeMaxStackDepth() {
+    maxStackDepth = parseInt(document.getElementById('n').value);
+    stackText = document.getElementById('stack-depth');
+    stackText.textContent = maxStackDepth;
+}
+document.getElementById('n').addEventListener('change', changeMaxStackDepth);
 
 function toggleCodeLanguage() {
     var selectedLanguage = document.getElementById('lang-selector').value;
@@ -73,11 +80,12 @@ document.addEventListener('DOMContentLoaded', function () {
         const variable = variableSelect.value;
         const operator = operatorSelect.value;
 
-        let result = factorial(5, basecaseOperator, basecase, basecaseReturn, recursecase, variable, operator, 1);
-        resultElement.textContent = "Final Result" + result.toString();
+        let result = factorial(maxStackDepth, basecaseOperator, basecase, basecaseReturn, recursecase, variable, operator, 1);
+        resultElement.textContent = "Final Result: " + result.toString();
     }
 
     function factorial(n, basecaseOperator, basecase, basecaseReturn, recursecase, variable, operator, stackDepth) {
+        console.log(`n: ${n}, basecaseOperator: ${basecaseOperator}, basecase: ${basecase}, basecaseReturn: ${basecaseReturn}, recursecase: ${recursecase}, variable: ${variable}, operator: ${operator}, stackDepth: ${stackDepth}`);
         if (stackDepth > maxStackDepth) {
             return 'Stack Overflow';
         }

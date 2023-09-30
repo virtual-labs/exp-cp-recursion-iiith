@@ -85,7 +85,11 @@
                                     </select> subsol</div>
                                 <div id="line7" class="line">       return sol</div>
                                 <div class="line">&nbsp;</div>
-                                <div id="line8" class="line">print(factorial(5))</div>
+                                <div id="line8" class="line">print(factorial(<select id="n">
+                                    <option value="5" selected>5</option>
+                                    <option value="4">4</option>
+                                    <option value="3">3</option>
+                            </select>))</div>
                             </div>
 
                             <div id="container-c" style="display: none;">
@@ -125,7 +129,11 @@
                                 <div id="line10" class="line">}</div>
                                 <div class="line">&nbsp;</div>
                                 <div id="line11" class="line">int main() {</div>
-                                <div id="line12" class="line">    int n = 5; // Replace with the desired value of n</div>
+                                <div id="line12" class="line">    int n = <select id="n">
+                                    <option value="5" selected>5</option>
+                                    <option value="4">4</option>
+                                    <option value="3">3</option>
+                            </select>;</div>
                                 <div id="line13" class="line">    int result = func(n);</div>
                                 <div id="line14" class="line">    printf("Result: %d\n", result);</div>
                                 <div id="line15" class="line">    return 0;</div>
@@ -166,7 +174,11 @@
                                 <div id="line7" class="line">       return sol;</div>
                                 <div class="line">&nbsp;</div>
                                 <div id="line8" class="line">}</div>
-                                <div id="line9" class="line">var result = factorial(5);</div>
+                                <div id="line9" class="line">var result = factorial(<select id="n">
+                                        <option value="5" selected>5</option>
+                                        <option value="4">4</option>
+                                        <option value="3">3</option>
+                                </select>);</div>
                                 <div id="line10" class="line">console.log(result);</div>
                             </div>                            
                         </div>
@@ -181,7 +193,7 @@
                                     Stack
                                 </div>
                                 <div class="column">
-                                    Max Size: <u>5</u>
+                                    Max Size: <u><span id="stack-depth" style="white-space: nowrap;">5</span></u>
                                 </div>
                             </div>
                         </div>
