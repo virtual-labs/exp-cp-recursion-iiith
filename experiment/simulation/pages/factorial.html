@@ -75,7 +75,7 @@
                                         <option value="n">n</option>
                                         <option value="n+1">n + 1</option>
                                     </select>)</div>
-                                <div id="line6" class="line">       sol = <select id="multiply">
+                                <div id="line6" class="line">       sol = <select id="variable">
                                         <option value="n-1" selected>n - 1</option>
                                         <option value="n">n</option>
                                         <option value="n+1">n + 1</option>
@@ -112,7 +112,7 @@
                                             <option value="n">n</option>
                                             <option value="n+1">n + 1</option>
                                         </select>);</div>
-                                <div id="line7" class="line">        int sol = <select id="multiply">
+                                <div id="line7" class="line">        int sol = <select id="variable">
                                             <option value="n-1" selected>n - 1</option>
                                             <option value="n">n</option>
                                             <option value="n+1">n + 1</option>
@@ -155,7 +155,7 @@
                                         <option value="n">n</option>
                                         <option value="n+1">n + 1</option>
                                     </select>);</div>
-                                <div id="line6" class="line">       var sol = <select id="multiply">
+                                <div id="line6" class="line">       var sol = <select id="variable">
                                         <option value="n-1" selected>n - 1</option>
                                         <option value="n">n</option>
                                         <option value="n+1">n + 1</option>
@@ -194,15 +194,17 @@
                             Variable Values
                         </div>
                         <div id="container">
+                            <div id="result">
+                            </div>
                         </div>
                     </div>
                     <div class="demo-separator mdl-cell--1-col"></div>
                     <div class="v-datalist-container" style="min-height: 50px;">
                         <div class="container-buttons">
-                            <button>Reset</button>
+                            <button id="reset">Reset</button>
                             <button>&lt;</button>
                             <button>&gt;</button>
-                            <button>Last</button>
+                            <button id="run">Run</button>
                         </div>
                     </div>
                 </div>
