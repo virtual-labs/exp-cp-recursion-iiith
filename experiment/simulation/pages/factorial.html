@@ -50,8 +50,127 @@
                         <div class="v-datalist-title">
                             Code Block
                         </div>
-                        <div id="container">
+                        <!--noformat-->
+                        <div class="container">
+                            <div id="container-py" style="display: none;">
+                                <div id="line1" class="line">def factorial(n):</div>
+                                <div id="line2" class="line">   if n <select id="basecase_operator">
+                                        <option value="eq" selected>==</option>
+                                        <option value="gt">&gt;</option>
+                                        <option value="lt">&lt;</option>
+                                        <option value="ge">&gt;=</option>
+                                        <option value="le">&lt;=</option>
+                                    </select> <select id="basecase">
+                                        <option value="0" selected>0</option>
+                                        <option value="1">1</option>
+                                        <option value="-1">-1</option>
+                                    </select>:</div>
+                                <div id="line3" class="line">       return <select id="basecase_return">
+                                        <option value="0" selected>0</option>
+                                        <option value="1">1</option>
+                                    </select></div>
+                                <div id="line4" class="line">   else:</div>
+                                <div id="line5" class="line">       subsol = factorial(<select id="recursecase">
+                                        <option value="n-1" selected>n - 1</option>
+                                        <option value="n">n</option>
+                                        <option value="n+1">n + 1</option>
+                                    </select>)</div>
+                                <div id="line6" class="line">       sol = <select id="multiply">
+                                        <option value="n-1" selected>n - 1</option>
+                                        <option value="n">n</option>
+                                        <option value="n+1">n + 1</option>
+                                    </select> <select id="operator">
+                                        <option value="*" selected>*</option>
+                                        <option value="+">+</option>
+                                    </select> subsol</div>
+                                <div id="line7" class="line">       return sol</div>
+                                <div class="line">&nbsp;</div>
+                                <div id="line8" class="line">print(factorial(5))</div>
+                            </div>
+
+                            <div id="container-c" style="display: none;">
+                                <div id="line1" class="line">#include &lt;stdio.h&gt;</div>
+                                <div id="line2" class="line">int func(int n) {</div>
+                                <div id="line3" class="line">    if (n <select id="basecase_operator">
+                                            <option value="eq" selected>==</option>
+                                            <option value="gt">&gt;</option>
+                                            <option value="lt">&lt;</option>
+                                            <option value="ge">&gt;=</option>
+                                            <option value="le">&lt;=</option>
+                                        </select> <select id="basecase">
+                                            <option value="0" selected>0</option>
+                                            <option value="1">1</option>
+                                            <option value="-1">-1</option>
+                                        </select>) {</div>
+                                <div id="line4" class="line">        return <select id="basecase_return">
+                                            <option value="0" selected>0</option>
+                                            <option value="1">1</option>
+                                        </select>;</div>
+                                <div id="line5" class="line">    } else {</div>
+                                <div id="line6" class="line">        int subsol = func(<select id="recursecase">
+                                            <option value="n-1" selected>n - 1</option>
+                                            <option value="n">n</option>
+                                            <option value="n+1">n + 1</option>
+                                        </select>);</div>
+                                <div id="line7" class="line">        int sol = <select id="multiply">
+                                            <option value="n-1" selected>n - 1</option>
+                                            <option value="n">n</option>
+                                            <option value="n+1">n + 1</option>
+                                        </select> <select id="operator">
+                                            <option value="*" selected>*</option>
+                                            <option value="+">+</option>
+                                        </select> subsol;</div>
+                                <div id="line8" class="line">        return sol;</div>
+                                <div id="line9" class="line">    }</div>
+                                <div id="line10" class="line">}</div>
+                                <div class="line">&nbsp;</div>
+                                <div id="line11" class="line">int main() {</div>
+                                <div id="line12" class="line">    int n = 5; // Replace with the desired value of n</div>
+                                <div id="line13" class="line">    int result = func(n);</div>
+                                <div id="line14" class="line">    printf("Result: %d\n", result);</div>
+                                <div id="line15" class="line">    return 0;</div>
+                                <div id="line16" class="line">}</div>
+                            </div>
+                            
+                            <div id="container-js" style="display: none;">
+                                <div id="line1" class="line">function factorial(n) {</div>
+                                <div id="line2" class="line">   if (n <select id="basecase_operator">
+                                        <option value="eq" selected>==</option>
+                                        <option value="gt">&gt;</option>
+                                        <option value="lt">&lt;</option>
+                                        <option value="ge">&gt;=</option>
+                                        <option value="le">&lt;=</option>
+                                    </select> <select id="basecase">
+                                        <option value="0" selected>0</option>
+                                        <option value="1">1</option>
+                                        <option value="-1">-1</option>
+                                    </select>) {</div>
+                                <div id="line3" class="line">       return <select id="basecase_return">
+                                        <option value="0" selected>0</option>
+                                        <option value="1">1</option>
+                                    </select>;</div>
+                                <div id="line4" class="line">   } else {</div>
+                                <div id="line5" class="line">       var subsol = factorial(<select id="recursecase">
+                                        <option value="n-1" selected>n - 1</option>
+                                        <option value="n">n</option>
+                                        <option value="n+1">n + 1</option>
+                                    </select>);</div>
+                                <div id="line6" class="line">       var sol = <select id="multiply">
+                                        <option value="n-1" selected>n - 1</option>
+                                        <option value="n">n</option>
+                                        <option value="n+1">n + 1</option>
+                                    </select> <select id="operator">
+                                        <option value="*" selected>*</option>
+                                        <option value="+">+</option>
+                                    </select> subsol;</div>
+                                <div id="line7" class="line">       return sol;</div>
+                                <div class="line">&nbsp;</div>
+                                <div id="line8" class="line">}</div>
+                                <div id="line9" class="line">var result = factorial(5);</div>
+                                <div id="line10" class="line">console.log(result);</div>
+                            </div>                            
                         </div>
+                        <!--noformat-->
                     </div>
                 </div>
                 <div class="mdl-cell mdl-cell--6-col mdl-cell--8-col-tablet mdl-cell--4-col-phone">
@@ -72,20 +191,26 @@
                     <div class="demo-separator mdl-cell--1-col"></div>
                     <div class="v-datalist-container" style="min-height: 150px;">
                         <div class="v-datalist-title">
-                            Variables
+                            Variable Values
                         </div>
                         <div id="container">
                         </div>
                     </div>
                     <div class="demo-separator mdl-cell--1-col"></div>
                     <div class="v-datalist-container" style="min-height: 50px;">
-                        <div id="container">
+                        <div class="container-buttons">
+                            <button>Reset</button>
+                            <button>&lt;</button>
+                            <button>&gt;</button>
+                            <button>Last</button>
                         </div>
                     </div>
                 </div>
             </div>
         </main>
     </div>
+
+    <script src="../js/factorial.js"></script>
 
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.teal-deep_purple.min.css" />

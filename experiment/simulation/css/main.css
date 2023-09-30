@@ -37,7 +37,7 @@
 
 /* Change the background color of the navigation drawer */
 .mdl-layout__drawer {
-    background-color: #f5f5f5; 
+    background-color: #f5f5f5;
 }
 
 .left-margin {
@@ -46,4 +46,56 @@
 
 .nav-active {
     background-color: #88c8e7;
+}
+
+.line {
+    text-align: left;
+    font: 18px Arial, sans-serif;
+    color: #333;
+    word-wrap: break-word;
+    white-space: pre;
+    tab-size: 4;
+    margin-left: 10px;
+}
+
+.container {
+    background-color: azure;
+    width: 100%;
+    border-bottom: transparent;
+    border-radius: 1rem;
+}
+
+.container #line1 {
+    margin-top: 10px;
+}
+
+#container-py, #container-c {
+    justify-content: left;
+    align-items: self-start;
+}
+
+.container-buttons {
+    display: flex;
+    background-color: azure;
+    width: 100%;
+    height: inherit;
+    border-radius: 1rem;
+    border: transparent;
+}
+
+.container-buttons button {
+    flex-grow: 1;
+    border: none;
+    background: none;
+    outline: none;
+    cursor: pointer;
+    padding: 5px;
+    font-size: 18px;
+    text-align: center;
+    margin-top: 10px;
+    border-right: .2rem solid #176696;
+}
+
+.container-buttons button:last-child {
+    border-right: none;
 }
