@@ -1,8 +1,11 @@
 const nextButton = document.getElementById('next');
 const prevButton = document.getElementById('prev');
 const runButton = document.getElementById('run');
+const resetButton = document.getElementById('reset');
+
 const stackElement = document.getElementById('container-stack');
 const resultElement = document.getElementById('result');
+
 const basecaseOperatorSelect = document.getElementById('basecase_operator');
 const basecaseSelect = document.getElementById('basecase');
 const basecaseReturnSelect = document.getElementById('basecase_return');
@@ -11,85 +14,10 @@ const variableSelect = document.getElementById('variable');
 const operatorSelect = document.getElementById('operator');
 
 let maxStackDepth = 5;
-
-function changeMaxStackDepth() {
-    maxStackDepth = parseInt(document.getElementById('n').value);
-    stackText = document.getElementById('stack-depth');
-    stackText.textContent = maxStackDepth;
-}
-document.getElementById('n').addEventListener('change', changeMaxStackDepth);
-
-function toggleCodeLanguage() {
-    var selectedLanguage = document.getElementById('lang-selector').value;
-    var containerPy = document.getElementById('container-py');
-    var containerJs = document.getElementById('container-js');
-    var containerC = document.getElementById('container-c');
-
-    if (selectedLanguage === 'PY') {
-        containerPy.style.display = 'block';
-        containerJs.style.display = 'none';
-        containerC.style.display = 'none';
-    } else if (selectedLanguage === 'JS') {
-        containerPy.style.display = 'none';
-        containerJs.style.display = 'block';
-        containerC.style.display = 'none';
-    } else if (selectedLanguage === 'C') {
-        containerPy.style.display = 'none';
-        containerJs.style.display = 'none';
-        containerC.style.display = 'block';
-    } else {
-        containerPy.style.display = 'none';
-        containerJs.style.display = 'none';
-        containerC.style.display = 'none';
-    }
-
-    runButton.disabled = false;
-    nextButton.disabled = false;
-    prevButton.disabled = true;
-}
-document.getElementById('lang-selector').addEventListener('change', toggleCodeLanguage);
-
-function reset() {
-    resultElement.textContent = '';
-
-    stackElement.innerHTML = '';
-    stackElement.style.color = 'black';
-    stackHTML = '';
-
-    resultHTML = '';
-    resultElement.style.color = 'black';
-    resultElement.innerHTML = '<br/>';
-
-    runButton.disabled = false;
-    nextButton.disabled = false;
-    prevButton.disabled = true;
-
-    stepstoexecute = -1;
-    executedsteps = 0;
-}
-document.getElementById('reset').addEventListener('click', reset);
-
-function changeOperator(operator) {
-    switch (operator) {
-        case 'eq':
-            return '==';
-        case 'neq':
-            return '!=';
-        case 'lt':
-            return '<';
-        case 'le':
-            return '<=';
-        case 'gt':
-            return '>';
-        case 'ge':
-            return '>=';
-        default:
-            return '';
-    }
-}
-
 let stackHTML = '';
 let resultHTML = '';
+let stepstoexecute = -1;
+let executedsteps = 0;
 
 let basecaseOperator = changeOperator(basecaseOperatorSelect.value);
 let basecase = parseInt(basecaseSelect.value);
@@ -123,8 +51,6 @@ operatorSelect.addEventListener('change', function () {
     reset();
 });
 
-let stepstoexecute = -1;
-let executedsteps = 0;
 function step() {
     executedsteps++;
     if (stepstoexecute != -1 && executedsteps > stepstoexecute)
@@ -132,7 +58,52 @@ function step() {
     return true;
 }
 
-function factorial(n, stackDepth) {
+function changeOperator(operator) {
+    switch (operator) {
+        case 'eq':
+            return '==';
+        case 'neq':
+            return '!=';
+        case 'lt':
+            return '<';
+        case 'le':
+            return '<=';
+        case 'gt':
+            return '>';
+        case 'ge':
+            return '>=';
+        default:
+            return '';
+    }
+}
+
+function reset() {
+    resultElement.textContent = '';
+
+    stackElement.innerHTML = '';
+    stackElement.style.color = 'black';
+    stackHTML = '';
+
+    resultHTML = '';
+    resultElement.style.color = 'black';
+    resultElement.innerHTML = '<br/>';
+
+    runButton.disabled = false;
+    nextButton.disabled = false;
+    prevButton.disabled = true;
+
+    stepstoexecute = -1;
+    executedsteps = 0;
+}
+
+function factorial(n) {
+    if (n === 0 || n === 1)
+        return 1;
+    else
+        return n * factorial(n - 1);
+}
+
+function step_factorial(n, stackDepth) {
     newHTML = `<div class="stack">
         stackDepth: ${stackDepth}<br>
         n: ${eval(n)}<br>
@@ -162,7 +133,7 @@ function factorial(n, stackDepth) {
         stackHTML = stackHTML.replace(newHTML, '');
         return basecaseReturn;
     } else {
-        const subsol = factorial(eval(recursecase), stackDepth + 1);
+        const subsol = step_factorial(eval(recursecase), stackDepth + 1);
 
         if (subsol === 'Stack Overflow') {
             return 'Stack Overflow';
@@ -194,14 +165,62 @@ function factorial(n, stackDepth) {
     }
 }
 
+function check_result(result) {
+    if (result === factorial(maxStackDepth)) {
+        resultElement.style.color = 'green';
+        resultElement.innerHTML = '';
+        resultElement.textContent = "Correct Answer: " + result.toString();
+    }
+    else {
+        resultElement.style.color = 'red';
+        resultElement.innerHTML = '';
+        resultElement.textContent = 'Wrong Answer: ' + result.toString();
+    }
+
+}
+
+resetButton.addEventListener('click', reset);
+
+document.getElementById('n').addEventListener('change', function () {
+    maxStackDepth = parseInt(document.getElementById('n').value);
+    stackText = document.getElementById('stack-depth');
+    stackText.textContent = maxStackDepth;
+});
+
+document.getElementById('lang-selector').addEventListener('change', function () {
+    var selectedLanguage = document.getElementById('lang-selector').value;
+    var containerPy = document.getElementById('container-py');
+    var containerJs = document.getElementById('container-js');
+    var containerC = document.getElementById('container-c');
+
+    if (selectedLanguage === 'PY') {
+        containerPy.style.display = 'block';
+        containerJs.style.display = 'none';
+        containerC.style.display = 'none';
+    } else if (selectedLanguage === 'JS') {
+        containerPy.style.display = 'none';
+        containerJs.style.display = 'block';
+        containerC.style.display = 'none';
+    } else if (selectedLanguage === 'C') {
+        containerPy.style.display = 'none';
+        containerJs.style.display = 'none';
+        containerC.style.display = 'block';
+    } else {
+        containerPy.style.display = 'none';
+        containerJs.style.display = 'none';
+        containerC.style.display = 'none';
+    }
+
+    reset();
+});
+
 runButton.addEventListener('click', function () {
     stackElement.innerHTML = '';
     stackHTML = '';
     stepstoexecute = -1;
 
-    let result = factorial(maxStackDepth, 1);
-    resultElement.innerHTML = '';
-    resultElement.textContent = "Final Result: " + result.toString();
+    let result = step_factorial(maxStackDepth, 1);
+    check_result(result);
 
     runButton.disabled = true;
     nextButton.disabled = true;
@@ -222,15 +241,14 @@ nextButton.addEventListener('click', function () {
 
     stackHTML = '';
 
-    stackHTML = factorial(maxStackDepth, 1);
+    stackHTML = step_factorial(maxStackDepth, 1);
 
     if (typeof stackHTML === 'number') {
         nextButton.disabled = true;
         prevButton.disabled = true;
         runButton.disabled = true;
 
-        resultElement.innerHTML = '';
-        resultElement.textContent = "Final Result: " + stackHTML.toString();
+        check_result(stackHTML);
         stackElement.innerHTML = '';
         return;
     }
@@ -259,7 +277,7 @@ prevButton.addEventListener('click', function () {
 
         stackHTML = '';
 
-        stackHTML = factorial(maxStackDepth, 1);
+        stackHTML = step_factorial(maxStackDepth, 1);
         if (stackHTML === 'Stack Overflow') {
             stackElement.style.color = 'red';
             return;
