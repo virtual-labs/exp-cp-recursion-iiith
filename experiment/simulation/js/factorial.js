@@ -185,6 +185,7 @@ document.getElementById('n').addEventListener('change', function () {
     maxStackDepth = parseInt(document.getElementById('n').value);
     stackText = document.getElementById('stack-depth');
     stackText.textContent = maxStackDepth;
+    reset();
 });
 
 document.getElementById('lang-selector').addEventListener('change', function () {
@@ -211,6 +212,7 @@ document.getElementById('lang-selector').addEventListener('change', function () 
         containerC.style.display = 'none';
     }
 
+    resetButton.disabled = false;
     reset();
 });
 
