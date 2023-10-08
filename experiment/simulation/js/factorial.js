@@ -30,13 +30,19 @@ function toggleCodeLanguage() {
         containerJs.style.display = 'none';
         containerC.style.display = 'none';
     }
+
+    const runButton = document.getElementById('run');
+    runButton.disabled = false;
 }
 document.getElementById('lang-selector').addEventListener('change', toggleCodeLanguage);
 
 function reset() {
-    document.getElementById('lang-selector').value = '';
     document.getElementById('result').textContent = '';
-    toggleCodeLanguage();
+    let stackElement = document.getElementById('container-stack');
+    stackElement.innerHTML = '';
+    stackHTML = '';
+    const runButton = document.getElementById('run');
+    runButton.disabled = false;
 }
 document.getElementById('reset').addEventListener('click', reset);
 
@@ -59,45 +65,77 @@ function changeOperator(operator) {
     }
 }
 
-document.addEventListener('DOMContentLoaded', function () {
-    const runButton = document.getElementById('run');
-    runButton.addEventListener('click', calculateFactorial);
+let stackHTML = '';
+const basecaseOperatorSelect = document.getElementById('basecase_operator');
+const basecaseSelect = document.getElementById('basecase');
+const basecaseReturnSelect = document.getElementById('basecase_return');
+const recursecaseSelect = document.getElementById('recursecase');
+const variableSelect = document.getElementById('variable');
+const operatorSelect = document.getElementById('operator');
+const resultElement = document.getElementById('result');
+const stackElement = document.getElementById('container-stack');
 
-    function calculateFactorial() {
-        const basecaseOperatorSelect = document.getElementById('basecase_operator');
-        const basecaseSelect = document.getElementById('basecase');
-        const basecaseReturnSelect = document.getElementById('basecase_return');
-        const recursecaseSelect = document.getElementById('recursecase');
-        const variableSelect = document.getElementById('variable');
-        const operatorSelect = document.getElementById('operator');
+let basecaseOperator = changeOperator(basecaseOperatorSelect.value);
+let basecase = parseInt(basecaseSelect.value);
+let basecaseReturn = parseInt(basecaseReturnSelect.value);
+let recursecase = recursecaseSelect.value;
+let variable = variableSelect.value;
+let operator = operatorSelect.value;
 
-        const resultElement = document.getElementById('result');
+basecaseOperatorSelect.addEventListener('change', function () {
+    basecaseOperator = changeOperator(basecaseOperatorSelect.value);
+});
+basecaseSelect.addEventListener('change', function () {
+    basecase = parseInt(basecaseSelect.value);
+});
+basecaseReturnSelect.addEventListener('change', function () {
+    basecaseReturn = parseInt(basecaseReturnSelect.value);
+});
+recursecaseSelect.addEventListener('change', function () {
+    recursecase = recursecaseSelect.value;
+});
+variableSelect.addEventListener('change', function () {
+    variable = variableSelect.value;
+});
+operatorSelect.addEventListener('change', function () {
+    operator = operatorSelect.value;
+});
 
-        const basecaseOperator = changeOperator(basecaseOperatorSelect.value);
-        const basecase = parseInt(basecaseSelect.value);
-        const basecaseReturn = parseInt(basecaseReturnSelect.value);
-        const recursecase = recursecaseSelect.value;
-        const variable = variableSelect.value;
-        const operator = operatorSelect.value;
+const runButton = document.getElementById('run');
+runButton.addEventListener('click', calculateFactorial);
 
-        let result = factorial(maxStackDepth, basecaseOperator, basecase, basecaseReturn, recursecase, variable, operator, 1);
-        resultElement.textContent = "Final Result: " + result.toString();
+function calculateFactorial() {
+    stackElement.innerHTML = '';
+    stackHTML = '';
+
+    let result = factorial(maxStackDepth, 1);
+    resultElement.textContent = "Final Result: " + result.toString();
+
+    runButton.disabled = true;
+}
+
+function factorial(n, stackDepth) {
+    newHTML = `<div class="stack">
+        stackDepth: ${stackDepth}<br>
+        n: ${eval(n)}<br>
+        </div>`;
+    stackHTML = newHTML + stackHTML;
+    stackElement.innerHTML = stackHTML;
+
+    if (stackDepth > maxStackDepth) {
+        return 'Stack Overflow';
     }
-
-    function factorial(n, basecaseOperator, basecase, basecaseReturn, recursecase, variable, operator, stackDepth) {
-        console.log(`n: ${n}, basecaseOperator: ${basecaseOperator}, basecase: ${basecase}, basecaseReturn: ${basecaseReturn}, recursecase: ${recursecase}, variable: ${variable}, operator: ${operator}, stackDepth: ${stackDepth}`);
-        if (stackDepth > maxStackDepth) {
+    if (eval(`n ${basecaseOperator} ${basecase}`)) {
+        stackHTML = stackHTML.replace(newHTML, '');
+        return basecaseReturn;
+    } else {
+        const subsol = factorial(eval(recursecase), stackDepth + 1);
+        if (subsol === 'Stack Overflow') {
             return 'Stack Overflow';
         }
-        if (eval(`n ${basecaseOperator} ${basecase}`)) {
-            return basecaseReturn;
-        } else {
-            const subsol = factorial(eval(recursecase), basecaseOperator, basecase, basecaseReturn, recursecase, variable, operator, stackDepth + 1);
-            if (subsol === 'Stack Overflow') {
-                return 'Stack Overflow';
-            }
-            const sol = eval(`${eval(variable)} ${operator} ${subsol}`);
-            return sol;
-        }
+        const sol = eval(`${eval(variable)} ${operator} ${subsol}`);
+        stackHTML = stackHTML.substring(newHTML.length);
+        stackElement.innerHTML = stackHTML;
+        return sol;
     }
-});
+}
