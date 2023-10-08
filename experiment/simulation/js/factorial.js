@@ -1,3 +1,15 @@
+const nextButton = document.getElementById('next');
+const prevButton = document.getElementById('prev');
+const runButton = document.getElementById('run');
+const stackElement = document.getElementById('container-stack');
+const resultElement = document.getElementById('result');
+const basecaseOperatorSelect = document.getElementById('basecase_operator');
+const basecaseSelect = document.getElementById('basecase');
+const basecaseReturnSelect = document.getElementById('basecase_return');
+const recursecaseSelect = document.getElementById('recursecase');
+const variableSelect = document.getElementById('variable');
+const operatorSelect = document.getElementById('operator');
+
 let maxStackDepth = 5;
 
 function changeMaxStackDepth() {
@@ -31,18 +43,29 @@ function toggleCodeLanguage() {
         containerC.style.display = 'none';
     }
 
-    const runButton = document.getElementById('run');
     runButton.disabled = false;
+    nextButton.disabled = false;
+    prevButton.disabled = true;
 }
 document.getElementById('lang-selector').addEventListener('change', toggleCodeLanguage);
 
 function reset() {
-    document.getElementById('result').textContent = '';
-    let stackElement = document.getElementById('container-stack');
+    resultElement.textContent = '';
+
     stackElement.innerHTML = '';
+    stackElement.style.color = 'black';
     stackHTML = '';
-    const runButton = document.getElementById('run');
+
+    resultHTML = '';
+    resultElement.style.color = 'black';
+    resultElement.innerHTML = '<br/>';
+
     runButton.disabled = false;
+    nextButton.disabled = false;
+    prevButton.disabled = true;
+
+    stepstoexecute = -1;
+    executedsteps = 0;
 }
 document.getElementById('reset').addEventListener('click', reset);
 
@@ -66,14 +89,7 @@ function changeOperator(operator) {
 }
 
 let stackHTML = '';
-const basecaseOperatorSelect = document.getElementById('basecase_operator');
-const basecaseSelect = document.getElementById('basecase');
-const basecaseReturnSelect = document.getElementById('basecase_return');
-const recursecaseSelect = document.getElementById('recursecase');
-const variableSelect = document.getElementById('variable');
-const operatorSelect = document.getElementById('operator');
-const resultElement = document.getElementById('result');
-const stackElement = document.getElementById('container-stack');
+let resultHTML = '';
 
 let basecaseOperator = changeOperator(basecaseOperatorSelect.value);
 let basecase = parseInt(basecaseSelect.value);
@@ -84,58 +100,175 @@ let operator = operatorSelect.value;
 
 basecaseOperatorSelect.addEventListener('change', function () {
     basecaseOperator = changeOperator(basecaseOperatorSelect.value);
+    reset();
 });
 basecaseSelect.addEventListener('change', function () {
     basecase = parseInt(basecaseSelect.value);
+    reset();
 });
 basecaseReturnSelect.addEventListener('change', function () {
     basecaseReturn = parseInt(basecaseReturnSelect.value);
+    reset();
 });
 recursecaseSelect.addEventListener('change', function () {
     recursecase = recursecaseSelect.value;
+    reset();
 });
 variableSelect.addEventListener('change', function () {
     variable = variableSelect.value;
+    reset();
 });
 operatorSelect.addEventListener('change', function () {
     operator = operatorSelect.value;
+    reset();
 });
 
-const runButton = document.getElementById('run');
-runButton.addEventListener('click', calculateFactorial);
-
-function calculateFactorial() {
-    stackElement.innerHTML = '';
-    stackHTML = '';
-
-    let result = factorial(maxStackDepth, 1);
-    resultElement.textContent = "Final Result: " + result.toString();
-
-    runButton.disabled = true;
+let stepstoexecute = -1;
+let executedsteps = 0;
+function step() {
+    executedsteps++;
+    if (stepstoexecute != -1 && executedsteps > stepstoexecute)
+        return false;
+    return true;
 }
 
 function factorial(n, stackDepth) {
     newHTML = `<div class="stack">
         stackDepth: ${stackDepth}<br>
         n: ${eval(n)}<br>
-        </div>`;
+        </div>\n`;
     stackHTML = newHTML + stackHTML;
-    stackElement.innerHTML = stackHTML;
+
+    resultHTML = `n: ${eval(n)} | subsol: undefined | sol: undefined<br>`;
+    resultElement.innerHTML = resultHTML;
 
     if (stackDepth > maxStackDepth) {
+        resultElement.style.color = 'red';
+        resultElement.innerHTML = '';
+        resultElement.textContent = 'Stack Overflow';
+
+        stackElement.style.color = 'red';
+        stackElement.innerHTML = stackHTML;
+
         return 'Stack Overflow';
     }
+    resultElement.style.color = 'black';
+
+    if (!step()) {
+        return stackHTML;
+    }
+
     if (eval(`n ${basecaseOperator} ${basecase}`)) {
         stackHTML = stackHTML.replace(newHTML, '');
         return basecaseReturn;
     } else {
         const subsol = factorial(eval(recursecase), stackDepth + 1);
+
         if (subsol === 'Stack Overflow') {
             return 'Stack Overflow';
         }
+        if (subsol.toString().startsWith('<')) {
+            return subsol;
+        }
+
+        resultHTML = `n: ${eval(n)} | subsol: ${subsol} | sol: undefined<br>`;
+        resultElement.innerHTML = resultHTML;
+
+        if (!step()) {
+            return stackHTML;
+        }
+
         const sol = eval(`${eval(variable)} ${operator} ${subsol}`);
+
+        resultHTML = `n: ${eval(n)} | subsol: ${subsol} | sol: ${sol}<br>`;
+        resultElement.innerHTML = resultHTML;
+
+        if (!step()) {
+            return stackHTML;
+        }
+
         stackHTML = stackHTML.substring(newHTML.length);
         stackElement.innerHTML = stackHTML;
+
         return sol;
     }
 }
+
+runButton.addEventListener('click', function () {
+    stackElement.innerHTML = '';
+    stackHTML = '';
+    stepstoexecute = -1;
+
+    let result = factorial(maxStackDepth, 1);
+    resultElement.innerHTML = '';
+    resultElement.textContent = "Final Result: " + result.toString();
+
+    runButton.disabled = true;
+    nextButton.disabled = true;
+    prevButton.disabled = true;
+});
+
+nextButton.addEventListener('click', function () {
+    if (typeof stackHTML === 'number') {
+        return;
+    }
+    if (stackHTML === 'Stack Overflow') {
+        nextButton.disabled = true;
+        prevButton.disabled = true;
+        return;
+    }
+    stepstoexecute++;
+    executedsteps = 0;
+
+    stackHTML = '';
+
+    stackHTML = factorial(maxStackDepth, 1);
+
+    if (typeof stackHTML === 'number') {
+        nextButton.disabled = true;
+        prevButton.disabled = true;
+        runButton.disabled = true;
+
+        resultElement.innerHTML = '';
+        resultElement.textContent = "Final Result: " + stackHTML.toString();
+        stackElement.innerHTML = '';
+        return;
+    }
+
+    if (stackHTML === 'Stack Overflow') {
+        stackElement.style.color = 'red';
+        nextButton.disabled = true;
+        runButton.disabled = true;
+        return;
+    }
+    stackElement.innerHTML = stackHTML;
+    prevButton.disabled = false;
+});
+
+prevButton.addEventListener('click', function () {
+    if (stepstoexecute <= 0) {
+        stackHTML = '';
+        resultHTML = '';
+        resultElement.innerHTML = '<br/>';
+        stepstoexecute = -1;
+        prevButton.disabled = true;
+    }
+    else {
+        stepstoexecute--;
+        executedsteps = 0;
+
+        stackHTML = '';
+
+        stackHTML = factorial(maxStackDepth, 1);
+        if (stackHTML === 'Stack Overflow') {
+            stackElement.style.color = 'red';
+            return;
+        }
+        else {
+            stackElement.style.color = 'black';
+        }
+    }
+    stackElement.innerHTML = stackHTML;
+    nextButton.disabled = false;
+    runButton.disabled = false;
+});
