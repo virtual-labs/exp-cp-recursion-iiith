@@ -53,7 +53,7 @@
                         <!--noformat-->
                         <div class="container">
                             <div id="container-py" style="display: none;">
-                                <div id="line1" class="line">def factorial(n):</div>
+                                <div id="line1" class="line">def fibonacci(n):</div>
                                 <div id="line2" class="line">   if n <select id="basecase_operator">
                                         <option value="eq" selected>==</option>
                                         <option value="gt">&gt;</option>
@@ -68,24 +68,34 @@
                                 <div id="line3" class="line">       return <select id="basecase_return">
                                         <option value="0" selected>0</option>
                                         <option value="1">1</option>
+                                        <option value="-1">-1</option>
+                                        <option value="n-1">n-1</option>
+                                        <option value="n">n</option>
+                                        <option value="n+1">n + 1</option>
                                     </select></div>
                                 <div id="line4" class="line">   else:</div>
-                                <div id="line5" class="line">       subsol = factorial(<select id="recursecase">
-                                        <option value="n-1" selected>n - 1</option>
+                                <div id="line5" class="line">       subsol1 = factorial(<select id="recursecase1">
+                                        <option value="n-2" selected>n - 2</option>
+                                        <option value="n-1">n - 1</option>
                                         <option value="n">n</option>
                                         <option value="n+1">n + 1</option>
+                                        <option value="n+2">n + 2</option>
                                     </select>)</div>
-                                <div id="line6" class="line">       sol = <select id="variable">
-                                        <option value="n-1" selected>n - 1</option>
+                                <div id="line6" class="line">       subsol2 = factorial(<select id="recursecase2">
+                                        <option value="n-2" selected>n - 2</option>
+                                        <option value="n-1">n - 1</option>
                                         <option value="n">n</option>
                                         <option value="n+1">n + 1</option>
-                                    </select> <select id="operator">
+                                        <option value="n+2">n + 2</option>
+                                    </select>)</div>
+                                <div id="line7" class="line">       sol = subsol1 <select id="operator">
                                         <option value="*" selected>*</option>
                                         <option value="+">+</option>
-                                    </select> subsol</div>
-                                <div id="line7" class="line">       return sol</div>
+                                        <option value="-">-</option>
+                                    </select> subsol2</div>
+                                <div id="line8" class="line">       return sol</div>
                                 <div class="line">&nbsp;</div>
-                                <div id="line8" class="line">print(factorial(<select id="n">
+                                <div id="line9" class="line">print(factorial(<select id="n">
                                     <option value="5" selected>5</option>
                                     <option value="4">4</option>
                                     <option value="3">3</option>
@@ -94,7 +104,7 @@
 
                             <div id="container-c" style="display: none;">
                                 <div id="line1" class="line">#include &lt;stdio.h&gt;</div>
-                                <div id="line2" class="line">int func(int n) {</div>
+                                <div id="line2" class="line">int fibonacci(int n) {</div>
                                 <div id="line3" class="line">    if (n <select id="basecase_operator">
                                             <option value="eq" selected>==</option>
                                             <option value="gt">&gt;</option>
@@ -109,27 +119,37 @@
                                 <div id="line4" class="line">        return <select id="basecase_return">
                                             <option value="0" selected>0</option>
                                             <option value="1">1</option>
+                                            <option value="-1">-1</option>
+                                            <option value="n-1">n-1</option>
+                                            <option value="n">n</option>
+                                            <option value="n+1">n + 1</option>
                                         </select>;</div>
                                 <div id="line5" class="line">    } else {</div>
-                                <div id="line6" class="line">        int subsol = func(<select id="recursecase">
-                                            <option value="n-1" selected>n - 1</option>
-                                            <option value="n">n</option>
-                                            <option value="n+1">n + 1</option>
-                                        </select>);</div>
-                                <div id="line7" class="line">        int sol = <select id="variable">
-                                            <option value="n-1" selected>n - 1</option>
-                                            <option value="n">n</option>
-                                            <option value="n+1">n + 1</option>
-                                        </select> <select id="operator">
+                                <div id="line6" class="line">        int subsol1 = fibonacci(<select id="recursecase1">
+                                    <option value="n-2" selected>n - 2</option>
+                                    <option value="n-1">n - 1</option>
+                                    <option value="n">n</option>
+                                    <option value="n+1">n + 1</option>
+                                    <option value="n+2">n + 2</option>
+                                </select>);</div>
+                                <div id="line7" class="line">        int subsol2 = fibonacci(<select id="recursecase2">
+                                    <option value="n-2" selected>n - 2</option>
+                                    <option value="n-1">n - 1</option>
+                                    <option value="n">n</option>
+                                    <option value="n+1">n + 1</option>
+                                    <option value="n+2">n + 2</option>
+                                </select>);</div>
+                                <div id="line8" class="line">        int sol = subsol1 <select id="operator">
                                             <option value="*" selected>*</option>
                                             <option value="+">+</option>
-                                        </select> subsol;</div>
-                                <div id="line8" class="line">        return sol;</div>
-                                <div id="line9" class="line">    }</div>
-                                <div id="line10" class="line">}</div>
+                                            <option value="-">-</option>
+                                        </select> subsol2;</div>
+                                <div id="line9" class="line">        return sol;</div>
+                                <div id="line10" class="line">    }</div>
+                                <div id="line11" class="line">}</div>
                                 <div class="line">&nbsp;</div>
-                                <div id="line11" class="line">int main() {</div>
-                                <div id="line12" class="line">    int n = <select id="n">
+                                <div id="line12" class="line">int main() {</div>
+                                <div id="line13" class="line">    int n = <select id="n">
                                     <option value="5" selected>5</option>
                                     <option value="4">4</option>
                                     <option value="3">3</option>
@@ -141,7 +161,7 @@
                             </div>
                             
                             <div id="container-js" style="display: none;">
-                                <div id="line1" class="line">function factorial(n) {</div>
+                                <div id="line1" class="line">function fibonacci(n) {</div>
                                 <div id="line2" class="line">   if (n <select id="basecase_operator">
                                         <option value="eq" selected>==</option>
                                         <option value="gt">&gt;</option>
@@ -156,30 +176,40 @@
                                 <div id="line3" class="line">       return <select id="basecase_return">
                                         <option value="0" selected>0</option>
                                         <option value="1">1</option>
+                                        <option value="-1">-1</option>
+                                        <option value="n-1">n-1</option>
+                                        <option value="n">n</option>
+                                        <option value="n+1">n + 1</option>
                                     </select>;</div>
                                 <div id="line4" class="line">   } else {</div>
-                                <div id="line5" class="line">       var subsol = factorial(<select id="recursecase">
-                                        <option value="n-1" selected>n - 1</option>
-                                        <option value="n">n</option>
-                                        <option value="n+1">n + 1</option>
-                                    </select>);</div>
-                                <div id="line6" class="line">       var sol = <select id="variable">
-                                        <option value="n-1" selected>n - 1</option>
-                                        <option value="n">n</option>
-                                        <option value="n+1">n + 1</option>
-                                    </select> <select id="operator">
+                                <div id="line5" class="line">       var subsol1 = factorial(<select id="recursecase1">
+                                    <option value="n-2" selected>n - 2</option>
+                                    <option value="n-1">n - 1</option>
+                                    <option value="n">n</option>
+                                    <option value="n+1">n + 1</option>
+                                    <option value="n+2">n + 2</option>
+                                </select>);</div>
+                                <div id="line6" class="line">       var subsol2 = factorial(<select id="recursecase2">
+                                    <option value="n-2" selected>n - 2</option>
+                                    <option value="n-1">n - 1</option>
+                                    <option value="n">n</option>
+                                    <option value="n+1">n + 1</option>
+                                    <option value="n+2">n + 2</option>
+                                </select>);</div>
+                                <div id="line7" class="line">       var sol = subsol1 <select id="operator">
                                         <option value="*" selected>*</option>
                                         <option value="+">+</option>
-                                    </select> subsol;</div>
-                                <div id="line7" class="line">       return sol;</div>
+                                        <option value="-">-</option>
+                                    </select> subsol2;</div>
+                                <div id="line8" class="line">       return sol;</div>
                                 <div class="line">&nbsp;</div>
-                                <div id="line8" class="line">}</div>
-                                <div id="line9" class="line">var result = factorial(<select id="n">
+                                <div id="line9" class="line">}</div>
+                                <div id="line10" class="line">var result = factorial(<select id="n">
                                         <option value="5" selected>5</option>
                                         <option value="4">4</option>
                                         <option value="3">3</option>
                                 </select>);</div>
-                                <div id="line10" class="line">console.log(result);</div>
+                                <div id="line11" class="line">console.log(result);</div>
                             </div>                            
                         </div>
                         <!--noformat-->
@@ -224,7 +254,7 @@
         </main>
     </div>
 
-    <script src="../js/factorial.js"></script>
+    <script src="../js/fibonacci.js"></script>
 
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.teal-deep_purple.min.css" />
