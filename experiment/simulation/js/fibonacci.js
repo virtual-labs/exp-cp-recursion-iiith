@@ -15,7 +15,7 @@ const operatorSelect = document.getElementById('operator');
 
 let maxStackDepth = 5;
 let stackHTML = '';
-let resultHTML = '';
+let resultContent = '';
 let stepstoexecute = -1;
 let executedsteps = 0;
 
@@ -82,7 +82,7 @@ function reset() {
     stackElement.style.color = 'black';
     stackHTML = '';
 
-    resultHTML = '';
+    resultContent = '';
     resultElement.style.color = 'black';
     resultElement.textContent = ' ';
     
@@ -107,8 +107,8 @@ function step_fibonacci(n, stackDepth) {
         </div>\n`;
     stackHTML = newHTML + stackHTML;
 
-    resultHTML = `n: ${eval(n)} | subsol1: undefined | subsol2: undefined | sol: undefined<br>`;
-    resultElement.textContent = resultHTML;
+    resultContent = `n: ${eval(n)} | subsol1: undefined | subsol2: undefined | sol: undefined`;
+    resultElement.textContent = resultContent;
 
     if (stackDepth > maxStackDepth) {
         resultElement.style.color = 'red';
@@ -136,8 +136,8 @@ function step_fibonacci(n, stackDepth) {
         if (subsol1.toString().startsWith('<'))
             return subsol1;
 
-        resultHTML = `n: ${eval(n)} | subsol1: ${subsol1} | subsol2: undefined | sol: undefined<br>`;
-        resultElement.textContent = resultHTML;
+        resultContent = `n: ${eval(n)} | subsol1: ${subsol1} | subsol2: undefined | sol: undefined`;
+        resultElement.textContent = resultContent;
 
         if (!step()) {
             return stackHTML;
@@ -150,8 +150,8 @@ function step_fibonacci(n, stackDepth) {
         if (subsol2.toString().startsWith('<'))
             return subsol2;
 
-        resultHTML = `n: ${eval(n)} | subsol1: ${subsol1} | subsol2: ${subsol2} | sol: undefined<br>`;
-        resultElement.textContent = resultHTML;
+        resultContent = `n: ${eval(n)} | subsol1: ${subsol1} | subsol2: ${subsol2} | sol: undefined`;
+        resultElement.textContent = resultContent;
 
         if (!step()) {
             return stackHTML;
@@ -159,8 +159,8 @@ function step_fibonacci(n, stackDepth) {
 
         const sol = eval(`${subsol1} ${operator} ${subsol2}`);
 
-        resultHTML = `n: ${eval(n)} | subsol1: ${subsol1} | subsol2: ${subsol2} | sol: ${sol}<br>`;
-        resultElement.textContent = resultHTML;
+        resultContent = `n: ${eval(n)} | subsol1: ${subsol1} | subsol2: ${subsol2} | sol: ${sol}`;
+        resultElement.textContent = resultContent;
 
         if (!step()) {
             return stackHTML;
@@ -274,7 +274,7 @@ nextButton.addEventListener('click', function () {
 prevButton.addEventListener('click', function () {
     if (stepstoexecute <= 0) {
         stackHTML = '';
-        resultHTML = '';
+        resultContent = '';
         resultElement.textContent = ' ';
         stepstoexecute = -1;
         prevButton.disabled = true;

@@ -124,7 +124,8 @@
     font: 18px Arial, sans-serif;
     color: #333;
     word-wrap: break-word;
-    white-space: pre;
+    overflow-wrap: break-word;
+    width: 100%;
     tab-size: 4;
     margin: 10px;
 }
