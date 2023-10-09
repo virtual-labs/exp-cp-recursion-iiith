@@ -15,7 +15,7 @@ const operatorSelect = document.getElementById('operator');
 
 let maxStackDepth = 5;
 let stackHTML = '';
-let resultHTML = '';
+let resultContent = '';
 let stepstoexecute = -1;
 let executedsteps = 0;
 
@@ -78,15 +78,13 @@ function changeOperator(operator) {
 }
 
 function reset() {
-    resultElement.textContent = '';
-
     stackElement.innerHTML = '';
     stackElement.style.color = 'black';
     stackHTML = '';
 
-    resultHTML = '';
+    resultContent = '';
     resultElement.style.color = 'black';
-    resultElement.innerHTML = '<br/>';
+    resultElement.textContent = ' ';
 
     runButton.disabled = false;
     nextButton.disabled = false;
@@ -110,12 +108,11 @@ function step_factorial(n, stackDepth) {
         </div>\n`;
     stackHTML = newHTML + stackHTML;
 
-    resultHTML = `n: ${eval(n)} | subsol: undefined | sol: undefined<br>`;
-    resultElement.innerHTML = resultHTML;
+    resultContent = `n: ${eval(n)} | subsol: undefined | sol: undefined`;
+    resultElement.textContent = resultContent;
 
     if (stackDepth > maxStackDepth) {
         resultElement.style.color = 'red';
-        resultElement.innerHTML = '';
         resultElement.textContent = 'Stack Overflow';
 
         stackElement.style.color = 'red';
@@ -142,8 +139,8 @@ function step_factorial(n, stackDepth) {
             return subsol;
         }
 
-        resultHTML = `n: ${eval(n)} | subsol: ${subsol} | sol: undefined<br>`;
-        resultElement.innerHTML = resultHTML;
+        resultContent = `n: ${eval(n)} | subsol: ${subsol} | sol: undefined`;
+        resultElement.textContent = resultContent;
 
         if (!step()) {
             return stackHTML;
@@ -151,8 +148,8 @@ function step_factorial(n, stackDepth) {
 
         const sol = eval(`${eval(variable)} ${operator} ${subsol}`);
 
-        resultHTML = `n: ${eval(n)} | subsol: ${subsol} | sol: ${sol}<br>`;
-        resultElement.innerHTML = resultHTML;
+        resultContent = `n: ${eval(n)} | subsol: ${subsol} | sol: ${sol}`;
+        resultElement.textContent = resultContent;
 
         if (!step()) {
             return stackHTML;
@@ -168,12 +165,10 @@ function step_factorial(n, stackDepth) {
 function check_result(result) {
     if (result === factorial(maxStackDepth)) {
         resultElement.style.color = 'green';
-        resultElement.innerHTML = '';
         resultElement.textContent = "Correct Answer: " + result.toString();
     }
     else {
         resultElement.style.color = 'red';
-        resultElement.innerHTML = '';
         resultElement.textContent = 'Wrong Answer: ' + result.toString();
     }
 
@@ -268,8 +263,8 @@ nextButton.addEventListener('click', function () {
 prevButton.addEventListener('click', function () {
     if (stepstoexecute <= 0) {
         stackHTML = '';
-        resultHTML = '';
-        resultElement.innerHTML = '<br/>';
+        resultContent = '';
+        resultElement.innerHTML = ' ';
         stepstoexecute = -1;
         prevButton.disabled = true;
     }
