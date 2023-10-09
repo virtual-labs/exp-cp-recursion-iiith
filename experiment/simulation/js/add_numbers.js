@@ -8,7 +8,7 @@ const resetButton = document.getElementById('reset');
 const stackElement = document.getElementById('container-stack');
 const resultElement = document.getElementById('result');
 
-let basecaseOperatorSelect = document.getElementById(`basecase_operator-${languages[0]}`);
+let basecaseOperatorSelect = document.getElementById(`basecase-operator-${languages[0]}`);
 let basecaseSelect = document.getElementById(`basecase-${languages[0]}`);
 let basecaseReturnSelect = document.getElementById(`basecase-return-${languages[0]}`);
 let recursecaseSelect = document.getElementById(`recursecase-${languages[0]}`);
@@ -30,13 +30,13 @@ let variable = variableSelect.value;
 let operator = operatorSelect.value;
 
 languages.forEach(language => {
-    let basecaseOperatorSelect = document.getElementById(`basecase_operator-${language}`);
+    let basecaseOperatorSelect = document.getElementById(`basecase-operator-${language}`);
     basecaseOperatorSelect.addEventListener('change', function () {
         basecaseOperator = changeOperator(basecaseOperatorSelect.value);
         reset();
 
         languages.forEach(language1 => {
-            document.getElementById(`basecase_operator-${language1}`).value = basecaseOperatorSelect.value;
+            document.getElementById(`basecase-operator-${language1}`).value = basecaseOperatorSelect.value;
         })
     })
 });
@@ -69,7 +69,7 @@ languages.forEach(language => {
         reset();
 
         languages.forEach(language1 => {
-            document.getElementById(`recursecase-${language1}`).value = basecaseReturnSelect.value;
+            document.getElementById(`recursecase-${language1}`).value = recursecaseSelect.value;
         })
     })
 });
