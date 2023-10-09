@@ -1,3 +1,5 @@
+const languages = ['py', 'js', 'c'];
+
 const nextButton = document.getElementById('next');
 const prevButton = document.getElementById('prev');
 const runButton = document.getElementById('run');
@@ -6,12 +8,13 @@ const resetButton = document.getElementById('reset');
 const stackElement = document.getElementById('container-stack');
 const resultElement = document.getElementById('result');
 
-const basecaseOperatorSelect = document.getElementById('basecase_operator');
-const basecaseSelect = document.getElementById('basecase');
-const basecaseReturnSelect = document.getElementById('basecase_return');
-const recursecaseSelect = document.getElementById('recursecase');
-const variableSelect = document.getElementById('variable');
-const operatorSelect = document.getElementById('operator');
+let basecaseOperatorSelect = document.getElementById(`basecase-operator-${languages[0]}`);
+let basecaseSelect = document.getElementById(`basecase-${languages[0]}`);
+let basecaseReturnSelect = document.getElementById(`basecase-return-${languages[0]}`);
+let recursecaseSelect = document.getElementById(`recursecase-${languages[0]}`);
+let variableSelect = document.getElementById(`variable-${languages[0]}`);
+let operatorSelect = document.getElementById(`operator-${languages[0]}`);
+let nSelect = document.getElementById('n-${languages[0]}');
 
 let maxStackDepth = 5;
 let stackHTML = '';
@@ -26,29 +29,84 @@ let recursecase = recursecaseSelect.value;
 let variable = variableSelect.value;
 let operator = operatorSelect.value;
 
-basecaseOperatorSelect.addEventListener('change', function () {
-    basecaseOperator = changeOperator(basecaseOperatorSelect.value);
-    reset();
+languages.forEach(language => {
+    let basecaseOperatorSelect = document.getElementById(`basecase-operator-${language}`);
+    basecaseOperatorSelect.addEventListener('change', function () {
+        basecaseOperator = changeOperator(basecaseOperatorSelect.value);
+        reset();
+
+        languages.forEach(language1 => {
+            document.getElementById(`basecase-operator-${language1}`).value = basecaseOperatorSelect.value;
+        })
+    })
 });
-basecaseSelect.addEventListener('change', function () {
-    basecase = parseInt(basecaseSelect.value);
-    reset();
+languages.forEach(language => {
+    let basecaseSelect = document.getElementById(`basecase-${language}`);
+    basecaseSelect.addEventListener('change', function () {
+        basecase = parseInt(basecaseSelect.value);
+        reset();
+
+        languages.forEach(language1 => {
+            document.getElementById(`basecase-${language1}`).value = basecaseSelect.value;
+        })
+    })
 });
-basecaseReturnSelect.addEventListener('change', function () {
-    basecaseReturn = parseInt(basecaseReturnSelect.value);
-    reset();
+languages.forEach(language => {
+    let basecaseReturnSelect = document.getElementById(`basecase-return-${language}`);
+    basecaseReturnSelect.addEventListener('change', function () {
+        basecaseReturn = parseInt(basecaseReturnSelect.value);
+        reset();
+
+        languages.forEach(language1 => {
+            document.getElementById(`basecase-return-${language1}`).value = basecaseReturnSelect.value;
+        })
+    })
 });
-recursecaseSelect.addEventListener('change', function () {
-    recursecase = recursecaseSelect.value;
-    reset();
+languages.forEach(language => {
+    let recursecaseSelect = document.getElementById(`recursecase-${language}`);
+    recursecaseSelect.addEventListener('change', function () {
+        recursecase = recursecaseSelect.value;
+        reset();
+
+        languages.forEach(language1 => {
+            document.getElementById(`recursecase-${language1}`).value = recursecaseSelect.value;
+        })
+    })
 });
-variableSelect.addEventListener('change', function () {
-    variable = variableSelect.value;
-    reset();
+languages.forEach(language => {
+    let variableSelect = document.getElementById(`variable-${language}`);
+    variableSelect.addEventListener('change', function () {
+        variable = variableSelect.value;
+        reset();
+
+        languages.forEach(language1 => {
+            document.getElementById(`variable-${language1}`).value = variableSelect.value;
+        })
+    })
 });
-operatorSelect.addEventListener('change', function () {
-    operator = operatorSelect.value;
-    reset();
+languages.forEach(language => {
+    let operatorSelect = document.getElementById(`operator-${language}`);
+    operatorSelect.addEventListener('change', function () {
+        operator = operatorSelect.value;
+        reset();
+
+        languages.forEach(language1 => {
+            document.getElementById(`operator-${language1}`).value = operatorSelect.value;
+        })
+    })
+});
+languages.forEach(language => {
+    let nSelect = document.getElementById(`n-${language}`);
+    nSelect.addEventListener('change', function () {
+        maxStackDepth = parseInt(nSelect.value);
+        stackText = document.getElementById('stack-depth');
+        stackText.textContent = maxStackDepth;
+        reset();
+
+        languages.forEach(language1 => {
+            document.getElementById(`n-${language1}`).value = maxStackDepth;
+        })
+    })
 });
 
 function step() {
@@ -176,35 +234,21 @@ function check_result(result) {
 
 resetButton.addEventListener('click', reset);
 
-document.getElementById('n').addEventListener('change', function () {
-    maxStackDepth = parseInt(document.getElementById('n').value);
-    stackText = document.getElementById('stack-depth');
-    stackText.textContent = maxStackDepth;
-    reset();
-});
-
 document.getElementById('lang-selector').addEventListener('change', function () {
-    var selectedLanguage = document.getElementById('lang-selector').value;
-    var containerPy = document.getElementById('container-py');
-    var containerJs = document.getElementById('container-js');
-    var containerC = document.getElementById('container-c');
+    var selectedLanguage = document.getElementById('lang-selector').value.toLowerCase();
 
-    if (selectedLanguage === 'PY') {
-        containerPy.style.display = 'block';
-        containerJs.style.display = 'none';
-        containerC.style.display = 'none';
-    } else if (selectedLanguage === 'JS') {
-        containerPy.style.display = 'none';
-        containerJs.style.display = 'block';
-        containerC.style.display = 'none';
-    } else if (selectedLanguage === 'C') {
-        containerPy.style.display = 'none';
-        containerJs.style.display = 'none';
-        containerC.style.display = 'block';
+    languages.forEach(function (language) {
+        var container = document.getElementById('container-' + language);
+        container.style.display = 'none';
+    });
+
+    if (languages.includes(selectedLanguage)) {
+        var selectedContainer = document.getElementById('container-' + selectedLanguage);
+        selectedContainer.style.display = 'block';
     } else {
-        containerPy.style.display = 'none';
-        containerJs.style.display = 'none';
-        containerC.style.display = 'none';
+        console.log('Unsupported language: ' + selectedLanguage);
+        resetButton.disabled = true;
+        return;
     }
 
     resetButton.disabled = false;
