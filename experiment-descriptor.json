@@ -21,13 +21,6 @@
       "content-type": "assesment"
     },
     {
-      "target": "procedure.html",
-      "source": "procedure.md",
-      "label": "Procedure",
-      "unit-type": "task",
-      "content-type": "text"
-    },
-    {
       "target": "practice.html",
       "source": "simulation/index.html",
       "label": "Practice",
