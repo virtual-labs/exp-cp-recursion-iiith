@@ -6,6 +6,7 @@ const runButton = document.getElementById('run');
 const resetButton = document.getElementById('reset');
 
 const stackElement = document.getElementById('container-stack');
+const stackText = document.getElementById('stack-depth');
 const resultElement = document.getElementById('result');
 
 let basecaseOperatorSelect = document.getElementById(`basecase-operator-${languages[0]}`);
@@ -14,13 +15,15 @@ let basecaseReturnSelect = document.getElementById(`basecase-return-${languages[
 let recursecaseSelect = document.getElementById(`recursecase-${languages[0]}`);
 let variableSelect = document.getElementById(`variable-${languages[0]}`);
 let operatorSelect = document.getElementById(`operator-${languages[0]}`);
-let nSelect = document.getElementById('n-${languages[0]}');
+let nSelect = document.getElementById(`n-${languages[0]}`);
 
-let maxStackDepth = 5;
 let stackHTML = '';
 let resultContent = '';
 let stepstoexecute = -1;
 let executedsteps = 0;
+
+let maxStackDepth = parseInt(nSelect.value) + 1;
+stackText.textContent = maxStackDepth;
 
 let basecaseOperator = changeOperator(basecaseOperatorSelect.value);
 let basecase = parseInt(basecaseSelect.value);
@@ -99,12 +102,11 @@ languages.forEach(language => {
     let nSelect = document.getElementById(`n-${language}`);
     nSelect.addEventListener('change', function () {
         maxStackDepth = parseInt(nSelect.value);
-        stackText = document.getElementById('stack-depth');
         stackText.textContent = maxStackDepth;
         reset();
 
         languages.forEach(language1 => {
-            document.getElementById(`n-${language1}`).value = maxStackDepth;
+            document.getElementById(`n-${language1}`).value = nSelect.value;
         })
     })
 });
