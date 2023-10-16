@@ -1,57 +1,50 @@
 {
   "unit-type": "lu",
-  "label": "",
+  "label": "Recursion - Computer Programming",
   "basedir": ".",
   "units": [
     {
       "unit-type": "aim"
     },
     {
-      "target": "theory.html",
-      "source": "theory.md",
-      "label": "Theory",
+      "target": "overview.html",
+      "source": "overview.md",
+      "label": "Overview",
       "unit-type": "task",
-      "content-type": "text"
+      "content-type": "video"
     },
     {
-      "target": "objective.html",
-      "source": "objective.md",
-      "label": "Objective",
-      "unit-type": "task",
-      "content-type": "text"
-    },
-    {
-      "target": "pretest.html",
-      "source": "pretest.json",
-      "label": "Pretest",
+      "target": "theory-test.html",
+      "source": "theorytest.json",
+      "label": "Theory-Test",
       "unit-type": "task",
       "content-type": "assesment"
     },
     {
-      "target": "procedure.html",
-      "source": "procedure.md",
-      "label": "Procedure",
-      "unit-type": "task",
-      "content-type": "text"
-    },
-    {
-      "target": "simulation.html",
+      "target": "practice.html",
       "source": "simulation/index.html",
-      "label": "Simulation",
+      "label": "Practice",
       "unit-type": "task",
       "content-type": "simulation"
     },
     {
-      "target": "posttest.html",
-      "source": "posttest.json",
-      "label": "Posttest",
+      "target": "assignment.html",
+      "source": "assignment.md",
+      "label": "Assignment",
+      "unit-type": "task",
+      "content-type": "text"
+    },
+    {
+      "target": "practical-test.html",
+      "source": "practicaltest.json",
+      "label": "Practical-Test",
       "unit-type": "task",
       "content-type": "assesment"
     },
     {
       "target": "references.html",
       "source": "references.md",
-      "label": "References",
+      "label": "Further Readings/References",
       "unit-type": "task",
       "content-type": "text"
     }

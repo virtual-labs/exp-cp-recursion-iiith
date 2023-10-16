@@ -1,0 +1,153 @@
+{
+    "version": 2.0,
+    "questions": [
+        {
+            "question": "1. How many stars will the following code output for a given positive value of n: <br/>  <img src='images/code1.png'>",
+            "answers": {
+                "a": "n",
+                "b": "n^2",
+                "c": "n(n-1)/2",
+                "d": "n(n+1)/2"
+            },
+            "correctAnswer": "d",
+            "difficulty": "beginner"
+        },
+        {
+            "question": "2. What will be the ouptut of the following function call: fun2(20); where fun2 is defined as:  <br/>  <img src='images/code2.png'>",
+            "answers": {
+                "a": "20 40 60 80 60 40 20",
+                "b": "80 60 40 20",
+                "c": "20 40 60 80 80 60 40 20",
+                "d": "20 40 60 80"
+            },
+            "correctAnswer": "c",
+            "difficulty": "beginner"
+        },
+        {
+            "question": "3. What will be the ouptut of the following function call: fun3(100); where fun3 is defined as:  <br/>  <img src='images/code3.png'>",
+            "answers": {
+                "a": "6",
+                "b": "7",
+                "c": "5",
+                "d": "4"
+            },
+            "correctAnswer": "a",
+            "difficulty": "beginner"
+        },
+        {
+            "question": "4. In Python, which module or library allows you to control the maximum recursion depth?",
+            "answers": {
+                "a": "recursioncontrol",
+                "b": "sys",
+                "c": "recursivelimit",
+                "d": "recursivecontrol"
+            },
+            "correctAnswer": "b",
+            "difficulty": "advanced"
+        },
+        {
+            "question": "5. What is the time complexity of the following recursive function for computing Fibonacci numbers? <br/>  <img src='images/code5.png'>",
+            "answers": {
+                "a": "O(n)",
+                "b": "O(log n)",
+                "c": "O(2^n)",
+                "d": "O(n^2)"
+            },
+            "correctAnswer": "c",
+            "difficulty": "advanced"
+        },
+        {
+            "question": "6. How does the compiler or interpreter handle tail recursion?",
+            "answers": {
+                "a": "By converting it into a loop",
+                "b": "By using a special optimization technique",
+                "c": "By adding a flag to indicate tail recursion",
+                "d": "By doing nothing, tail recursion works as usual"
+            },
+            "correctAnswer": "a",
+            "difficulty": "advanced"
+        },
+        {
+            "question": "7. Can recursion be used to solve parallel computing problems?",
+            "answers": {
+                "a": "Yes, recursion can be used to solve parallel computing problems",
+                "b": "No, recursion is not useful for parallel computing",
+                "c": "Sometimes, depending on the specific problem",
+                "d": "Only if the problem has a small number of inputs"
+            },
+            "correctAnswer": "a",
+            "difficulty": "advanced"
+        },
+        {
+            "question": "8. Which of the following is a valid way to write a recursive function for calculating the Fibonacci sequence?",
+            "answers": {
+                "a": "<img src='images/code8a.png'>",
+                "b": "<img src='images/code8b.png'>",
+                "c": "<img src='images/code8c.png'>",
+                "d": "None of the above"
+            },
+            "correctAnswer": "b",
+            "difficulty": "beginner"
+        },
+        {
+            "question": "9. Consider the following recursive function fun(x, y). What is the value of fun(4, 3)? <br/>  <img src='images/code9.png'>",
+            "answers": {
+                "a": "9",
+                "b": "10",
+                "c": "11",
+                "d": "12",
+                "e": "13"
+            },
+            "correctAnswer": "e",
+            "difficulty": "beginner"
+        },
+        {
+            "question": "10. What does the following function print for n = 25? <br/>  <img src='images/code10.png'>",
+            "answers": {
+                "a": "11001",
+                "b": "10011",
+                "c": "11111",
+                "d": "00000",
+                "e": "None of the above"
+            },
+            "correctAnswer": "b",
+            "difficulty": "beginner"
+        },
+        {
+            "question": "11. What does the following function do? <br/>  <img src='images/code11.png'>",
+            "answers": {
+                "a": "x + y",
+                "b": "x + x*y",
+                "c": "x*y",
+                "d": "x<sup>y</sup>",
+                "e": "None of the above"
+            },
+            "correctAnswer": "c",
+            "difficulty": "advanced"
+        },
+        {
+            "question": "12. What does fun2() do in general? <br/>  <img src='images/code12.png'>",
+            "answers": {
+                "a": "x*y",
+                "b": "x + x*y",
+                "c": "y<sup>x</sup>",
+                "d": "x<sup>y</sup>",
+                "e": "None of the above"
+            },
+            "correctAnswer": "d",
+            "difficulty": "advanced"
+        },
+        {
+            "question": "13. Consider the same recursive C++ function that takes two arguments. <br/>  <img src='images/code13.png'> <br/>What is the return value of the function foo when it is called as foo(513, 2)?",
+            "answers": {
+                "a": "2",
+                "b": "5",
+                "c": "8",
+                "d": "9",
+                "e": "None of the above"
+            },
+            "correctAnswer": "a",
+            "difficulty": "advanced"
+        }
+    ]
+}
