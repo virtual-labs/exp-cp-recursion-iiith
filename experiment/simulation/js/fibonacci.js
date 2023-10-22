@@ -42,8 +42,7 @@ languages.forEach(language => {
             document.getElementById(`basecase-operator-${language1}`).value = basecaseOperatorSelect.value;
         })
     })
-});
-languages.forEach(language => {
+    
     let basecaseSelect = document.getElementById(`basecase-${language}`);
     basecaseSelect.addEventListener('change', function () {
         basecase = parseInt(basecaseSelect.value);
@@ -53,8 +52,7 @@ languages.forEach(language => {
             document.getElementById(`basecase-${language1}`).value = basecaseSelect.value;
         })
     })
-});
-languages.forEach(language => {
+    
     let basecaseReturnSelect = document.getElementById(`basecase-return-${language}`);
     basecaseReturnSelect.addEventListener('change', function () {
         basecaseReturn = parseInt(basecaseReturnSelect.value);
@@ -64,8 +62,7 @@ languages.forEach(language => {
             document.getElementById(`basecase-return-${language1}`).value = basecaseReturnSelect.value;
         })
     })
-});
-languages.forEach(language => {
+    
     let recursecase1Select = document.getElementById(`recursecase1-${language}`);
     recursecase1Select.addEventListener('change', function () {
         recursecase1 = recursecase1Select.value;
@@ -75,8 +72,7 @@ languages.forEach(language => {
             document.getElementById(`recursecase1-${language1}`).value = recursecase1Select.value;
         })
     })
-});
-languages.forEach(language => {
+    
     let recursecase2Select = document.getElementById(`recursecase2-${language}`);
     recursecase2Select.addEventListener('change', function () {
         recursecase1 = recursecase2Select.value;
@@ -86,8 +82,7 @@ languages.forEach(language => {
             document.getElementById(`recursecase2-${language1}`).value = recursecase2Select.value;
         })
     })
-});
-languages.forEach(language => {
+    
     let operatorSelect = document.getElementById(`operator-${language}`);
     operatorSelect.addEventListener('change', function () {
         operator = operatorSelect.value;
@@ -97,8 +92,7 @@ languages.forEach(language => {
             document.getElementById(`operator-${language1}`).value = operatorSelect.value;
         })
     })
-});
-languages.forEach(language => {
+    
     let nSelect = document.getElementById(`n-${language}`);
     nSelect.addEventListener('change', function () {
         maxStackDepth = parseInt(nSelect.value);
