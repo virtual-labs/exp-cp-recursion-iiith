@@ -221,21 +221,20 @@
         {
             "question": "14. Recursion can be a powerful tool in algorithm design. When would you choose to implement an iterative solution instead of a recursive one?",
             "answers": {
-              "a": "When the problem can be naturally defined in a recursive manner.",
-              "b": "When memory usage is a critical concern, and a non-recursive solution would use less memory.",
-              "c": "When the problem involves complex data structures, making recursion the preferred choice.",
-              "d": "When you want to simplify the code and make it more intuitive."
+                "a": "When the problem can be naturally defined in a recursive manner.",
+                "b": "When memory usage is a critical concern, and a non-recursive solution would use less memory.",
+                "c": "When the problem involves complex data structures, making recursion the preferred choice.",
+                "d": "When you want to simplify the code and make it more intuitive."
             },
             "correctAnswer": "b",
             "explanations": {
-              "a": "This option is incorrect. Recursive solutions are suitable when a problem can be naturally defined recursively.",
-              "b": "This option is correct. Memory usage can be a critical concern in certain scenarios, and iterative solutions often use less memory than recursive ones.",
-              "c": "This option is incorrect. The choice between recursion and iteration should not be solely based on data structures; it depends on the problem and its requirements.",
-              "d": "This option is incorrect. Code simplification and intuitiveness are not the primary factors in choosing between recursion and iteration; performance and memory usage are often more critical."
+                "a": "This option is incorrect. Recursive solutions are suitable when a problem can be naturally defined recursively.",
+                "b": "This option is correct. Memory usage can be a critical concern in certain scenarios, and iterative solutions often use less memory than recursive ones.",
+                "c": "This option is incorrect. The choice between recursion and iteration should not be solely based on data structures; it depends on the problem and its requirements.",
+                "d": "This option is incorrect. Code simplification and intuitiveness are not the primary factors in choosing between recursion and iteration; performance and memory usage are often more critical."
             },
             "difficulty": "intermediate"
-          }
-          
+        },
         {
             "question": "15. In recursive algorithms, what is meant by 'tail recursion'?",
             "answers": {
