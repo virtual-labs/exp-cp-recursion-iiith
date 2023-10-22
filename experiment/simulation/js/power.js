@@ -1,15 +1,16 @@
-const languages = ['py', 'js', 'c'];
-
-import { step } from './main.js';
-
-const nextButton = document.getElementById('next');
-const prevButton = document.getElementById('prev');
-const runButton = document.getElementById('run');
-const resetButton = document.getElementById('reset');
-
-const stackElement = document.getElementById('container-stack');
-const stackText = document.getElementById('stack-depth');
-const resultElement = document.getElementById('result');
+import {
+    step,
+    changeOperator,
+    languages,
+    nextButton,
+    prevButton,
+    runButton,
+    resetButton,
+    stackElement,
+    stackText,
+    resultElement,
+    power
+} from './main.js';
 
 let basecaseOperatorSelect = document.getElementById(`basecase-operator-${languages[0]}`);
 let basecaseSelect = document.getElementById(`basecase-${languages[0]}`);
@@ -107,25 +108,6 @@ languages.forEach(language => {
     })
 });
 
-function changeOperator(operator) {
-    switch (operator) {
-        case 'eq':
-            return '==';
-        case 'neq':
-            return '!=';
-        case 'lt':
-            return '<';
-        case 'le':
-            return '<=';
-        case 'gt':
-            return '>';
-        case 'ge':
-            return '>=';
-        default:
-            return '';
-    }
-}
-
 function reset() {
     stackElement.innerHTML = '';
     stackElement.style.color = 'black';
@@ -141,10 +123,6 @@ function reset() {
 
     stepstoexecute.value = -1;
     executedsteps.value = 0;
-}
-
-function power(base, n) {
-    return Math.pow(base, n);
 }
 
 function step_power(n, stackDepth) {

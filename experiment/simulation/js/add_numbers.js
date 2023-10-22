@@ -1,15 +1,16 @@
-const languages = ['py', 'js', 'c'];
-
-import { step } from './main.js';
-
-const nextButton = document.getElementById('next');
-const prevButton = document.getElementById('prev');
-const runButton = document.getElementById('run');
-const resetButton = document.getElementById('reset');
-
-const stackElement = document.getElementById('container-stack');
-const stackText = document.getElementById('stack-depth');
-const resultElement = document.getElementById('result');
+import {
+    step,
+    changeOperator,
+    languages,
+    nextButton,
+    prevButton,
+    runButton,
+    resetButton,
+    stackElement,
+    stackText,
+    resultElement,
+    sumOfNNaturalNumbers
+} from './main.js';
 
 let basecaseOperatorSelect = document.getElementById(`basecase-operator-${languages[0]}`);
 let basecaseSelect = document.getElementById(`basecase-${languages[0]}`);
@@ -107,25 +108,6 @@ languages.forEach(language => {
     })
 });
 
-function changeOperator(operator) {
-    switch (operator) {
-        case 'eq':
-            return '==';
-        case 'neq':
-            return '!=';
-        case 'lt':
-            return '<';
-        case 'le':
-            return '<=';
-        case 'gt':
-            return '>';
-        case 'ge':
-            return '>=';
-        default:
-            return '';
-    }
-}
-
 function reset() {
     stackElement.innerHTML = '';
     stackElement.style.color = 'black';
@@ -141,15 +123,6 @@ function reset() {
 
     stepstoexecute.value = -1;
     executedsteps.value = 0;
-}
-
-function sumOfNNaturalNumbers(n) {
-    if (n <= 0) {
-        return "Please enter a positive integer.";
-    }
-
-    const sum = (n * (n + 1)) / 2;
-    return sum;
 }
 
 function step_sumOfNNaturalNumbers(n, stackDepth) {
@@ -259,8 +232,6 @@ runButton.addEventListener('click', function () {
     runButton.disabled = true;
     nextButton.disabled = true;
     prevButton.disabled = true;
-
-    console.log(basecaseOperator, basecase, basecaseReturn, recursecase, variable, operator, maxStackDepth);
 });
 
 nextButton.addEventListener('click', function () {
