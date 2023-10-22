@@ -1,5 +1,7 @@
 const languages = ['py', 'js', 'c'];
 
+import { step } from './main.js';
+
 const nextButton = document.getElementById('next');
 const prevButton = document.getElementById('prev');
 const runButton = document.getElementById('run');
@@ -19,8 +21,8 @@ let nSelect = document.getElementById(`n-${languages[0]}`);
 
 let stackHTML = '';
 let resultContent = '';
-let stepstoexecute = -1;
-let executedsteps = 0;
+let stepstoexecute = { value: -1 };
+let executedsteps = { value: 0 };
 
 let maxStackDepth = parseInt(nSelect.value) + 1;
 stackText.textContent = maxStackDepth;
@@ -105,13 +107,6 @@ languages.forEach(language => {
     })
 });
 
-function step() {
-    executedsteps++;
-    if (stepstoexecute != -1 && executedsteps > stepstoexecute)
-        return false;
-    return true;
-}
-
 function changeOperator(operator) {
     switch (operator) {
         case 'eq':
@@ -144,8 +139,8 @@ function reset() {
     nextButton.disabled = false;
     prevButton.disabled = true;
 
-    stepstoexecute = -1;
-    executedsteps = 0;
+    stepstoexecute.value = -1;
+    executedsteps.value = 0;
 }
 
 function fibonnaci(n) {
@@ -156,7 +151,7 @@ function fibonnaci(n) {
 }
 
 function step_fibonacci(n, stackDepth) {
-    newHTML = `<div class="stack">
+    let newHTML = `<div class="stack">
         stackDepth: ${stackDepth} | n: ${eval(n)}<br>
         </div>\n`;
     stackHTML = newHTML + stackHTML;
@@ -175,7 +170,7 @@ function step_fibonacci(n, stackDepth) {
     }
     resultElement.style.color = 'black';
 
-    if (!step()) {
+    if (!step(executedsteps, stepstoexecute)) {
         return stackHTML;
     }
 
@@ -193,7 +188,7 @@ function step_fibonacci(n, stackDepth) {
         resultContent = `n: ${eval(n)} | subsol1: ${subsol1} | subsol2: undefined | sol: undefined`;
         resultElement.textContent = resultContent;
 
-        if (!step()) {
+        if (!step(executedsteps, stepstoexecute)) {
             return stackHTML;
         }
 
@@ -207,7 +202,7 @@ function step_fibonacci(n, stackDepth) {
         resultContent = `n: ${eval(n)} | subsol1: ${subsol1} | subsol2: ${subsol2} | sol: undefined`;
         resultElement.textContent = resultContent;
 
-        if (!step()) {
+        if (!step(executedsteps, stepstoexecute)) {
             return stackHTML;
         }
 
@@ -216,7 +211,7 @@ function step_fibonacci(n, stackDepth) {
         resultContent = `n: ${eval(n)} | subsol1: ${subsol1} | subsol2: ${subsol2} | sol: ${sol}`;
         resultElement.textContent = resultContent;
 
-        if (!step()) {
+        if (!step(executedsteps, stepstoexecute)) {
             return stackHTML;
         }
 
@@ -265,7 +260,7 @@ document.getElementById('lang-selector').addEventListener('change', function () 
 runButton.addEventListener('click', function () {
     stackElement.innerHTML = '';
     stackHTML = '';
-    stepstoexecute = -1;
+    stepstoexecute.value = -1;
 
     let result = step_fibonacci(maxStackDepth, 1);
     check_result(result);
@@ -284,8 +279,8 @@ nextButton.addEventListener('click', function () {
         prevButton.disabled = true;
         return;
     }
-    stepstoexecute++;
-    executedsteps = 0;
+    stepstoexecute.value++;
+    executedsteps.value = 0;
 
     stackHTML = '';
 
@@ -312,16 +307,16 @@ nextButton.addEventListener('click', function () {
 });
 
 prevButton.addEventListener('click', function () {
-    if (stepstoexecute <= 0) {
+    if (stepstoexecute.value <= 0) {
         stackHTML = '';
         resultContent = '';
         resultElement.textContent = ' ';
-        stepstoexecute = -1;
+        stepstoexecute.value = -1;
         prevButton.disabled = true;
     }
     else {
-        stepstoexecute--;
-        executedsteps = 0;
+        stepstoexecute.value--;
+        executedsteps.value = 0;
 
         stackHTML = '';
 
