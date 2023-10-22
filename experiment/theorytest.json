@@ -253,7 +253,7 @@
             "difficulty": "advanced"
         },
         {
-            "question": "16. What is the time complexity of a recursive function that makes n recursive calls?",
+            "question": "16. What is the time complexity of a recursive function that makes n recursive call, assuming each recursive call takes O(1) time?",
             "answers": {
                 "a": "O(2^n)",
                 "b": "O(log n)",

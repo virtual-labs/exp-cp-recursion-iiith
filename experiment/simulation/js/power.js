@@ -232,8 +232,6 @@ runButton.addEventListener('click', function () {
     runButton.disabled = true;
     nextButton.disabled = true;
     prevButton.disabled = true;
-
-    console.log(basecaseOperator, basecase, basecaseReturn, recursecase, variable, operator, maxStackDepth);
 });
 
 nextButton.addEventListener('click', function () {

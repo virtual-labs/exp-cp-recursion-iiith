@@ -25,7 +25,7 @@ let resultContent = '';
 let stepstoexecute = { value: -1 };
 let executedsteps = { value: 0 };
 
-let maxStackDepth = parseInt(nSelect.value) + 1;
+let maxStackDepth = parseInt(nSelect.value);
 stackText.textContent = maxStackDepth;
 
 let basecaseOperator = changeOperator(basecaseOperatorSelect.value);
@@ -127,8 +127,7 @@ function reset() {
 
 function step_factorial(n, stackDepth) {
     let newHTML = `<div class="stack">
-        stackDepth: ${stackDepth}<br>
-        n: ${eval(n)}<br>
+        stackDepth: ${stackDepth} | n: ${eval(n)}<br>
         </div>\n`;
     stackHTML = newHTML + stackHTML;
 

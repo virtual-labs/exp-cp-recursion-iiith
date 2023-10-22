@@ -25,7 +25,7 @@ let resultContent = '';
 let stepstoexecute = { value: -1 };
 let executedsteps = { value: 0 };
 
-let maxStackDepth = parseInt(nSelect.value) + 1;
+let maxStackDepth = parseInt(nSelect.value);
 stackText.textContent = maxStackDepth;
 
 let basecaseOperator = changeOperator(basecaseOperatorSelect.value);
