@@ -127,11 +127,11 @@ function reset() {
 
 function step_fibonacci(n, stackDepth) {
     let newHTML = `<div class="stack">
-        stackDepth: ${stackDepth} | n: ${eval(n)}<br>
+        stackDepth: ${stackDepth} | n: ${n}<br>
         </div>\n`;
     stackHTML = newHTML + stackHTML;
 
-    resultContent = `n: ${eval(n)} | subsol1: undefined | subsol2: undefined | sol: undefined`;
+    resultContent = `n: ${n} | subsol1: undefined | subsol2: undefined | sol: undefined`;
     resultElement.textContent = resultContent;
 
     if (stackDepth > maxStackDepth) {
@@ -149,41 +149,41 @@ function step_fibonacci(n, stackDepth) {
         return stackHTML;
     }
 
-    if (eval(`n ${basecaseOperator} ${basecase}`)) {
+    if (eval(`"use strict";n ${basecaseOperator} ${basecase}`)) {
         stackHTML = stackHTML.replace(newHTML, '');
         return eval(basecaseReturn);
     } else {
-        const subsol1 = step_fibonacci(eval(recursecase1), stackDepth + 1);
+        const subsol1 = step_fibonacci(eval(`"use strict";${recursecase1}`), stackDepth + 1);
 
         if (subsol1 === 'Stack Overflow')
             return 'Stack Overflow';
         if (subsol1.toString().startsWith('<'))
             return subsol1;
 
-        resultContent = `n: ${eval(n)} | subsol1: ${subsol1} | subsol2: undefined | sol: undefined`;
+        resultContent = `n: ${n} | subsol1: ${subsol1} | subsol2: undefined | sol: undefined`;
         resultElement.textContent = resultContent;
 
         if (!step(executedsteps, stepstoexecute)) {
             return stackHTML;
         }
 
-        const subsol2 = step_fibonacci(eval(recursecase2), stackDepth + 1);
+        const subsol2 = step_fibonacci(eval(`"use strict";${recursecase2}`), stackDepth + 1);
 
         if (subsol2 === 'Stack Overflow')
             return 'Stack Overflow';
         if (subsol2.toString().startsWith('<'))
             return subsol2;
 
-        resultContent = `n: ${eval(n)} | subsol1: ${subsol1} | subsol2: ${subsol2} | sol: undefined`;
+        resultContent = `n: ${n} | subsol1: ${subsol1} | subsol2: ${subsol2} | sol: undefined`;
         resultElement.textContent = resultContent;
 
         if (!step(executedsteps, stepstoexecute)) {
             return stackHTML;
         }
 
-        const sol = eval(`${subsol1} ${operator} ${subsol2}`);
+        const sol = eval(`"use strict";${subsol1} ${operator} ${subsol2}`);
 
-        resultContent = `n: ${eval(n)} | subsol1: ${subsol1} | subsol2: ${subsol2} | sol: ${sol}`;
+        resultContent = `n: ${n} | subsol1: ${subsol1} | subsol2: ${subsol2} | sol: ${sol}`;
         resultElement.textContent = resultContent;
 
         if (!step(executedsteps, stepstoexecute)) {

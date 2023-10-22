@@ -127,11 +127,11 @@ function reset() {
 
 function step_factorial(n, stackDepth) {
     let newHTML = `<div class="stack">
-        stackDepth: ${stackDepth} | n: ${eval(n)}<br>
+        stackDepth: ${stackDepth} | n: ${n}<br>
         </div>\n`;
     stackHTML = newHTML + stackHTML;
 
-    resultContent = `n: ${eval(n)} | subsol: undefined | sol: undefined`;
+    resultContent = `n: ${n} | subsol: undefined | sol: undefined`;
     resultElement.textContent = resultContent;
 
     if (stackDepth > maxStackDepth) {
@@ -149,11 +149,11 @@ function step_factorial(n, stackDepth) {
         return stackHTML;
     }
 
-    if (eval(`n ${basecaseOperator} ${basecase}`)) {
+    if (eval(`"use strict";n ${basecaseOperator} ${basecase}`)) {
         stackHTML = stackHTML.replace(newHTML, '');
         return basecaseReturn;
     } else {
-        const subsol = step_factorial(eval(recursecase), stackDepth + 1);
+        const subsol = step_factorial(eval(`"use strict";${recursecase}`), stackDepth + 1);
 
         if (subsol === 'Stack Overflow') {
             return 'Stack Overflow';
@@ -162,16 +162,16 @@ function step_factorial(n, stackDepth) {
             return subsol;
         }
 
-        resultContent = `n: ${eval(n)} | subsol: ${subsol} | sol: undefined`;
+        resultContent = `n: ${n} | subsol: ${subsol} | sol: undefined`;
         resultElement.textContent = resultContent;
 
         if (!step(executedsteps, stepstoexecute)) {
             return stackHTML;
         }
 
-        const sol = eval(`${eval(variable)} ${operator} ${subsol}`);
+        const sol = eval(`"use strict";${variable} ${operator} ${subsol}`);
 
-        resultContent = `n: ${eval(n)} | subsol: ${subsol} | sol: ${sol}`;
+        resultContent = `n: ${n} | subsol: ${subsol} | sol: ${sol}`;
         resultElement.textContent = resultContent;
 
         if (!step(executedsteps, stepstoexecute)) {
