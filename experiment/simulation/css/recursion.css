@@ -3,6 +3,7 @@
 body {
 	min-height: 564px;
 	min-width: 1100px;
+    text-align: center;
     height: 100%;
     font-size: 100%;
     position:absolute;
@@ -10,10 +11,6 @@ body {
     bottom: 0%; 
     right: 0%; 
     left: 0%;
-}
-
-.mdl-layout__content {
-    text-align: center;
 }
 
 #header {
@@ -41,10 +38,10 @@ body {
     margin: 0;
     text-align: center;
 	zoom: 1;
-    display: inline;
+    *display: inline;
     text-decoration: none;
     display: inline-block;
-}
+  }
 
 .button {
     cursor: pointer;

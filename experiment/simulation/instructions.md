@@ -1,5 +1,0 @@
-- Select the most appropriate option from the dropdowns in the code.
-- Click on the **Run** button to run the code, and directly get the final output.
-- Click on the **Next** button to see the next step of the code.
-- Click on the **Prev** button to see the previous step of the code.
-- Click on the **Reset** button to reset the code execution.

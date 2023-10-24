@@ -1,24 +1,24 @@
 ## Introduction
 
 
-<b>Discipline | <b>Computer Science and Engineering
+<b>Discipline | <b>Fill your discipline name here
 :--|:--|
-<b> Lab | <b> Computer Programming
-<b> Experiment|     <b> Recursion
+<b> Lab | <b> Fill your lab name here
+<b> Experiment|     <b> Fill your experiment name and number here
 
 ### About the Experiment 
 
-Exploring the concept of recursion through interactive exercises.
+Fill a brief description of this experiment here
 
 <b>Name of Developer | <b> Fill the name of experiment owner here 
 :--|:--|
-<b> Institute | <b>  International Institute of Information Technology, Hyderabad
-<b> Email id|     <b>  -
-<b> Department |  <b> Computer Science and Engineering
+<b> Institute | <b>  
+<b> Email id|     <b>  
+<b> Department |  
 
 ### Contributors List
 
 SrNo | Name | Faculty or Student | Department| Institute | Email id
 :--|:--|:--|:--|:--|:--|
-1 | Bhav Beri | Student | CSD | IIIT-H | bhavberi@gmail.com
-<!-- 2 | . | . | . | . | . -->
+1 | . | . | . | . | .
+2 | . | . | . | . | .
