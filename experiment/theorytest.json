@@ -219,7 +219,24 @@
             "difficulty": "intermediate"
         },
         {
-            "question": "14. In recursive algorithms, what is meant by 'tail recursion'?",
+            "question": "14. Recursion can be a powerful tool in algorithm design. When would you choose to implement an iterative solution instead of a recursive one?",
+            "answers": {
+                "a": "When the problem can be naturally defined in a recursive manner.",
+                "b": "When memory usage is a critical concern, and a non-recursive solution would use less memory.",
+                "c": "When the problem involves complex data structures, making recursion the preferred choice.",
+                "d": "When you want to simplify the code and make it more intuitive."
+            },
+            "correctAnswer": "b",
+            "explanations": {
+                "a": "This option is incorrect. Recursive solutions are suitable when a problem can be naturally defined recursively.",
+                "b": "This option is correct. Memory usage can be a critical concern in certain scenarios, and iterative solutions often use less memory than recursive ones.",
+                "c": "This option is incorrect. The choice between recursion and iteration should not be solely based on data structures; it depends on the problem and its requirements.",
+                "d": "This option is incorrect. Code simplification and intuitiveness are not the primary factors in choosing between recursion and iteration; performance and memory usage are often more critical."
+            },
+            "difficulty": "intermediate"
+        },
+        {
+            "question": "15. In recursive algorithms, what is meant by 'tail recursion'?",
             "answers": {
                 "a": "A type of recursion that is slower than regular recursion",
                 "b": "A recursive call that appears at the end of a function and doesn't require any further computation after the recursive call returns",
@@ -236,7 +253,7 @@
             "difficulty": "advanced"
         },
         {
-            "question": "15. How can you optimize a recursive function to reduce the overhead of function calls?",
+            "question": "16. How can you optimize a recursive function to reduce the overhead of function calls?",
             "answers": {
                 "a": "By making the recursive calls non-tail recursive",
                 "b": "By using global variables instead of local variables",
@@ -253,7 +270,7 @@
             "difficulty": "advanced"
         },
         {
-            "question": "16. What is the time complexity of a recursive function that makes n recursive calls?",
+            "question": "17. What is the time complexity of a recursive function that makes n recursive call, assuming each recursive call takes O(1) time?",
             "answers": {
                 "a": "O(2^n)",
                 "b": "O(log n)",
@@ -270,7 +287,7 @@
             "difficulty": "advanced"
         },
         {
-            "question": "17. What is the concept of 'tree recursion'?",
+            "question": "18. What is the concept of 'tree recursion'?",
             "answers": {
                 "a": "A recursion that models a tree structure with multiple branches",
                 "b": "A recursion that only works with binary trees",
@@ -283,23 +300,6 @@
                 "b": "This option is incorrect. Tree recursion is not limited to binary trees; it can involve any tree structure with multiple branches.",
                 "c": "This option is somewhat related but not a complete definition. Tree recursion often creates a tree-like computational structure, but it's primarily about the recursive function's behavior.",
                 "d": "This option is unrelated to tree recursion. The use of a stack data structure is not a defining characteristic of tree recursion."
-            },
-            "difficulty": "advanced"
-        },
-        {
-            "question": "18. When is it appropriate to use recursion over iteration, and vice versa, in solving problems?",
-            "answers": {
-                "a": "Recursion is always preferred over iteration for all types of problems.",
-                "b": "Recursion is preferred when a problem can be naturally divided into smaller subproblems, and iteration is preferred for problems with a fixed number of steps.",
-                "c": "Recursion is preferred when memory usage is a concern, and iteration is preferred for time-critical tasks.",
-                "d": "Recursion and iteration are interchangeable, and the choice depends on personal preference."
-            },
-            "correctAnswer": "b",
-            "explanations": {
-                "a": "This option is incorrect. Recursion is not always preferred over iteration; the choice depends on the nature of the problem and other factors.",
-                "b": "This option is correct. Recursion is well-suited for problems that can be naturally divided into smaller subproblems, while iteration is preferred for problems with a fixed number of steps or where simplicity is crucial.",
-                "c": "This option is partially correct. Memory usage can be a consideration, but it's not the sole determinant for choosing between recursion and iteration. Time complexity, problem structure, and other factors also play a role.",
-                "d": "This option is not entirely accurate. While recursion and iteration can sometimes be interchangeable, the choice is not solely based on personal preference but on the problem's characteristics and performance considerations."
             },
             "difficulty": "advanced"
         },

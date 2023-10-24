@@ -7,9 +7,9 @@
       "unit-type": "aim"
     },
     {
-      "target": "overview.html",
-      "source": "overview.md",
-      "label": "Overview",
+      "target": "theory.html",
+      "source": "theory.md",
+      "label": "Theory",
       "unit-type": "task",
       "content-type": "video"
     },
@@ -44,7 +44,7 @@
     {
       "target": "references.html",
       "source": "references.md",
-      "label": "Further Readings/References",
+      "label": "References",
       "unit-type": "task",
       "content-type": "text"
     }

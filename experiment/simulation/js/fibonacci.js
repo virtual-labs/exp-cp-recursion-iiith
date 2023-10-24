@@ -1,13 +1,16 @@
-const languages = ['py', 'js', 'c'];
-
-const nextButton = document.getElementById('next');
-const prevButton = document.getElementById('prev');
-const runButton = document.getElementById('run');
-const resetButton = document.getElementById('reset');
-
-const stackElement = document.getElementById('container-stack');
-const stackText = document.getElementById('stack-depth');
-const resultElement = document.getElementById('result');
+import {
+    step,
+    changeOperator,
+    languages,
+    nextButton,
+    prevButton,
+    runButton,
+    resetButton,
+    stackElement,
+    stackText,
+    resultElement,
+    fibonnaci
+} from './main.js';
 
 let basecaseOperatorSelect = document.getElementById(`basecase-operator-${languages[0]}`);
 let basecaseSelect = document.getElementById(`basecase-${languages[0]}`);
@@ -19,10 +22,10 @@ let nSelect = document.getElementById(`n-${languages[0]}`);
 
 let stackHTML = '';
 let resultContent = '';
-let stepstoexecute = -1;
-let executedsteps = 0;
+let stepstoexecute = { value: -1 };
+let executedsteps = { value: 0 };
 
-let maxStackDepth = parseInt(nSelect.value) + 1;
+let maxStackDepth = parseInt(nSelect.value);
 stackText.textContent = maxStackDepth;
 
 let basecaseOperator = changeOperator(basecaseOperatorSelect.value);
@@ -42,8 +45,7 @@ languages.forEach(language => {
             document.getElementById(`basecase-operator-${language1}`).value = basecaseOperatorSelect.value;
         })
     })
-});
-languages.forEach(language => {
+    
     let basecaseSelect = document.getElementById(`basecase-${language}`);
     basecaseSelect.addEventListener('change', function () {
         basecase = parseInt(basecaseSelect.value);
@@ -53,8 +55,7 @@ languages.forEach(language => {
             document.getElementById(`basecase-${language1}`).value = basecaseSelect.value;
         })
     })
-});
-languages.forEach(language => {
+    
     let basecaseReturnSelect = document.getElementById(`basecase-return-${language}`);
     basecaseReturnSelect.addEventListener('change', function () {
         basecaseReturn = parseInt(basecaseReturnSelect.value);
@@ -64,8 +65,7 @@ languages.forEach(language => {
             document.getElementById(`basecase-return-${language1}`).value = basecaseReturnSelect.value;
         })
     })
-});
-languages.forEach(language => {
+    
     let recursecase1Select = document.getElementById(`recursecase1-${language}`);
     recursecase1Select.addEventListener('change', function () {
         recursecase1 = recursecase1Select.value;
@@ -75,8 +75,7 @@ languages.forEach(language => {
             document.getElementById(`recursecase1-${language1}`).value = recursecase1Select.value;
         })
     })
-});
-languages.forEach(language => {
+    
     let recursecase2Select = document.getElementById(`recursecase2-${language}`);
     recursecase2Select.addEventListener('change', function () {
         recursecase1 = recursecase2Select.value;
@@ -86,8 +85,7 @@ languages.forEach(language => {
             document.getElementById(`recursecase2-${language1}`).value = recursecase2Select.value;
         })
     })
-});
-languages.forEach(language => {
+    
     let operatorSelect = document.getElementById(`operator-${language}`);
     operatorSelect.addEventListener('change', function () {
         operator = operatorSelect.value;
@@ -97,8 +95,7 @@ languages.forEach(language => {
             document.getElementById(`operator-${language1}`).value = operatorSelect.value;
         })
     })
-});
-languages.forEach(language => {
+    
     let nSelect = document.getElementById(`n-${language}`);
     nSelect.addEventListener('change', function () {
         maxStackDepth = parseInt(nSelect.value);
@@ -110,32 +107,6 @@ languages.forEach(language => {
         })
     })
 });
-
-function step() {
-    executedsteps++;
-    if (stepstoexecute != -1 && executedsteps > stepstoexecute)
-        return false;
-    return true;
-}
-
-function changeOperator(operator) {
-    switch (operator) {
-        case 'eq':
-            return '==';
-        case 'neq':
-            return '!=';
-        case 'lt':
-            return '<';
-        case 'le':
-            return '<=';
-        case 'gt':
-            return '>';
-        case 'ge':
-            return '>=';
-        default:
-            return '';
-    }
-}
 
 function reset() {
     stackElement.innerHTML = '';
@@ -150,24 +121,17 @@ function reset() {
     nextButton.disabled = false;
     prevButton.disabled = true;
 
-    stepstoexecute = -1;
-    executedsteps = 0;
-}
-
-function fibonnaci(n) {
-    if (n <= 1)
-        return n;
-    else
-        return fibonnaci(n - 1) + fibonnaci(n - 2);
+    stepstoexecute.value = -1;
+    executedsteps.value = 0;
 }
 
 function step_fibonacci(n, stackDepth) {
-    newHTML = `<div class="stack">
-        stackDepth: ${stackDepth} | n: ${eval(n)}<br>
+    let newHTML = `<div class="stack">
+        stackDepth: ${stackDepth} | n: ${n}<br>
         </div>\n`;
     stackHTML = newHTML + stackHTML;
 
-    resultContent = `n: ${eval(n)} | subsol1: undefined | subsol2: undefined | sol: undefined`;
+    resultContent = `n: ${n} | subsol1: undefined | subsol2: undefined | sol: undefined`;
     resultElement.textContent = resultContent;
 
     if (stackDepth > maxStackDepth) {
@@ -181,48 +145,48 @@ function step_fibonacci(n, stackDepth) {
     }
     resultElement.style.color = 'black';
 
-    if (!step()) {
+    if (!step(executedsteps, stepstoexecute)) {
         return stackHTML;
     }
 
-    if (eval(`n ${basecaseOperator} ${basecase}`)) {
+    if (eval(`"use strict";n ${basecaseOperator} ${basecase}`)) {
         stackHTML = stackHTML.replace(newHTML, '');
         return eval(basecaseReturn);
     } else {
-        const subsol1 = step_fibonacci(eval(recursecase1), stackDepth + 1);
+        const subsol1 = step_fibonacci(eval(`"use strict";${recursecase1}`), stackDepth + 1);
 
         if (subsol1 === 'Stack Overflow')
             return 'Stack Overflow';
         if (subsol1.toString().startsWith('<'))
             return subsol1;
 
-        resultContent = `n: ${eval(n)} | subsol1: ${subsol1} | subsol2: undefined | sol: undefined`;
+        resultContent = `n: ${n} | subsol1: ${subsol1} | subsol2: undefined | sol: undefined`;
         resultElement.textContent = resultContent;
 
-        if (!step()) {
+        if (!step(executedsteps, stepstoexecute)) {
             return stackHTML;
         }
 
-        const subsol2 = step_fibonacci(eval(recursecase2), stackDepth + 1);
+        const subsol2 = step_fibonacci(eval(`"use strict";${recursecase2}`), stackDepth + 1);
 
         if (subsol2 === 'Stack Overflow')
             return 'Stack Overflow';
         if (subsol2.toString().startsWith('<'))
             return subsol2;
 
-        resultContent = `n: ${eval(n)} | subsol1: ${subsol1} | subsol2: ${subsol2} | sol: undefined`;
+        resultContent = `n: ${n} | subsol1: ${subsol1} | subsol2: ${subsol2} | sol: undefined`;
         resultElement.textContent = resultContent;
 
-        if (!step()) {
+        if (!step(executedsteps, stepstoexecute)) {
             return stackHTML;
         }
 
-        const sol = eval(`${subsol1} ${operator} ${subsol2}`);
+        const sol = eval(`"use strict";${subsol1} ${operator} ${subsol2}`);
 
-        resultContent = `n: ${eval(n)} | subsol1: ${subsol1} | subsol2: ${subsol2} | sol: ${sol}`;
+        resultContent = `n: ${n} | subsol1: ${subsol1} | subsol2: ${subsol2} | sol: ${sol}`;
         resultElement.textContent = resultContent;
 
-        if (!step()) {
+        if (!step(executedsteps, stepstoexecute)) {
             return stackHTML;
         }
 
@@ -271,7 +235,7 @@ document.getElementById('lang-selector').addEventListener('change', function () 
 runButton.addEventListener('click', function () {
     stackElement.innerHTML = '';
     stackHTML = '';
-    stepstoexecute = -1;
+    stepstoexecute.value = -1;
 
     let result = step_fibonacci(maxStackDepth, 1);
     check_result(result);
@@ -290,8 +254,8 @@ nextButton.addEventListener('click', function () {
         prevButton.disabled = true;
         return;
     }
-    stepstoexecute++;
-    executedsteps = 0;
+    stepstoexecute.value++;
+    executedsteps.value = 0;
 
     stackHTML = '';
 
@@ -318,16 +282,16 @@ nextButton.addEventListener('click', function () {
 });
 
 prevButton.addEventListener('click', function () {
-    if (stepstoexecute <= 0) {
+    if (stepstoexecute.value <= 0) {
         stackHTML = '';
         resultContent = '';
         resultElement.textContent = ' ';
-        stepstoexecute = -1;
+        stepstoexecute.value = -1;
         prevButton.disabled = true;
     }
     else {
-        stepstoexecute--;
-        executedsteps = 0;
+        stepstoexecute.value--;
+        executedsteps.value = 0;
 
         stackHTML = '';
 

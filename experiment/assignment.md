@@ -1,5 +1,7 @@
 ### Practice Assignment
 
+_Note_: Some of these problems can be solved using different other methods, but we would recommend you to use the method of recursion to solve these problems and get a better understanding of recursion.
+
 1. **Reversing a String** (Beginner)
 
     Write a function `reverseString(str)` that takes in a string argument and returns the reverse of the given string.
