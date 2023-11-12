@@ -1,4 +1,4 @@
-Welcome to the Virtual Lab on _Recursion_! In this lab, you will learn how to use recursion to solve problems by breaking them down into smaller, similar sub-problems.
+Welcome to this experiment on _Recursion_! In this experiment, you will learn how to use recursion to solve problems by breaking them down into smaller, similar sub-problems.
 
 > ### More information
 
@@ -6,7 +6,7 @@ Recursion is a powerful technique that allows us to solve complex problems by di
 
 The definition of GNU (the source of much free software) is said to be recursive because GNU stands for `GNU's Not Unix`, i.e. GNU is part of the definition of GNU! Or maybe two mirrors placed parallely! The nested images are a form of infinite recursion.
 
-In this lab, we will explore the concept of recursion through interactive exercises. We will start with simple examples and gradually move on to more complex problems. Along the way, you will learn how to:
+Here, we will explore the concept of recursion through interactive exercises. We will start with simple examples and gradually move on to more complex problems. Along the way, you will learn how to:
 
 - Identify problems that can be solved using recursion
 - Write recursive functions that solve problems by breaking them down into smaller sub-problems
@@ -14,10 +14,10 @@ In this lab, we will explore the concept of recursion through interactive exerci
 - Use recursion to solve real-world problems
 - Appreciate the beauty and power of recursion in computer science
 
-By the end of this lab, you will have gained hands-on experience in visualizing recursive code and understanding its inner workings. You will also develop problem-solving skills that will serve you well in your future.
+By the end of this experiment, you will have gained hands-on experience in visualizing recursive code and understanding its inner workings. You will also develop problem-solving skills that will serve you well in your future.
 
 So let's get started and discover the magic of recursion together!
 
 > ### Pre-requisite
 
-To get the most out of this lab, you should be familiar with the basics of programming in `Python/C/JavaScript`. You should also be comfortable with using functions and loops to solve problems.
+To get the most out of this experiment, you should be familiar with the basics of programming in `Python/C/JavaScript`. You should also be comfortable with using functions and loops to solve problems.
