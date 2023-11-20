@@ -1,2 +1,0 @@
-- To understand that some problems can be broken down into smaller similar problems.
-- To solve such problems using recursive procedures.
