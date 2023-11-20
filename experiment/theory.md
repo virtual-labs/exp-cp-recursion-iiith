@@ -1,18 +1,36 @@
-Recursion simply means applying a function as a part of the definition of that same function. Suppose we have to find the factorial of a number. The mathematical factorial function is defined as being the product of all the numbers up to and including the number, and the factorial of 1 is 1. Thinking about this, we see that another way to express this is that the factorial of N is equal to N times the factorial of (N-1).
+***Recursion*** is a programming technique where a function calls itself repeatedly until it reaches a stopping criterion. In other words, a function solves a problem by breaking it down into smaller sub-problems of the same type, and then solving those sub-problems using the same function. This process continues until the sub-problems are small enough to be solved directly, without calling the function again.
 
-Thus:
+To illustrate this concept, let's consider an example. Imagine you have a set of nesting dolls, where each doll is placed inside another slightly larger doll. The smallest doll is the base case, and we want to find out how many dolls are in total. A recursive approach would involve defining a function that takes the current doll and its contents (other dollars), and then calls itself with the next smaller doll and its contents. By doing so, we continue to break down the problem into smaller sub-problems until we reach the base case, which is the smallest doll with no contents.
 
-1! = 1 2! = 1 x 2 = 1! x 2 3! = 1 x 2 x 3 = 2! x 3 = 6 --- --- N! = 1 x 2 x 3 x .... (N-2) x (N-1) x N = (N-1)! x N
+Let's consider another very simple example: Calculating the sum of numbers from 1 to n. We can write a recursive function like this:
 
-  
+```
+sum(n):
+    if n <= 0:
+        return 0
+    else:
+        return n + sum(n-1)
+```
 
-So we can express this as:
+Here's how the function works:
 
-factorial(n): if n == 1: return 1 else: return n * factorial(n-1)
+- _Base case_: When n is 0 or less, the function returns 0 immediately. This makes sense since the sum of no numbers is 0.
+- _Recursive case_: When n is greater than 0, the function calls itself with n-1 as the argument. This continues until the base case is reached.
+- _Solution_: The function returns the sum of all numbers from 1 to n by adding n to the sum of all numbers from 1 to n-1.
 
-The important thing to remember when creating a recursive function is to give an 'end-conditions' or the 'base cases'. We don't want the function to keep calling itself forever, do we? Somehow, it should know when to stop. So, we give it a base case. Like here the base case is for n=1. The key to making this work is that there must be a terminating condition such that the function branches to a non-recursive solution at some point.
+For instance, if we call the function with n = 4, it will first call itself with n-1 = 3, then with n-2 = 2, and so on until it reaches the base case with n = 0. Then, it will return the sum of all numbers from 1 to 4, which is 10.
 
-Hence a feasible recursive solution will have the following two properties:
 
-1.  A simple base case (or cases), and
-2.  A set of rules which reduce all other cases toward the base case.
+This process might seem magical, but it's actually based on a simple principle: divide and conquer. Break down a complex problem into smaller sub-problems, solve each sub-problem, and combine their solutions to get the final answer. By using recursion, we can solve problems that would otherwise require a lot of code or be difficult to understand.
+
+When writing a recursive function, it's essential to follow these steps:
+
+1. Define a clear base case: Identify a trivial case that can be solved directly without calling the function again.
+2. Write a recursive case: Use the function itself to solve the remaining cases, gradually reducing the size of the problem until you reach the base case.
+3. Ensure termination: Make sure the function will eventually reach the base case, so it doesn't run infinitely.
+
+With practice, you'll become more comfortable with recursion, and you'll be able to apply it to various problems in different domains. Remember, the key to successful recursion is identifying a suitable base case and designing a well-structured recursive mechanism to approach it.
+
+> You can refer to the following video from `FreeCodeCamp` to learn more about recursion:
+
+<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/IJDJ0kBx2LM?si=dtiXrVeo-nItieqs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
