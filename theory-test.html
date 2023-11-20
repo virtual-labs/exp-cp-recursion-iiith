@@ -1,0 +1,1192 @@
+<!DOCTYPE html><html lang="en"><head>
+      <!--Google Tag Manager-->
+      <script class="gtm">
+        var dataLayer = [{
+        'labName': 'Virtual Lab',
+        'discipline': 'Test',
+        'college': 'IIITH',
+        'phase': 'Testing',
+        'expName': 'RECURSION',
+        'expShortName': 'cp-recursion'
+        }];
+    
+        (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
+        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-5NMQ9NQ');
+      </script>
+      <!--End Google Tag Manager-->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta content="" name="description">
+    <meta content="" name="author">
+    
+    	<meta name="experiment-short-name" content="cp-recursion">
+    	<meta name="developer-institute" content="IIITH">
+    	<meta name="learning-unit" content="Recursion - Computer Programming">
+    	<meta name="task-name" content="Theory-Test">
+    
+    <!-- For iPhone -->
+    <meta name="msapplication-TileColor" content="#4076e0">
+    <!-- Chrome, Firefox OS and Opera -->
+    <meta name="theme-color" content="#4076e0">
+    <!-- Windows Phone -->
+    <meta name="msapplication-navbutton-color" content="#4076e0">
+    <title>Virtual Labs</title>
+    <link rel="shortcut icon" href="./assets/images/favicon.ico">
+    <link rel="stylesheet" href="./assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/4.0.0/github-markdown.min.css" integrity="sha512-Oy18vBnbSJkXTndr2n6lDMO5NN31UljR8e/ICzVPrGpSud4Gkckb8yUpqhKuUNoE+o9gAb4O/rAxxw1ojyUVzg==" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&amp;family=Raleway&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./assets/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="./assets/css/github-markdown.min.css">
+    <link rel="stylesheet" href="./assets/css/vlabs-style.css">
+    <link rel="stylesheet" href="./assets/katex_assets/katex.min.css">
+    
+    <script src="./assets/js/jquery-3.4.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js" integrity="sha384-q2kxQ16AaE6UbzuKqyBE9/u/KzioAlnx2maXQHiDX9d4/zp8Ok3f+M7DPm+Ib6IU" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.min.js" integrity="sha384-pQQkAEnwaBkjpqZ8RU1fF1AKtTcHJwFl3pblpTlHXybJjHpMYo79HY3hIi4NKxyj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <style>
+      h1 {
+      font-size: 1.8rem;
+      }
+      h2 {
+      font-size: 1.4rem;
+      }
+      h3 {
+      font-size: 1.2rem;
+      }
+
+      h2, h3 {
+      font-weight: 800;
+      }
+    </style>
+    
+  </head>
+  <body class="p-0 container-fluid vlabs-page d-flex flex-column justify-content-between">
+      <!--Google Tag Manager (noscript)-->
+      <noscript class="gtm">
+        <iframe height="0" src="https://www.googletagmanager.com/ns.html?id=GTM-5NMQ9NQ" style="display:none;visibility:hidden" width="0">
+        </iframe>
+      </noscript>
+      <!--End Google Tag Manager (noscript)-->
+  
+      <header class="vlabs-header sticky-top bg-white">
+        <nav class="p-0 navbar navbar-light d-flex align-items-stretch">
+          
+          <button class="navbar-toggler px-4" type="button" onclick="toggle()">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+      
+          <div class="d-flex justify-content-center">        
+            <a href="https://vlab.co.in" class="navbar-brand">
+              <img src="./assets/images/vlabs-color-small-moe.jpg" alt="vlabs logo" class="vlabs-logo">
+            </a>
+          </div>
+          
+          <div id="headerNavbar" class="d-none border-top flex-grow-1 d-lg-flex align-items-center justify-content-end">
+            <bug-report id="bug-report" title="[BUG REPORT] RECURSION" page-type="assesment" context-info="{&quot;organisation&quot;:&quot;Virtual Labs&quot;,&quot;developer_institute&quot;:&quot;IIITH&quot;,&quot;expname&quot;:&quot;RECURSION&quot;,&quot;labname&quot;:&quot;Virtual Lab&quot;,&quot;phase&quot;:&quot;Testing&quot;}" checkbox-json="{&quot;text&quot;:[&quot;Insufficient Content&quot;],&quot;video&quot;:[&quot;Insufficient Content&quot;],&quot;assesment&quot;:[&quot;Incorrect Options&quot;,&quot;Incorrect Answer&quot;,&quot;Incorrect Question&quot;],&quot;assessment&quot;:[&quot;Incorrect Options&quot;,&quot;Incorrect Answer&quot;,&quot;Incorrect Question&quot;],&quot;simulation&quot;:[&quot;Simulation Not Working&quot;,&quot;Incorrect Results/Observations&quot;,&quot;Insufficient/Incorrect Instructions&quot;],&quot;DEFAULT&quot;:[&quot;Page Not Loading&quot;,&quot;Content Not Visible&quot;,&quot;Incorrect Content&quot;]}" button_style="border: none; color: #fff; background-color: #288ec8; text-align: center; font-size: 1.05rem; border-radius: 1em;padding: 0.6em 1.2em; margin: 0 10px" position="override" custom_button_class="v-button"></bug-report>
+          </div>
+        </nav>
+      </header>
+      <div class="container-fluid flex-fill d-flex flex-column vlabs-page-main">
+        <div class="row d-flex justify-content-between">
+          <div class="flex-column">
+          <div class="row py-4 px-4 breadcrumbs">
+          	<div class="title is-4 tools">Tools</div>
+          	<span class="mx-2">
+          		<i aria-hidden="true" class="fa fa-angle-right"></i>
+          	</span>
+          	<a href="performance-report.html" class="my-2 mx-3" target="_blank">
+          		<button class="v-button">Performance Tool</button>
+          	</a>
+          	<a href="validator-report.html" class="my-2 mx-3" target="_blank">
+          		<button class="v-button">Validation Tool</button>
+          	</a>
+          </div>
+          </div>
+        </div>
+        <div class="row flex-grow-1 d-flex flex-nowrap flex-column flex-lg-row">
+          <div class="modal fade popupmenu" id="popupMenu" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+              <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+                  <div class="modal-content">
+                      <div class="modal-header">
+                          <h5 class="modal-title" id="exampleModalLabel">
+                              <a href="https://vlab.co.in" class="navbar-brand">
+                                  <img src="./assets/images/vlabs-color-small-moe.jpg" alt="vlabs logo" class="vlabs-logo">
+                              </a>
+                          </h5>
+                          <button type="button" class="btn-close align-self-center" data-bs-dismiss="modal" aria-label="Close"></button>
+                      </div>
+                      <div class="modal-body nav-menu">
+                              <div>
+                                  <div class="d-flex nav-menu-body">
+                                      <a href="index.html" class="p-2 ">
+                                      Aim
+                                      </a>
+                                      
+                                  </div>
+                                  <div id="t-" class="collapse">
+                                      <div class="px-3 d-flex flex-column tasks align-items-center align-items-lg-start">
+                                      </div>
+                                  </div>
+                              </div>
+                              <div>
+                                  <div class="d-flex nav-menu-body">
+                                      <a href="theory.html" class="p-2 ">
+                                      Theory
+                                      </a>
+                                      
+                                  </div>
+                                  <div id="t-" class="collapse">
+                                      <div class="px-3 d-flex flex-column tasks align-items-center align-items-lg-start">
+                                      </div>
+                                  </div>
+                              </div>
+                              <div>
+                                  <div class="d-flex nav-menu-body">
+                                      <a href="theory-test.html" class="p-2  current-item ">
+                                      Theory-Test
+                                      </a>
+                                      
+                                  </div>
+                                  <div id="t-" class="collapse">
+                                      <div class="px-3 d-flex flex-column tasks align-items-center align-items-lg-start">
+                                      </div>
+                                  </div>
+                              </div>
+                              <div>
+                                  <div class="d-flex nav-menu-body">
+                                      <a href="practice.html" class="p-2 ">
+                                      Practice
+                                      </a>
+                                      
+                                  </div>
+                                  <div id="t-" class="collapse">
+                                      <div class="px-3 d-flex flex-column tasks align-items-center align-items-lg-start">
+                                      </div>
+                                  </div>
+                              </div>
+                              <div>
+                                  <div class="d-flex nav-menu-body">
+                                      <a href="assignment.html" class="p-2 ">
+                                      Assignment
+                                      </a>
+                                      
+                                  </div>
+                                  <div id="t-" class="collapse">
+                                      <div class="px-3 d-flex flex-column tasks align-items-center align-items-lg-start">
+                                      </div>
+                                  </div>
+                              </div>
+                              <div>
+                                  <div class="d-flex nav-menu-body">
+                                      <a href="practical-test.html" class="p-2 ">
+                                      Practical-Test
+                                      </a>
+                                      
+                                  </div>
+                                  <div id="t-" class="collapse">
+                                      <div class="px-3 d-flex flex-column tasks align-items-center align-items-lg-start">
+                                      </div>
+                                  </div>
+                              </div>
+                              <div>
+                                  <div class="d-flex nav-menu-body">
+                                      <a href="references.html" class="p-2 ">
+                                      References
+                                      </a>
+                                      
+                                  </div>
+                                  <div id="t-" class="collapse">
+                                      <div class="px-3 d-flex flex-column tasks align-items-center align-items-lg-start">
+                                      </div>
+                                  </div>
+                              </div>
+                              <div>
+                                  <div class="d-flex nav-menu-body">
+                                      <a href="feedback.html" class="p-2 ">
+                                      Feedback
+                                      </a>
+                                      
+                                  </div>
+                                  <div id="t-" class="collapse">
+                                      <div class="px-3 d-flex flex-column tasks align-items-center align-items-lg-start">
+                                      </div>
+                                  </div>
+                              </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+          <div class="nav flex-column sidebar nav-menu flex-shrink-0 px-lg-4 align-items-center align-items-lg-start hidden d-none d-lg-flex" id="menu">
+                <div>
+                    <div class="d-flex nav-menu-body">
+                        <a href="index.html" class="p-2 ">
+                        Aim
+                        </a>
+                        
+                    </div>
+                    <div id="t-" class="collapse">
+                        <div class="px-3 d-flex flex-column tasks align-items-center align-items-lg-start">
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div class="d-flex nav-menu-body">
+                        <a href="theory.html" class="p-2 ">
+                        Theory
+                        </a>
+                        
+                    </div>
+                    <div id="t-" class="collapse">
+                        <div class="px-3 d-flex flex-column tasks align-items-center align-items-lg-start">
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div class="d-flex nav-menu-body">
+                        <a href="theory-test.html" class="p-2  current-item ">
+                        Theory-Test
+                        </a>
+                        
+                    </div>
+                    <div id="t-" class="collapse">
+                        <div class="px-3 d-flex flex-column tasks align-items-center align-items-lg-start">
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div class="d-flex nav-menu-body">
+                        <a href="practice.html" class="p-2 ">
+                        Practice
+                        </a>
+                        
+                    </div>
+                    <div id="t-" class="collapse">
+                        <div class="px-3 d-flex flex-column tasks align-items-center align-items-lg-start">
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div class="d-flex nav-menu-body">
+                        <a href="assignment.html" class="p-2 ">
+                        Assignment
+                        </a>
+                        
+                    </div>
+                    <div id="t-" class="collapse">
+                        <div class="px-3 d-flex flex-column tasks align-items-center align-items-lg-start">
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div class="d-flex nav-menu-body">
+                        <a href="practical-test.html" class="p-2 ">
+                        Practical-Test
+                        </a>
+                        
+                    </div>
+                    <div id="t-" class="collapse">
+                        <div class="px-3 d-flex flex-column tasks align-items-center align-items-lg-start">
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div class="d-flex nav-menu-body">
+                        <a href="references.html" class="p-2 ">
+                        References
+                        </a>
+                        
+                    </div>
+                    <div id="t-" class="collapse">
+                        <div class="px-3 d-flex flex-column tasks align-items-center align-items-lg-start">
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div class="d-flex nav-menu-body">
+                        <a href="feedback.html" class="p-2 ">
+                        Feedback
+                        </a>
+                        
+                    </div>
+                    <div id="t-" class="collapse">
+                        <div class="px-3 d-flex flex-column tasks align-items-center align-items-lg-start">
+                        </div>
+                    </div>
+                </div>
+          </div>          <div class="vlabs-page-content px-5 pb-4 flex-grow-1 markdown-body">
+            <div class="text-center fix-spacing">
+              <h2 id="recursion">Recursion</h2>
+          
+            </div>
+                  <div id="difficulty-container" style="border-bottom: 1px solid #eaecef; padding-bottom: .3em; margin: 0" class="row">
+                    <div id="difficulty-label" class="col-12 col-md-3" style="display:none"><strong>Choose difficulty: </strong></div>
+                    <div class="form-check col-12 col-md-3" style="display:none">
+                      <input id="beginner" type="checkbox" value="">
+                      <label class="form-check-label" for="flexCheckDefault">
+                        <strong>Beginner</strong>
+                      </label>
+                    </div>
+                    <div class="form-check col-12 col-md-3" style="display:none">
+                      <input id="intermediate" type="checkbox" value="">
+                      <label class="form-check-label" for="flexCheckDefault">
+                        <strong>Intermediate</strong>
+                      </label>
+                    </div>
+                    <div class="form-check col-12 col-md-3" style="display:none">
+                      <input id="advanced" type="checkbox" value="">
+                      <label class="form-check-label" for="flexCheckDefault">
+                        <strong>Advanced</strong>
+                      </label>
+                    </div>
+                  </div>
+                  
+                  <div id="quiz" class="versiontrue" style="margin-top: 1rem">
+                
+                
+                  <div class="question beginner">
+                    1. What is recursion in computer science?
+                  </div>
+                  
+                  <div class="answers">
+                    <div id="answer0a">
+                      <label>
+                        <input type="radio" name="question0" value="a">
+                        a: A programming error
+                      </label>
+                      <a href="#" id="explanation0a" class="accordion" onclick="return false;">Explanation</a>
+                    </div>
+                    <p class="panel">Explanation</p>
+                    <div id="answer0b">
+                      <label>
+                        <input type="radio" name="question0" value="b">
+                        b: A loop construct
+                      </label>
+                      <a href="#" id="explanation0b" class="accordion" onclick="return false;">Explanation</a>
+                    </div>
+                    <p class="panel">Explanation</p>
+                    <div id="answer0c">
+                      <label>
+                        <input type="radio" name="question0" value="c">
+                        c: A function calling itself
+                      </label>
+                      <a href="#" id="explanation0c" class="accordion" onclick="return false;">Explanation</a>
+                    </div>
+                    <p class="panel">Explanation</p>
+                    <div id="answer0d">
+                      <label>
+                        <input type="radio" name="question0" value="d">
+                        d: A data structure
+                      </label>
+                      <a href="#" id="explanation0d" class="accordion" onclick="return false;">Explanation</a>
+                    </div>
+                    <p class="panel">Explanation</p>
+                </div>
+                
+                  <div class="question beginner">
+                    2. What is the purpose of a base case in a recursive function?
+                  </div>
+                  
+                  <div class="answers">
+                    <div id="answer1a">
+                      <label>
+                        <input type="radio" name="question1" value="a">
+                        a: To provide a starting point for the recursive calls
+                      </label>
+                      <a href="#" id="explanation1a" class="accordion" onclick="return false;">Explanation</a>
+                    </div>
+                    <p class="panel">Explanation</p>
+                    <div id="answer1b">
+                      <label>
+                        <input type="radio" name="question1" value="b">
+                        b: To handle the edge cases
+                      </label>
+                      <a href="#" id="explanation1b" class="accordion" onclick="return false;">Explanation</a>
+                    </div>
+                    <p class="panel">Explanation</p>
+                    <div id="answer1c">
+                      <label>
+                        <input type="radio" name="question1" value="c">
+                        c: To optimize the function for better performance
+                      </label>
+                      <a href="#" id="explanation1c" class="accordion" onclick="return false;">Explanation</a>
+                    </div>
+                    <p class="panel">Explanation</p>
+                    <div id="answer1d">
+                      <label>
+                        <input type="radio" name="question1" value="d">
+                        d: To make the function more readable
+                      </label>
+                      <a href="#" id="explanation1d" class="accordion" onclick="return false;">Explanation</a>
+                    </div>
+                    <p class="panel">Explanation</p>
+                </div>
+                
+                  <div class="question beginner">
+                    3. What is the main difference between recursive and iterative solutions?
+                  </div>
+                  
+                  <div class="answers">
+                    <div id="answer2a">
+                      <label>
+                        <input type="radio" name="question2" value="a">
+                        a: Recursive solutions use loops, while iterative solutions use function calls
+                      </label>
+                      <a href="#" id="explanation2a" class="accordion" onclick="return false;">Explanation</a>
+                    </div>
+                    <p class="panel">Explanation</p>
+                    <div id="answer2b">
+                      <label>
+                        <input type="radio" name="question2" value="b">
+                        b: Recursive solutions use function calls, while iterative solutions use loops
+                      </label>
+                      <a href="#" id="explanation2b" class="accordion" onclick="return false;">Explanation</a>
+                    </div>
+                    <p class="panel">Explanation</p>
+                    <div id="answer2c">
+                      <label>
+                        <input type="radio" name="question2" value="c">
+                        c: Recursive solutions are faster, while iterative solutions are slower
+                      </label>
+                      <a href="#" id="explanation2c" class="accordion" onclick="return false;">Explanation</a>
+                    </div>
+                    <p class="panel">Explanation</p>
+                    <div id="answer2d">
+                      <label>
+                        <input type="radio" name="question2" value="d">
+                        d: Recursive solutions are less efficient, while iterative solutions are more efficient
+                      </label>
+                      <a href="#" id="explanation2d" class="accordion" onclick="return false;">Explanation</a>
+                    </div>
+                    <p class="panel">Explanation</p>
+                </div>
+                
+                  <div class="question beginner">
+                    4. For every recursive solution, there is a corresponding iterative solution?
+                  </div>
+                  
+                  <div class="answers">
+                    <div id="answer3a">
+                      <label>
+                        <input type="radio" name="question3" value="a">
+                        a: True
+                      </label>
+                      <a href="#" id="explanation3a" class="accordion" onclick="return false;">Explanation</a>
+                    </div>
+                    <p class="panel">Explanation</p>
+                    <div id="answer3b">
+                      <label>
+                        <input type="radio" name="question3" value="b">
+                        b: False
+                      </label>
+                      <a href="#" id="explanation3b" class="accordion" onclick="return false;">Explanation</a>
+                    </div>
+                    <p class="panel">Explanation</p>
+                </div>
+                
+                  <div class="question beginner">
+                    5. What is the advantage of using recursion over iteration?
+                  </div>
+                  
+                  <div class="answers">
+                    <div id="answer4a">
+                      <label>
+                        <input type="radio" name="question4" value="a">
+                        a: Recursion is generally faster than iteration
+                      </label>
+                      <a href="#" id="explanation4a" class="accordion" onclick="return false;">Explanation</a>
+                    </div>
+                    <p class="panel">Explanation</p>
+                    <div id="answer4b">
+                      <label>
+                        <input type="radio" name="question4" value="b">
+                        b: Recursion is easier to understand and implement than iteration
+                      </label>
+                      <a href="#" id="explanation4b" class="accordion" onclick="return false;">Explanation</a>
+                    </div>
+                    <p class="panel">Explanation</p>
+                    <div id="answer4c">
+                      <label>
+                        <input type="radio" name="question4" value="c">
+                        c: Recursion uses less memory than iteration
+                      </label>
+                      <a href="#" id="explanation4c" class="accordion" onclick="return false;">Explanation</a>
+                    </div>
+                    <p class="panel">Explanation</p>
+                    <div id="answer4d">
+                      <label>
+                        <input type="radio" name="question4" value="d">
+                        d: Recursion is more flexible than iteration
+                      </label>
+                      <a href="#" id="explanation4d" class="accordion" onclick="return false;">Explanation</a>
+                    </div>
+                    <p class="panel">Explanation</p>
+                </div>
+                
+                  <div class="question intermediate">
+                    6. Which of the following is NOT a characteristic of recursion?
+                  </div>
+                  
+                  <div class="answers">
+                    <div id="answer5a">
+                      <label>
+                        <input type="radio" name="question5" value="a">
+                        a: A function calling itself repeatedly
+                      </label>
+                      <a href="#" id="explanation5a" class="accordion" onclick="return false;">Explanation</a>
+                    </div>
+                    <p class="panel">Explanation</p>
+                    <div id="answer5b">
+                      <label>
+                        <input type="radio" name="question5" value="b">
+                        b: A function solving a problem by breaking it down into smaller sub-problems
+                      </label>
+                      <a href="#" id="explanation5b" class="accordion" onclick="return false;">Explanation</a>
+                    </div>
+                    <p class="panel">Explanation</p>
+                    <div id="answer5c">
+                      <label>
+                        <input type="radio" name="question5" value="c">
+                        c: A function having a fixed number of iterations
+                      </label>
+                      <a href="#" id="explanation5c" class="accordion" onclick="return false;">Explanation</a>
+                    </div>
+                    <p class="panel">Explanation</p>
+                    <div id="answer5d">
+                      <label>
+                        <input type="radio" name="question5" value="d">
+                        d: A function with a terminating condition
+                      </label>
+                      <a href="#" id="explanation5d" class="accordion" onclick="return false;">Explanation</a>
+                    </div>
+                    <p class="panel">Explanation</p>
+                </div>
+                
+                  <div class="question intermediate">
+                    7. In a recursive function, what happens when the base case is not reached?
+                  </div>
+                  
+                  <div class="answers">
+                    <div id="answer6a">
+                      <label>
+                        <input type="radio" name="question6" value="a">
+                        a: The function will continue to call itself infinitely
+                      </label>
+                      <a href="#" id="explanation6a" class="accordion" onclick="return false;">Explanation</a>
+                    </div>
+                    <p class="panel">Explanation</p>
+                    <div id="answer6b">
+                      <label>
+                        <input type="radio" name="question6" value="b">
+                        b: The function will throw an error
+                      </label>
+                      <a href="#" id="explanation6b" class="accordion" onclick="return false;">Explanation</a>
+                    </div>
+                    <p class="panel">Explanation</p>
+                    <div id="answer6c">
+                      <label>
+                        <input type="radio" name="question6" value="c">
+                        c: The function will return a default value
+                      </label>
+                      <a href="#" id="explanation6c" class="accordion" onclick="return false;">Explanation</a>
+                    </div>
+                    <p class="panel">Explanation</p>
+                    <div id="answer6d">
+                      <label>
+                        <input type="radio" name="question6" value="d">
+                        d: The function will terminate immediately
+                      </label>
+                      <a href="#" id="explanation6d" class="accordion" onclick="return false;">Explanation</a>
+                    </div>
+                    <p class="panel">Explanation</p>
+                </div>
+                
+                  <div class="question intermediate">
+                    8. How can we avoid a stack overflow error in a recursive function?
+                  </div>
+                  
+                  <div class="answers">
+                    <div id="answer7a">
+                      <label>
+                        <input type="radio" name="question7" value="a">
+                        a: By ensuring that the function has a base case
+                      </label>
+                      <a href="#" id="explanation7a" class="accordion" onclick="return false;">Explanation</a>
+                    </div>
+                    <p class="panel">Explanation</p>
+                    <div id="answer7b">
+                      <label>
+                        <input type="radio" name="question7" value="b">
+                        b: By limiting the number of recursive calls
+                      </label>
+                      <a href="#" id="explanation7b" class="accordion" onclick="return false;">Explanation</a>
+                    </div>
+                    <p class="panel">Explanation</p>
+                    <div id="answer7c">
+                      <label>
+                        <input type="radio" name="question7" value="c">
+                        c: By using iteration instead of recursion
+                      </label>
+                      <a href="#" id="explanation7c" class="accordion" onclick="return false;">Explanation</a>
+                    </div>
+                    <p class="panel">Explanation</p>
+                    <div id="answer7d">
+                      <label>
+                        <input type="radio" name="question7" value="d">
+                        d: By increasing the size of the stack
+                      </label>
+                      <a href="#" id="explanation7d" class="accordion" onclick="return false;">Explanation</a>
+                    </div>
+                    <p class="panel">Explanation</p>
+                </div>
+                
+                  <div class="question intermediate">
+                    9. Can recursion be used to solve dynamic programming problems?
+                  </div>
+                  
+                  <div class="answers">
+                    <div id="answer8a">
+                      <label>
+                        <input type="radio" name="question8" value="a">
+                        a: Yes, recursion is well suited for dynamic programming problems
+                      </label>
+                      <a href="#" id="explanation8a" class="accordion" onclick="return false;">Explanation</a>
+                    </div>
+                    <p class="panel">Explanation</p>
+                    <div id="answer8b">
+                      <label>
+                        <input type="radio" name="question8" value="b">
+                        b: No, recursion is not suitable for dynamic programming problems
+                      </label>
+                      <a href="#" id="explanation8b" class="accordion" onclick="return false;">Explanation</a>
+                    </div>
+                    <p class="panel">Explanation</p>
+                    <div id="answer8c">
+                      <label>
+                        <input type="radio" name="question8" value="c">
+                        c: Sometimes, depending on the specific problem
+                      </label>
+                      <a href="#" id="explanation8c" class="accordion" onclick="return false;">Explanation</a>
+                    </div>
+                    <p class="panel">Explanation</p>
+                    <div id="answer8d">
+                      <label>
+                        <input type="radio" name="question8" value="d">
+                        d: Only if the problem has a small number of inputs
+                      </label>
+                      <a href="#" id="explanation8d" class="accordion" onclick="return false;">Explanation</a>
+                    </div>
+                    <p class="panel">Explanation</p>
+                </div>
+                
+                  <div class="question intermediate">
+                    10. How do we determine the optimal depth of recursion in a recursive function?
+                  </div>
+                  
+                  <div class="answers">
+                    <div id="answer9a">
+                      <label>
+                        <input type="radio" name="question9" value="a">
+                        a: By trial and error
+                      </label>
+                      <a href="#" id="explanation9a" class="accordion" onclick="return false;">Explanation</a>
+                    </div>
+                    <p class="panel">Explanation</p>
+                    <div id="answer9b">
+                      <label>
+                        <input type="radio" name="question9" value="b">
+                        b: By analyzing the time complexity of the function
+                      </label>
+                      <a href="#" id="explanation9b" class="accordion" onclick="return false;">Explanation</a>
+                    </div>
+                    <p class="panel">Explanation</p>
+                    <div id="answer9c">
+                      <label>
+                        <input type="radio" name="question9" value="c">
+                        c: By looking at the base case
+                      </label>
+                      <a href="#" id="explanation9c" class="accordion" onclick="return false;">Explanation</a>
+                    </div>
+                    <p class="panel">Explanation</p>
+                    <div id="answer9d">
+                      <label>
+                        <input type="radio" name="question9" value="d">
+                        d: By checking the documentation
+                      </label>
+                      <a href="#" id="explanation9d" class="accordion" onclick="return false;">Explanation</a>
+                    </div>
+                    <p class="panel">Explanation</p>
+                </div>
+                
+                  <div class="question intermediate">
+                    11. Can recursion be used to solve problems with multiple correct solutions?
+                  </div>
+                  
+                  <div class="answers">
+                    <div id="answer10a">
+                      <label>
+                        <input type="radio" name="question10" value="a">
+                        a: Yes, recursion can be used to find all possible solutions
+                      </label>
+                      <a href="#" id="explanation10a" class="accordion" onclick="return false;">Explanation</a>
+                    </div>
+                    <p class="panel">Explanation</p>
+                    <div id="answer10b">
+                      <label>
+                        <input type="radio" name="question10" value="b">
+                        b: No, recursion can only find one solution
+                      </label>
+                      <a href="#" id="explanation10b" class="accordion" onclick="return false;">Explanation</a>
+                    </div>
+                    <p class="panel">Explanation</p>
+                    <div id="answer10c">
+                      <label>
+                        <input type="radio" name="question10" value="c">
+                        c: Sometimes, depending on the specific problem
+                      </label>
+                      <a href="#" id="explanation10c" class="accordion" onclick="return false;">Explanation</a>
+                    </div>
+                    <p class="panel">Explanation</p>
+                    <div id="answer10d">
+                      <label>
+                        <input type="radio" name="question10" value="d">
+                        d: Only if the problem has a unique solution
+                      </label>
+                      <a href="#" id="explanation10d" class="accordion" onclick="return false;">Explanation</a>
+                    </div>
+                    <p class="panel">Explanation</p>
+                </div>
+                
+                  <div class="question intermediate">
+                    12. What is the main advantage of using recursion over iteration in some cases?
+                  </div>
+                  
+                  <div class="answers">
+                    <div id="answer11a">
+                      <label>
+                        <input type="radio" name="question11" value="a">
+                        a: Recursion is always faster
+                      </label>
+                      <a href="#" id="explanation11a" class="accordion" onclick="return false;">Explanation</a>
+                    </div>
+                    <p class="panel">Explanation</p>
+                    <div id="answer11b">
+                      <label>
+                        <input type="radio" name="question11" value="b">
+                        b: Recursion uses less memory
+                      </label>
+                      <a href="#" id="explanation11b" class="accordion" onclick="return false;">Explanation</a>
+                    </div>
+                    <p class="panel">Explanation</p>
+                    <div id="answer11c">
+                      <label>
+                        <input type="radio" name="question11" value="c">
+                        c: Recursion can solve problems that are hard to express iteratively
+                      </label>
+                      <a href="#" id="explanation11c" class="accordion" onclick="return false;">Explanation</a>
+                    </div>
+                    <p class="panel">Explanation</p>
+                    <div id="answer11d">
+                      <label>
+                        <input type="radio" name="question11" value="d">
+                        d: Recursion is easier to implement
+                      </label>
+                      <a href="#" id="explanation11d" class="accordion" onclick="return false;">Explanation</a>
+                    </div>
+                    <p class="panel">Explanation</p>
+                </div>
+                
+                  <div class="question intermediate">
+                    13. What is the purpose of a recursive function's 'stack'?
+                  </div>
+                  
+                  <div class="answers">
+                    <div id="answer12a">
+                      <label>
+                        <input type="radio" name="question12" value="a">
+                        a: To store local variables
+                      </label>
+                      <a href="#" id="explanation12a" class="accordion" onclick="return false;">Explanation</a>
+                    </div>
+                    <p class="panel">Explanation</p>
+                    <div id="answer12b">
+                      <label>
+                        <input type="radio" name="question12" value="b">
+                        b: To keep track of function calls
+                      </label>
+                      <a href="#" id="explanation12b" class="accordion" onclick="return false;">Explanation</a>
+                    </div>
+                    <p class="panel">Explanation</p>
+                    <div id="answer12c">
+                      <label>
+                        <input type="radio" name="question12" value="c">
+                        c: To store global variables
+                      </label>
+                      <a href="#" id="explanation12c" class="accordion" onclick="return false;">Explanation</a>
+                    </div>
+                    <p class="panel">Explanation</p>
+                    <div id="answer12d">
+                      <label>
+                        <input type="radio" name="question12" value="d">
+                        d: To hold the return value
+                      </label>
+                      <a href="#" id="explanation12d" class="accordion" onclick="return false;">Explanation</a>
+                    </div>
+                    <p class="panel">Explanation</p>
+                </div>
+                
+                  <div class="question intermediate">
+                    14. Recursion can be a powerful tool in algorithm design. When would you choose to implement an iterative solution instead of a recursive one?
+                  </div>
+                  
+                  <div class="answers">
+                    <div id="answer13a">
+                      <label>
+                        <input type="radio" name="question13" value="a">
+                        a: When the problem can be naturally defined in a recursive manner.
+                      </label>
+                      <a href="#" id="explanation13a" class="accordion" onclick="return false;">Explanation</a>
+                    </div>
+                    <p class="panel">Explanation</p>
+                    <div id="answer13b">
+                      <label>
+                        <input type="radio" name="question13" value="b">
+                        b: When memory usage is a critical concern, and a non-recursive solution would use less memory.
+                      </label>
+                      <a href="#" id="explanation13b" class="accordion" onclick="return false;">Explanation</a>
+                    </div>
+                    <p class="panel">Explanation</p>
+                    <div id="answer13c">
+                      <label>
+                        <input type="radio" name="question13" value="c">
+                        c: When the problem involves complex data structures, making recursion the preferred choice.
+                      </label>
+                      <a href="#" id="explanation13c" class="accordion" onclick="return false;">Explanation</a>
+                    </div>
+                    <p class="panel">Explanation</p>
+                    <div id="answer13d">
+                      <label>
+                        <input type="radio" name="question13" value="d">
+                        d: When you want to simplify the code and make it more intuitive.
+                      </label>
+                      <a href="#" id="explanation13d" class="accordion" onclick="return false;">Explanation</a>
+                    </div>
+                    <p class="panel">Explanation</p>
+                </div>
+                
+                  <div class="question advanced">
+                    15. In recursive algorithms, what is meant by 'tail recursion'?
+                  </div>
+                  
+                  <div class="answers">
+                    <div id="answer14a">
+                      <label>
+                        <input type="radio" name="question14" value="a">
+                        a: A type of recursion that is slower than regular recursion
+                      </label>
+                      <a href="#" id="explanation14a" class="accordion" onclick="return false;">Explanation</a>
+                    </div>
+                    <p class="panel">Explanation</p>
+                    <div id="answer14b">
+                      <label>
+                        <input type="radio" name="question14" value="b">
+                        b: A recursive call that appears at the end of a function and doesn't require any further computation after the recursive call returns
+                      </label>
+                      <a href="#" id="explanation14b" class="accordion" onclick="return false;">Explanation</a>
+                    </div>
+                    <p class="panel">Explanation</p>
+                    <div id="answer14c">
+                      <label>
+                        <input type="radio" name="question14" value="c">
+                        c: A recursive call that occurs within a loop
+                      </label>
+                      <a href="#" id="explanation14c" class="accordion" onclick="return false;">Explanation</a>
+                    </div>
+                    <p class="panel">Explanation</p>
+                    <div id="answer14d">
+                      <label>
+                        <input type="radio" name="question14" value="d">
+                        d: A type of recursion that uses a tail data structure
+                      </label>
+                      <a href="#" id="explanation14d" class="accordion" onclick="return false;">Explanation</a>
+                    </div>
+                    <p class="panel">Explanation</p>
+                </div>
+                
+                  <div class="question advanced">
+                    16. How can you optimize a recursive function to reduce the overhead of function calls?
+                  </div>
+                  
+                  <div class="answers">
+                    <div id="answer15a">
+                      <label>
+                        <input type="radio" name="question15" value="a">
+                        a: By making the recursive calls non-tail recursive
+                      </label>
+                      <a href="#" id="explanation15a" class="accordion" onclick="return false;">Explanation</a>
+                    </div>
+                    <p class="panel">Explanation</p>
+                    <div id="answer15b">
+                      <label>
+                        <input type="radio" name="question15" value="b">
+                        b: By using global variables instead of local variables
+                      </label>
+                      <a href="#" id="explanation15b" class="accordion" onclick="return false;">Explanation</a>
+                    </div>
+                    <p class="panel">Explanation</p>
+                    <div id="answer15c">
+                      <label>
+                        <input type="radio" name="question15" value="c">
+                        c: By using memoization or dynamic programming techniques
+                      </label>
+                      <a href="#" id="explanation15c" class="accordion" onclick="return false;">Explanation</a>
+                    </div>
+                    <p class="panel">Explanation</p>
+                    <div id="answer15d">
+                      <label>
+                        <input type="radio" name="question15" value="d">
+                        d: By removing the base case
+                      </label>
+                      <a href="#" id="explanation15d" class="accordion" onclick="return false;">Explanation</a>
+                    </div>
+                    <p class="panel">Explanation</p>
+                </div>
+                
+                  <div class="question advanced">
+                    17. What is the time complexity of a recursive function that makes n recursive call, assuming each recursive call takes O(1) time?
+                  </div>
+                  
+                  <div class="answers">
+                    <div id="answer16a">
+                      <label>
+                        <input type="radio" name="question16" value="a">
+                        a: O(2^n)
+                      </label>
+                      <a href="#" id="explanation16a" class="accordion" onclick="return false;">Explanation</a>
+                    </div>
+                    <p class="panel">Explanation</p>
+                    <div id="answer16b">
+                      <label>
+                        <input type="radio" name="question16" value="b">
+                        b: O(log n)
+                      </label>
+                      <a href="#" id="explanation16b" class="accordion" onclick="return false;">Explanation</a>
+                    </div>
+                    <p class="panel">Explanation</p>
+                    <div id="answer16c">
+                      <label>
+                        <input type="radio" name="question16" value="c">
+                        c: O(n^2)
+                      </label>
+                      <a href="#" id="explanation16c" class="accordion" onclick="return false;">Explanation</a>
+                    </div>
+                    <p class="panel">Explanation</p>
+                    <div id="answer16d">
+                      <label>
+                        <input type="radio" name="question16" value="d">
+                        d: O(n)
+                      </label>
+                      <a href="#" id="explanation16d" class="accordion" onclick="return false;">Explanation</a>
+                    </div>
+                    <p class="panel">Explanation</p>
+                </div>
+                
+                  <div class="question advanced">
+                    18. What is the concept of 'tree recursion'?
+                  </div>
+                  
+                  <div class="answers">
+                    <div id="answer17a">
+                      <label>
+                        <input type="radio" name="question17" value="a">
+                        a: A recursion that models a tree structure with multiple branches
+                      </label>
+                      <a href="#" id="explanation17a" class="accordion" onclick="return false;">Explanation</a>
+                    </div>
+                    <p class="panel">Explanation</p>
+                    <div id="answer17b">
+                      <label>
+                        <input type="radio" name="question17" value="b">
+                        b: A recursion that only works with binary trees
+                      </label>
+                      <a href="#" id="explanation17b" class="accordion" onclick="return false;">Explanation</a>
+                    </div>
+                    <p class="panel">Explanation</p>
+                    <div id="answer17c">
+                      <label>
+                        <input type="radio" name="question17" value="c">
+                        c: A recursion that creates a tree-like data structure
+                      </label>
+                      <a href="#" id="explanation17c" class="accordion" onclick="return false;">Explanation</a>
+                    </div>
+                    <p class="panel">Explanation</p>
+                    <div id="answer17d">
+                      <label>
+                        <input type="radio" name="question17" value="d">
+                        d: A recursion that uses a stack data structure
+                      </label>
+                      <a href="#" id="explanation17d" class="accordion" onclick="return false;">Explanation</a>
+                    </div>
+                    <p class="panel">Explanation</p>
+                </div>
+                
+                  <div class="question advanced">
+                    19. In the context of recursion, what is 'tail call optimization,' and why is it important?
+                  </div>
+                  
+                  <div class="answers">
+                    <div id="answer18a">
+                      <label>
+                        <input type="radio" name="question18" value="a">
+                        a: Tail call optimization is a method for making recursive functions easier to understand, but it doesn't have any impact on performance.
+                      </label>
+                      <a href="#" id="explanation18a" class="accordion" onclick="return false;">Explanation</a>
+                    </div>
+                    <p class="panel">Explanation</p>
+                    <div id="answer18b">
+                      <label>
+                        <input type="radio" name="question18" value="b">
+                        b: Tail call optimization is a term used in functional programming, and it doesn't apply to recursion in imperative languages.
+                      </label>
+                      <a href="#" id="explanation18b" class="accordion" onclick="return false;">Explanation</a>
+                    </div>
+                    <p class="panel">Explanation</p>
+                    <div id="answer18c">
+                      <label>
+                        <input type="radio" name="question18" value="c">
+                        c: Tail call optimization is a way to convert recursive functions into iterative functions, making them more efficient.
+                      </label>
+                      <a href="#" id="explanation18c" class="accordion" onclick="return false;">Explanation</a>
+                    </div>
+                    <p class="panel">Explanation</p>
+                    <div id="answer18d">
+                      <label>
+                        <input type="radio" name="question18" value="d">
+                        d: Tail call optimization is a technique to make recursive calls more efficient, and it is important because it reduces the risk of stack overflow errors.
+                      </label>
+                      <a href="#" id="explanation18d" class="accordion" onclick="return false;">Explanation</a>
+                    </div>
+                    <p class="panel">Explanation</p>
+                </div>
+                
+                  <div class="question advanced">
+                    20. Explain the concept of 'mutual recursion' in programming and provide an example scenario where it might be applied.
+                  </div>
+                  
+                  <div class="answers">
+                    <div id="answer19a">
+                      <label>
+                        <input type="radio" name="question19" value="a">
+                        a: Mutual recursion is when two recursive functions call each other, and it is commonly used in algorithms for sorting and searching.
+                      </label>
+                      <a href="#" id="explanation19a" class="accordion" onclick="return false;">Explanation</a>
+                    </div>
+                    <p class="panel">Explanation</p>
+                    <div id="answer19b">
+                      <label>
+                        <input type="radio" name="question19" value="b">
+                        b: Mutual recursion is when a recursive function calls itself multiple times within a single iteration, optimizing performance.
+                      </label>
+                      <a href="#" id="explanation19b" class="accordion" onclick="return false;">Explanation</a>
+                    </div>
+                    <p class="panel">Explanation</p>
+                    <div id="answer19c">
+                      <label>
+                        <input type="radio" name="question19" value="c">
+                        c: Mutual recursion is a technique to replace recursion with iteration for better efficiency.
+                      </label>
+                      <a href="#" id="explanation19c" class="accordion" onclick="return false;">Explanation</a>
+                    </div>
+                    <p class="panel">Explanation</p>
+                    <div id="answer19d">
+                      <label>
+                        <input type="radio" name="question19" value="d">
+                        d: Mutual recursion is an outdated concept and is no longer relevant in modern programming.
+                      </label>
+                      <a href="#" id="explanation19d" class="accordion" onclick="return false;">Explanation</a>
+                    </div>
+                    <p class="panel">Explanation</p>
+                </div>
+               </div>
+                <button id="submit" class="btn btn-primary">Submit Quiz</button>
+                <div id="results"></div>
+          </div>
+            
+            <script>
+              const myQuestions = [{"question":"1. What is recursion in computer science?","answers":{"a":"A programming error","b":"A loop construct","c":"A function calling itself","d":"A data structure"},"correctAnswer":"c","explanations":{"a":"This option is incorrect because recursion is not a programming error. It is a legitimate and intentional technique in computer science and programming.","b":"This option is incorrect because recursion and loops are different concepts. Recursion involves a function calling itself, while a loop construct is a control structure that repeats a block of code.","c":"This option is correct. Recursion in computer science refers to the process in which a function calls itself. It's a powerful and important concept for solving problems in a more elegant and concise way.","d":"This option is incorrect because recursion is not a data structure. Data structures are used to organize and store data, while recursion is a technique for solving problems through iterative function calls."},"difficulty":"beginner"},{"question":"2. What is the purpose of a base case in a recursive function?","answers":{"a":"To provide a starting point for the recursive calls","b":"To handle the edge cases","c":"To optimize the function for better performance","d":"To make the function more readable"},"correctAnswer":"b","explanations":{"a":"This option is not correct. The purpose of a base case in a recursive function is not to provide a starting point for recursive calls. It is used to terminate the recursion when a certain condition is met.","b":"This option is correct. The purpose of a base case in a recursive function is to handle the edge cases and provide a condition for terminating the recursion. It ensures that the recursive calls eventually stop and prevent infinite recursion.","c":"This option is incorrect. The base case is not primarily used to optimize the function for better performance, although it can have performance benefits. Its primary role is to define when the recursion should stop.","d":"This option is not correct. While well-chosen base cases can make the function more readable by clearly defining the stopping conditions, readability is not the primary purpose of a base case."},"difficulty":"beginner"},{"question":"3. What is the main difference between recursive and iterative solutions?","answers":{"a":"Recursive solutions use loops, while iterative solutions use function calls","b":"Recursive solutions use function calls, while iterative solutions use loops","c":"Recursive solutions are faster, while iterative solutions are slower","d":"Recursive solutions are less efficient, while iterative solutions are more efficient"},"correctAnswer":"b","explanations":{"a":"This option is incorrect. Recursive solutions use function calls, not loops, as their primary control flow mechanism.","b":"This option is correct. The main difference between recursive and iterative solutions is that recursive solutions use function calls for control flow, while iterative solutions use loops.","c":"This option is incorrect. The speed of a solution depends on various factors and cannot be generalized as recursive solutions being faster or iterative solutions being slower.","d":"This option is incorrect. Efficiency can vary depending on the problem and how the solution is implemented. It is not accurate to say that recursive solutions are always less efficient than iterative solutions."},"difficulty":"beginner"},{"question":"4. For every recursive solution, there is a corresponding iterative solution?","answers":{"a":"True","b":"False"},"correctAnswer":"a","explanations":{"a":"This option is correct. For every recursive solution, there is indeed a corresponding iterative solution. Recursive and iterative solutions represent two different approaches to solving problems, and in most cases, a problem that can be solved recursively can also be solved iteratively, and vice versa.","b":"This option is incorrect. There is generally a corresponding iterative solution for every recursive solution. While the two approaches may differ in terms of code structure and implementation, they can both be used to solve the same problem."},"difficulty":"beginner"},{"question":"5. What is the advantage of using recursion over iteration?","answers":{"a":"Recursion is generally faster than iteration","b":"Recursion is easier to understand and implement than iteration","c":"Recursion uses less memory than iteration","d":"Recursion is more flexible than iteration"},"correctAnswer":"b","explanations":{"a":"This option is incorrect. Recursion is not generally faster than iteration. In fact, recursion can sometimes be less efficient in terms of performance due to the overhead of function calls.","b":"This option is correct. One advantage of using recursion is that it can be easier to understand and implement for certain problems. Recursive solutions often mirror the natural structure of the problem, making them more intuitive for some programmers.","c":"This option is incorrect. The memory usage of recursion depends on the specific implementation and problem. It is not accurate to say that recursion always uses less memory than iteration.","d":"This option is incorrect. Recursion and iteration each have their own strengths and weaknesses, and the choice between them depends on the nature of the problem. While recursion can be more flexible for certain problems, it is not a universal advantage over iteration."},"difficulty":"beginner"},{"question":"6. Which of the following is NOT a characteristic of recursion?","answers":{"a":"A function calling itself repeatedly","b":"A function solving a problem by breaking it down into smaller sub-problems","c":"A function having a fixed number of iterations","d":"A function with a terminating condition"},"correctAnswer":"c","explanations":{"a":"This option is correct (wrong answer). Recursion involves a function calling itself repeatedly, which is one of its defining characteristics.","b":"This option is correct (wrong answer). Recursion often solves a problem by breaking it down into smaller sub-problems and solving them recursively.","c":"This option is wrong (correct answer). Having a fixed number of iterations is not a characteristic of recursion. In fact, recursion doesn't necessarily have a fixed number of iterations, as it depends on the problem and the termination conditions.","d":"This option is correct (wrong answer). A fundamental characteristic of recursion is that it involves a function with a terminating condition to prevent infinite recursion."},"difficulty":"intermediate"},{"question":"7. In a recursive function, what happens when the base case is not reached?","answers":{"a":"The function will continue to call itself infinitely","b":"The function will throw an error","c":"The function will return a default value","d":"The function will terminate immediately"},"correctAnswer":"a","explanations":{"a":"This option is correct. When the base case is not reached in a recursive function, the function will continue to call itself infinitely, resulting in what is known as infinite recursion. This can lead to a stack overflow error and the program crashing.","b":"This option is incorrect. While reaching a base case is essential to prevent infinite recursion, the function won't necessarily throw an error immediately when the base case is not met. It will keep calling itself until a stack overflow occurs.","c":"This option is incorrect. The function will not return a default value when the base case is not reached; instead, it will continue with recursive calls.","d":"This option is incorrect. The function will not terminate immediately when the base case is not reached; it will keep calling itself until a stack overflow occurs."},"difficulty":"intermediate"},{"question":"8. How can we avoid a stack overflow error in a recursive function?","answers":{"a":"By ensuring that the function has a base case","b":"By limiting the number of recursive calls","c":"By using iteration instead of recursion","d":"By increasing the size of the stack"},"correctAnswer":"a","explanations":{"a":"This option is correct. The primary way to avoid a stack overflow error in a recursive function is by ensuring that the function has a base case that allows the recursion to terminate. The base case defines when the recursion should stop.","b":"This option is a partial solution. Limiting the number of recursive calls can help prevent stack overflow errors, but it is typically achieved by defining an appropriate base case.","c":"This option is not necessarily the best solution. While using iteration instead of recursion can avoid stack overflow errors, it may not always be practical or suitable for solving certain problems that are naturally recursive in nature.","d":"This option is not a common or recommended approach to avoiding stack overflow errors. Increasing the size of the stack can be a system-level configuration, but it does not address the root cause of the issue, which is the lack of a terminating condition in the recursive function."},"difficulty":"intermediate"},{"question":"9. Can recursion be used to solve dynamic programming problems?","answers":{"a":"Yes, recursion is well suited for dynamic programming problems","b":"No, recursion is not suitable for dynamic programming problems","c":"Sometimes, depending on the specific problem","d":"Only if the problem has a small number of inputs"},"correctAnswer":"c","explanations":{"a":"This option is partially correct. Recursion can be used to solve dynamic programming problems, but it often needs to be combined with memoization or other techniques to optimize the solution's efficiency.","b":"This option is not correct. Recursion can be suitable for solving dynamic programming problems, depending on the problem and how it's implemented.","c":"This option is correct. Whether recursion is suitable for solving dynamic programming problems depends on the specific problem and the approach used. Some dynamic programming problems can be solved using recursion with proper optimizations, while others may benefit from iterative approaches.","d":"This option is not a decisive factor. The suitability of recursion for solving dynamic programming problems is not solely determined by the number of inputs but by the problem's characteristics and the chosen algorithm."},"difficulty":"intermediate"},{"question":"10. How do we determine the optimal depth of recursion in a recursive function?","answers":{"a":"By trial and error","b":"By analyzing the time complexity of the function","c":"By looking at the base case","d":"By checking the documentation"},"correctAnswer":"b","explanations":{"a":"This option is not the best approach. Determining the optimal depth of recursion by trial and error can be time-consuming and inefficient.","b":"This option is correct. The optimal depth of recursion in a recursive function is typically determined by analyzing the time complexity of the function. This involves considering factors like the problem size and the number of recursive calls to ensure that the function performs efficiently.","c":"This option is related to recursion but doesn't directly address the determination of the optimal depth of recursion. The base case defines when the recursion should stop, but it doesn't provide guidance on how deep the recursion should go.","d":"This option is unlikely to provide information about the optimal depth of recursion for a specific function. Checking the documentation may offer insights into how a function works but may not specify the ideal recursion depth."},"difficulty":"intermediate"},{"question":"11. Can recursion be used to solve problems with multiple correct solutions?","answers":{"a":"Yes, recursion can be used to find all possible solutions","b":"No, recursion can only find one solution","c":"Sometimes, depending on the specific problem","d":"Only if the problem has a unique solution"},"correctAnswer":"a","explanations":{"a":"This option is correct. Recursion can be used to find all possible solutions to a problem, especially in cases where there are multiple correct solutions or a need to explore different branches of a solution space.","b":"This option is not correct. Recursion is not limited to finding only one solution. It can be used to explore and find multiple solutions, as needed by the problem.","c":"This option is also correct to some extent, but not completely. Whether recursion is suitable for finding multiple solutions depends on the specific problem and the chosen algorithm.","d":"This option is incorrect. Recursion is not limited to problems with unique solutions. It can be applied to problems with multiple correct solutions as well."},"difficulty":"intermediate"},{"question":"12. What is the main advantage of using recursion over iteration in some cases?","answers":{"a":"Recursion is always faster","b":"Recursion uses less memory","c":"Recursion can solve problems that are hard to express iteratively","d":"Recursion is easier to implement"},"correctAnswer":"c","explanations":{"a":"This option is incorrect. Recursion is not always faster than iteration. The relative speed of recursion versus iteration depends on the specific problem and its implementation.","b":"This option is incorrect. Memory usage in recursion can be influenced by factors such as the depth of recursion and data structures used. It is not a universal advantage over iteration.","c":"This option is correct. One of the main advantages of recursion is its ability to solve problems that are hard to express or solve iteratively. Some problems have a natural recursive structure that makes recursion a more intuitive and elegant choice.","d":"This option is not necessarily true. Whether recursion is easier to implement than iteration depends on the problem and the familiarity of the programmer with recursive techniques. It may or may not be easier in a given case."},"difficulty":"intermediate"},{"question":"13. What is the purpose of a recursive function's 'stack'?","answers":{"a":"To store local variables","b":"To keep track of function calls","c":"To store global variables","d":"To hold the return value"},"correctAnswer":"b","explanations":{"a":"This option is partially correct. The stack of a recursive function is used to store local variables, but its primary purpose is to keep track of function calls and their execution context.","b":"This option is correct. The stack of a recursive function is primarily used to keep track of function calls and their execution context, ensuring that the function can return to the correct point after each recursive call.","c":"This option is incorrect. The stack is not used to store global variables; it primarily deals with the call stack and local variables.","d":"This option is incorrect. The stack is not used to hold the return value of a recursive function; it is used for managing the function call stack and execution context."},"difficulty":"intermediate"},{"question":"14. Recursion can be a powerful tool in algorithm design. When would you choose to implement an iterative solution instead of a recursive one?","answers":{"a":"When the problem can be naturally defined in a recursive manner.","b":"When memory usage is a critical concern, and a non-recursive solution would use less memory.","c":"When the problem involves complex data structures, making recursion the preferred choice.","d":"When you want to simplify the code and make it more intuitive."},"correctAnswer":"b","explanations":{"a":"This option is incorrect. Recursive solutions are suitable when a problem can be naturally defined recursively.","b":"This option is correct. Memory usage can be a critical concern in certain scenarios, and iterative solutions often use less memory than recursive ones.","c":"This option is incorrect. The choice between recursion and iteration should not be solely based on data structures; it depends on the problem and its requirements.","d":"This option is incorrect. Code simplification and intuitiveness are not the primary factors in choosing between recursion and iteration; performance and memory usage are often more critical."},"difficulty":"intermediate"},{"question":"15. In recursive algorithms, what is meant by 'tail recursion'?","answers":{"a":"A type of recursion that is slower than regular recursion","b":"A recursive call that appears at the end of a function and doesn't require any further computation after the recursive call returns","c":"A recursive call that occurs within a loop","d":"A type of recursion that uses a tail data structure"},"correctAnswer":"b","explanations":{"a":"This option is incorrect. Tail recursion is not necessarily slower than regular recursion; in fact, it can be more efficient in some cases.","b":"This option is correct. Tail recursion refers to a recursive call that appears at the end of a function and doesn't require any further computation after the recursive call returns. It is an important concept for optimization in some programming languages.","c":"This option is not the definition of tail recursion. A recursive call within a loop is a different concept and is not referred to as tail recursion.","d":"This option is unrelated to tail recursion. Tail recursion is about the position of the recursive call within the function's execution, not the use of a tail data structure."},"difficulty":"advanced"},{"question":"16. How can you optimize a recursive function to reduce the overhead of function calls?","answers":{"a":"By making the recursive calls non-tail recursive","b":"By using global variables instead of local variables","c":"By using memoization or dynamic programming techniques","d":"By removing the base case"},"correctAnswer":"c","explanations":{"a":"This option is not a recommended way to optimize a recursive function for reducing function call overhead. Non-tail recursion can make optimization more challenging.","b":"This option is generally not recommended as using global variables can lead to unintended side effects and make the code less modular and maintainable.","c":"This option is correct. One of the primary ways to optimize a recursive function and reduce the overhead of function calls is by using memoization or dynamic programming techniques to store and reuse previously computed results.","d":"This option is incorrect. Removing the base case would make the recursive function incorrect and result in infinite recursion rather than optimization."},"difficulty":"advanced"},{"question":"17. What is the time complexity of a recursive function that makes n recursive call, assuming each recursive call takes O(1) time?","answers":{"a":"O(2^n)","b":"O(log n)","c":"O(n^2)","d":"O(n)"},"correctAnswer":"d","explanations":{"a":"This option is incorrect. A time complexity of O(2^n) typically represents exponential growth, which is much worse than linear time complexity.","b":"This option is incorrect. O(log n) represents logarithmic time complexity, which is better than linear but not appropriate for a function making n recursive calls.","c":"This option is incorrect. O(n^2) represents quadratic time complexity, which is worse than linear but not applicable to a function making n recursive calls.","d":"This option is correct. When a recursive function makes n recursive calls, and each call performs a constant amount of work, the time complexity is O(n). This is because the total work done is directly proportional to n, the number of recursive calls."},"difficulty":"advanced"},{"question":"18. What is the concept of 'tree recursion'?","answers":{"a":"A recursion that models a tree structure with multiple branches","b":"A recursion that only works with binary trees","c":"A recursion that creates a tree-like data structure","d":"A recursion that uses a stack data structure"},"correctAnswer":"a","explanations":{"a":"This option is correct. Tree recursion refers to a type of recursion in which a function makes multiple recursive calls, typically forming a tree-like structure with multiple branches of computation.","b":"This option is incorrect. Tree recursion is not limited to binary trees; it can involve any tree structure with multiple branches.","c":"This option is somewhat related but not a complete definition. Tree recursion often creates a tree-like computational structure, but it's primarily about the recursive function's behavior.","d":"This option is unrelated to tree recursion. The use of a stack data structure is not a defining characteristic of tree recursion."},"difficulty":"advanced"},{"question":"19. In the context of recursion, what is 'tail call optimization,' and why is it important?","answers":{"a":"Tail call optimization is a method for making recursive functions easier to understand, but it doesn't have any impact on performance.","b":"Tail call optimization is a term used in functional programming, and it doesn't apply to recursion in imperative languages.","c":"Tail call optimization is a way to convert recursive functions into iterative functions, making them more efficient.","d":"Tail call optimization is a technique to make recursive calls more efficient, and it is important because it reduces the risk of stack overflow errors."},"correctAnswer":"d","explanations":{"a":"This option is incorrect. Tail call optimization is primarily about improving the performance of recursive functions by reducing the risk of stack overflow errors. It may or may not impact code readability.","b":"This option is not entirely accurate. While tail call optimization is often associated with functional programming languages, it can apply to recursion in imperative languages as well.","c":"This option is partly correct. Tail call optimization can help convert certain types of recursive functions into iterative ones for efficiency, but its primary goal is to optimize tail-recursive calls.","d":"This option is correct. Tail call optimization is a technique used to make recursive calls more efficient, especially in preventing stack overflow errors. It is important because it allows recursive functions to be more practical and safer in cases where deep recursion is required."},"difficulty":"advanced"},{"question":"20. Explain the concept of 'mutual recursion' in programming and provide an example scenario where it might be applied.","answers":{"a":"Mutual recursion is when two recursive functions call each other, and it is commonly used in algorithms for sorting and searching.","b":"Mutual recursion is when a recursive function calls itself multiple times within a single iteration, optimizing performance.","c":"Mutual recursion is a technique to replace recursion with iteration for better efficiency.","d":"Mutual recursion is an outdated concept and is no longer relevant in modern programming."},"correctAnswer":"a","explanations":{"a":"This option is correct. Mutual recursion refers to a situation where two or more recursive functions call each other in a cycle. It is commonly used in algorithms for sorting, searching, and other scenarios where functions need to work together to solve a problem.","b":"This option is incorrect. Mutual recursion is not about a single recursive function calling itself multiple times within a single iteration; it involves multiple functions calling each other in a cycle.","c":"This option is not an accurate description of mutual recursion. Mutual recursion is not about replacing recursion with iteration but rather about the interaction between multiple recursive functions.","d":"This option is incorrect. Mutual recursion is still a relevant and valid concept in modern programming, especially in scenarios where it provides an elegant solution to a problem."},"difficulty":"advanced"}];
+            </script>
+              <script src="./assets/js/assessment_v2.js"></script>  
+          <div class="bug-report-mobile">
+              <bug-report id="bug-report" title="[BUG REPORT] RECURSION" page-type="assesment" context-info="{&quot;organisation&quot;:&quot;Virtual Labs&quot;,&quot;developer_institute&quot;:&quot;IIITH&quot;,&quot;expname&quot;:&quot;RECURSION&quot;,&quot;labname&quot;:&quot;Virtual Lab&quot;,&quot;phase&quot;:&quot;Testing&quot;}" checkbox-json="{&quot;text&quot;:[&quot;Insufficient Content&quot;],&quot;video&quot;:[&quot;Insufficient Content&quot;],&quot;assesment&quot;:[&quot;Incorrect Options&quot;,&quot;Incorrect Answer&quot;,&quot;Incorrect Question&quot;],&quot;assessment&quot;:[&quot;Incorrect Options&quot;,&quot;Incorrect Answer&quot;,&quot;Incorrect Question&quot;],&quot;simulation&quot;:[&quot;Simulation Not Working&quot;,&quot;Incorrect Results/Observations&quot;,&quot;Insufficient/Incorrect Instructions&quot;],&quot;DEFAULT&quot;:[&quot;Page Not Loading&quot;,&quot;Content Not Visible&quot;,&quot;Incorrect Content&quot;]}" position="override" button_style="
+                          position: fixed; 
+                          bottom: 20px;
+                          right: 20px;
+                          z-index: 1;
+                          font-size: 0;
+                          padding: 25px;
+                          border-radius: 50%;
+                          border: none;
+                          background-color: #0fc0ff;
+                          background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAC0AAAAtCAYAAAA6GuKaAAAAAXNSR0IArs4c6QAABiFJREFUaEPFmVuMFEUUhv/TM7uwoBGVyG22u7ZnYGG5REETo8RA1BhFIka8ABFf0PCgDxhFEpCLqAlE1OiTiSj4gFGjD0QBETQaEqPRICALSHdPV+8YQQJBA+wuO1PHdMNcWGame2ZWqMfuc/nq1KlT1acJAzhShjFVAUsYdL8G3HjRdA7gHwna5uahLR91dnaeb9QlNWrA1+/o6GjuPnv2DQ30LICKNhk4qLF63PK8g434rejATJhjKa6m9WazOzOZzKlKTmYAcc8QnxEwJwqIAk5STpvpZJwD1eTHjR43PKflhtkZ2+ovVxbaTJiTSVM/gzCYGIebu4fc1nmi80w5J0nDWA7Qq1GACzLMR3pV7pZMJtNdTs/UzelE6msAQ0BYb7vuS6VyZaGTungGhPfygkRYZ7nusv4OEonEDc2xuEfA0JqgATBhieO6b/fXE0IM1pgPECgVvGP+x/bksFDo1JhUguPZI8FMAz0+zzFtSjqd9p8VRlJvew7E79QKHNgEDjrSndRfNyXEGmasLK4KttmeOysU2hdIGm0vA/xKUZh32VLeW6psCrGMmO+uB5qIeEh398P7jx8/m9cP9pGm9vtpmQ9WjHDzUSkPRYJOpVKDuK9vP0Dj8goMfsSR8ot6IKPoJI22XUBpEHitLWUx6heNVC15pmHMItCXBYeKPUZsLlFWVYNQsVg2nU7v82XaW1tHZ4lGhUEztOlEKOQ4A/b5XHZyuc0aWqdNIbYSY3aY00veM/9te3KE/ywlxGpmrKpJP8h5ftCR8qtyeqHQY3XdVNAO5vMskvMGoRWrT9Ke90QlX6HQF6N16Y4OI28Ampn/jatcxx+ZzJ8NQScSiZZBWvzJwAhhJoCKUQhkaoVmnAZoJcC9WowOH02nf6gWl0iRLpQk3ZwOym0n0DVVg10rNAAF7Ig1xedYltUbtpCRoZO6Po1J+z7S6VcHdLCIClusLnfBgED7NVv1ZX8lYGKYwbrSo8Qogxc4Um5pOD1Mo20DgZ+PBFxPTpcYJuBUljDRdd1jdW/EcYnEmKwWSxNR05WADnwo2mB3pV+oGzopxDowlkYGbjDSF9ILpwd1D2mtdB2uuhEv3D+yfwG4/opCB5WVnrZk+v1yfqtCJ3X9TpC2pybggYj0BYcf29KdXwe0WArCuqsCzSxtT4qq0GareStIXXo3JjxGwNSrAh0crMFFq3jYEJ9wpPygkB6mYZwg0PCaAcsp1Hm4RPFtS5eK0LpxvqayVs3DlYIO7r0K8xUhlufRGKNrupLmFQcImsEZBhWaOxq4y5ZyRvXqIcSnYDwaZdkukRkgaGqK32RZ1on+/qt/buliFRFWXxXokonXBJ3S22Yz8darAc2sdjqed1/NddpvnMQUHwPRdTWBD0R6EBbbrltoGJX6D71PJ3V9E0h76kpCMzirNTWNLpfPPkcodNDXi6m9QLGqhE6gwUgzaKMj04sq+QmF9hVrjnYj0IwejmvtjuN4DUEbhjEqztgLoqCXEToagQavsKV8rZqPSJH2DaSEmMGMXZHSpE5oZnzneK7fL8w1DJ1sTU6CltvEwPj/88OWwRYx77Y9b3HD0KYuvqUL/Y5oo85I542TooesrnTF8yE0PUwh5hGj6tfxZTNpEBqKvUE9QyfW9bnV3t5+bV9P7yECxuTBFGOvRn5v5eJgTLzsUhUFmuGCcLJoBiNL/ZT7bVFYiWrrnTSM9QC9WBSmzy2ZnluqI4QYGQcWM/O8Qi+7EjSjB4xtTNqHjuf4HVHO20q1tiZZi/k/j1r8Z8zcRxyfanfZv/dnrJgeYw1jQo6xr+SOfY5j2oRq9VMIIWLA7QSMslz3raDGG8ZMJhoPpR1QmvrFdd2eSoFKGm0rAF5bfM97bCnvKp2c/64idFLXd4C0woWFwMstKV+PthPrk/L/R/aeOfcbCBOKq8uLLCk3llos/0tON+8hUt+U5O1Rao5PjtIcrA+3qOWvDEC78wFlIO1I1wyFTuptC0G8uWSZHrCl3N4oUFT9NiE2a4yFQW6DLUfKsaHQU0aMGHq2pWULM98Bpncdzy35yxXVdf1yftXK9vS8CUVjtBjWHHXdn0qt/Qf/x1JblU8EiAAAAABJRU5ErkJggg==);
+                          background-repeat: no-repeat;
+                          background-position: center;
+                          background-size: 30px;
+                          filter: invert(1);">
+              </bug-report>
+          </div>        </div>
+      </div>
+      <footer class="text-light pt-2 vlabs-footer d-flex flex-column">
+        <div class="row px-5 mx-0">
+          <div class="col d-flex flex-column">
+            <span class="font-weight-bold vlabs-footer-sect-name pb-2 mb-3">Community Links</span>
+            <a href="https://www.sakshat.ac.in/" class="text-light">Sakshat Portal</a>
+            <a href="http://outreach.vlabs.ac.in/" class="text-light">Outreach Portal</a>
+            <a href="https://vlab.co.in/faq" class="text-light">FAQ: Virtual Labs</a>
+          </div>
+          <div class="col d-flex flex-column">
+            <span class="font-weight-bold vlabs-footer-sect-name pb-2 mb-3">Contact Us</span>
+            <span> Phone: General Information: 011-26582050 </span>
+            <span> Email: support@vlabs.ac.in </span>
+          </div>
+          <div class="col d-flex flex-column">
+            <span class="font-weight-bold vlabs-footer-sect-name pb-2 mb-3">Follow Us</span>
+            <div class="social-links">
+      	<a class="p-2 mt-1 mr-2 d-inline-flex justify-content-center align-items-center" style="background: #55acee;" href="https://twitter.com/TheVirtualLabs">
+      	  <i class="fa fa-twitter"></i>
+      	</a>
+      	<a class="p-2 mt-1 mr-2 d-inline-flex justify-content-center align-items-center" style="background: #3b5998;" href="https://www.facebook.com/Virtual-Labs-IIT-Delhi-301510159983871/">
+      	  <i class="fa fa-facebook"></i>
+      	</a>
+      	<a class="p-2 mt-1 mr-2 d-inline-flex justify-content-center align-items-center" style="background: #e52d27;" href="https://www.youtube.com/watch?v=asxRaOgk6a0">
+      	  <i class="fa fa-youtube"></i>
+      	</a>
+      	<a class="p-2 mt-1 mr-2 d-inline-flex justify-content-center align-items-center" style="background: #2867B2;" href="https://in.linkedin.com/in/virtual-labs-008ba9136">
+      	  <i class="fa fa-linkedin"></i>
+      	</a>
+            </div>
+          </div>
+        </div>
+        <div class="m-0 py-2 text-center" style="font-family: &quot;Open Sans&quot;, sans-serif; background: #212121;">
+          <a class="text-primary font-weight-bold" href="https://www.gnu.org/licenses/agpl-3.0.en.html"> AGPL 3.0 </a>
+          &nbsp;&amp;&nbsp;
+          <a class="text-primary font-weight-bold" href="https://creativecommons.org/licenses/by-nc-sa/4.0/"> Creative Commons (CC BY-NC-SA 4.0) </a>
+        </div>
+      </footer>
+    <script src="./assets/js/toggleSidebar.js"></script>
+    <script src="./assets/js/event-handler.js"></script>
+
+
+    <script>
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+            navigator.serviceWorker.register("sw.js");
+        });
+      }
+    </script>
+  
+
+<script type="module" src="https://virtual-labs.github.io/svc-bug-report/client/src/bug-report.js"></script></body></html>

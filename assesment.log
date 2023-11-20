@@ -1,0 +1,30 @@
+=/theorytest.json
+{
+  _: [],
+  f: [
+    '/home/runner/work/exp-cp-recursion-iiith/exp-cp-recursion-iiith/experiment/theorytest.json'
+  ],
+  files: [
+    '/home/runner/work/exp-cp-recursion-iiith/exp-cp-recursion-iiith/experiment/theorytest.json'
+  ],
+  c: 'assessment',
+  contentTypes: 'assessment',
+  'content-types': 'assessment',
+  '$0': 'validate'
+}
+Validated true
+=/practicaltest.json
+{
+  _: [],
+  f: [
+    '/home/runner/work/exp-cp-recursion-iiith/exp-cp-recursion-iiith/experiment/practicaltest.json'
+  ],
+  files: [
+    '/home/runner/work/exp-cp-recursion-iiith/exp-cp-recursion-iiith/experiment/practicaltest.json'
+  ],
+  c: 'assessment',
+  contentTypes: 'assessment',
+  'content-types': 'assessment',
+  '$0': 'validate'
+}
+Validated true
