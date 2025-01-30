@@ -33,4 +33,4 @@ With practice, you'll become more comfortable with recursion, and you'll be able
 
 > You can refer to the following video from `FreeCodeCamp` to learn more about recursion:
 
-<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/IJDJ0kBx2LM?si=dtiXrVeo-nItieqs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+<iframe width="315" height="90" src="https://www.youtube-nocookie.com/embed/IJDJ0kBx2LM?si=dtiXrVeo-nItieqs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
