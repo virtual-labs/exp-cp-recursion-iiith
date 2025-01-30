@@ -7,37 +7,58 @@
       "unit-type": "aim"
     },
     {
+      "target": "objective.html",
+      "source": "objective.md",
+      "label": "Objective",
+      "unit-type": "task",
+      "content-type": "text"
+    },
+    {
       "target": "theory.html",
       "source": "theory.md",
       "label": "Theory",
       "unit-type": "task",
-      "content-type": "video"
+      "content-type": "text"
     },
     {
-      "target": "theory-test.html",
-      "source": "theorytest.json",
-      "label": "Theory-Test",
+      "target": "pretest.html",
+      "source": "pretest.json",
+      "label": "Pretest",
       "unit-type": "task",
       "content-type": "assesment"
     },
     {
-      "target": "practice.html",
+      "target": "procedure.html",
+      "source": "procedure.md",
+      "label": "Procedure",
+      "unit-type": "task",
+      "content-type": "text"
+    },
+    {
+      "target": "simulation.html",
       "source": "simulation/index.html",
-      "label": "Practice",
+      "label": "Simulation",
+      "unit-type": "task",
+      "content-type": "simulation"
+    },
+    {
+      "target": "towerofhanoi.html",
+      "source": "simulation/towerofhanoi.html",
+      "label": "Tower of Hanoi",
       "unit-type": "task",
       "content-type": "simulation"
     },
     {
       "target": "assignment.html",
       "source": "assignment.md",
-      "label": "Assignment",
+      "label": "Assignment",      
       "unit-type": "task",
-      "content-type": "text"
+      "content-type": "text"      
     },
     {
-      "target": "practical-test.html",
-      "source": "practicaltest.json",
-      "label": "Practical-Test",
+      "target": "posttest.html",
+      "source": "posttest.json",
+      "label": "Posttest",
       "unit-type": "task",
       "content-type": "assesment"
     },
