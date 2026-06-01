@@ -1,0 +1,177 @@
+{
+  "version": 2.0,
+  "questions": [
+    {
+      "question": "1. How many stars will the following code output for a given positive value of n: <br/>  <img src='images/code1.png'>",
+      "answers": {
+        "a": "n",
+        "b": "n^2",
+        "c": "n(n-1)/2",
+        "d": "n(n+1)/2"
+      },
+      "correctAnswer": "d",
+      "difficulty": "beginner",
+      "explanations": {
+        "a": "Incorrect. The code outputs more stars than just n because the loop and recursion combine their effects.",
+        "b": "Incorrect. The code does not output n squared stars, as the recursion and loop do not multiply in this way.",
+        "c": "Incorrect. The formula n(n-1)/2 does not represent the total stars printed by the recursive structure.",
+        "d": "Correct. The code prints n(n+1)/2 stars, combining the loop and recursive calls."
+      }
+    },
+    {
+      "question": "2. What will be the ouptut of the following function call: fun2(20); where fun2 is defined as:  <br/>  <img src='images/code2.png'>",
+      "answers": {
+        "a": "20 40 60 80 60 40 20",
+        "b": "80 60 40 20",
+        "c": "20 40 80 80 40 20",
+        "d": "20 40 60 80"
+      },
+      "correctAnswer": "c",
+      "difficulty": "beginner",
+      "explanations": {
+        "a": "Incorrect. The output sequence does not match the actual order of prints in the recursive function.",
+        "b": "Incorrect. The function prints values before and after recursion, not just in descending order.",
+        "c": "Correct. The output reflects both pre- and post-recursive prints for each call.",
+        "d": "Incorrect. The output misses the values printed after the recursive call."
+      }
+    },
+    {
+      "question": "3. What will be the ouptut of the following function call: fun3(100); where fun3 is defined as:  <br/>  <img src='images/code3.png'>",
+      "answers": {
+        "a": "6",
+        "b": "7",
+        "c": "5",
+        "d": "4"
+      },
+      "correctAnswer": "a",
+      "difficulty": "beginner",
+      "explanations": {
+        "a": "Correct. The function counts the number of times n can be divided by 2 before reaching 1, which is 6 for n = 100.",
+        "b": "Incorrect. The function does not reach 7 divisions for n = 100.",
+        "c": "Incorrect. The function divides n by 2 more times than this answer suggests.",
+        "d": "Incorrect. The function divides n by 2 fewer times than this answer suggests."
+      }
+    },
+    {
+      "question": "4. In Python, which module or library allows you to control the maximum recursion depth?",
+      "answers": {
+        "a": "recursioncontrol",
+        "b": "sys",
+        "c": "recursivelimit",
+        "d": "recursivecontrol"
+      },
+      "correctAnswer": "b",
+      "difficulty": "advanced",
+      "explanations": {
+        "a": "Incorrect. 'recursioncontrol' is not a standard Python module.",
+        "b": "Correct. The 'sys' module provides the setrecursionlimit function to control recursion depth.",
+        "c": "Incorrect. 'recursivelimit' is not a recognized Python module.",
+        "d": "Incorrect. 'recursivecontrol' is not a valid module in Python."
+      }
+    },
+    {
+      "question": "5. What is the time complexity of the following recursive function for computing Fibonacci numbers? <br/>  <img src='images/code5.png'>",
+      "answers": {
+        "a": "O(n)",
+        "b": "O(log n)",
+        "c": "O(2^n)",
+        "d": "O(n^2)"
+      },
+      "correctAnswer": "c",
+      "difficulty": "advanced",
+      "explanations": {
+        "a": "Incorrect. The function makes two recursive calls for each n, not just one, so the complexity is higher than linear.",
+        "b": "Incorrect. The function does not reduce n logarithmically, so the complexity is not O(log n).",
+        "c": "Correct. The recursive Fibonacci function has exponential time complexity, O(2^n), due to repeated calculations.",
+        "d": "Incorrect. The function's complexity grows much faster than quadratic because of the double recursion."
+      }
+    },
+    {
+      "question": "6. How many stars will the following code output for a given positive value of n: <br/>  <img src='images/code1.png'>",
+      "answers": {
+        "a": "n",
+        "b": "n^2",
+        "c": "n(n-1)/2",
+        "d": "n(n+1)/2"
+      },
+      "correctAnswer": "d",
+      "difficulty": "beginner",
+      "explanations": {
+        "a": "Incorrect. The code outputs more stars than just n because the loop and recursion combine their effects.",
+        "b": "Incorrect. The code does not output n squared stars, as the recursion and loop do not multiply in this way.",
+        "c": "Incorrect. The formula n(n-1)/2 does not represent the total stars printed by the recursive structure.",
+        "d": "Correct. The code prints n(n+1)/2 stars, combining the loop and recursive calls."
+      }
+    },
+    {
+      "question": "7. What will be the output of the following function call: fun2(20); where fun2 is defined as:  <br/>  <img src='images/code2.png'>",
+      "answers": {
+        "a": "20 40 60 80 60 40 20",
+        "b": "80 60 40 20",
+        "c": "20 40 80 80 40 20",
+        "d": "20 40 60 80"
+      },
+      "correctAnswer": "c",
+      "difficulty": "beginner",
+      "explanations": {
+        "a": "Incorrect. The output sequence does not match the actual order of prints in the recursive function.",
+        "b": "Incorrect. The function prints values before and after recursion, not just in descending order.",
+        "c": "Correct. The output reflects both pre- and post-recursive prints for each call.",
+        "d": "Incorrect. The output misses the values printed after the recursive call."
+      }
+    },
+    {
+      "question": "8. What will be the output of the following function call: fun3(100); where fun3 is defined as:  <br/>  <img src='images/code3.png'>",
+      "answers": {
+        "a": "6",
+        "b": "7",
+        "c": "5",
+        "d": "4"
+      },
+      "correctAnswer": "a",
+      "difficulty": "beginner",
+      "explanations": {
+        "a": "Correct. The function counts the number of times n can be divided by 2 before reaching 1, which is 6 for n = 100.",
+        "b": "Incorrect. The function does not reach 7 divisions for n = 100.",
+        "c": "Incorrect. The function divides n by 2 more times than this answer suggests.",
+        "d": "Incorrect. The function divides n by 2 fewer times than this answer suggests."
+      }
+    },
+    {
+      "question": "9. Which of the following is a valid way to write a recursive function for calculating the Fibonacci sequence?",
+      "answers": {
+        "a": "<img src='images/code8a.png'>",
+        "b": "<img src='images/code8b.png'>",
+        "c": "<img src='images/code8c.png'>",
+        "d": "None of the above"
+      },
+      "correctAnswer": "b",
+      "difficulty": "intermediate",
+      "explanations": {
+        "a": "Incorrect. The base case is not handled properly, so the function may not terminate as expected.",
+        "b": "Correct. The function correctly implements the recursive calculation of Fibonacci numbers with proper base cases.",
+        "c": "Incorrect. The function does not cover all necessary base cases for Fibonacci calculation.",
+        "d": "Incorrect. There is a valid recursive implementation for Fibonacci sequence calculation."
+      }
+    },
+    {
+      "question": "10. Consider the following recursive function fun(x, y). What is the value of fun(4, 3)? <br/>  <img src='images/code9.png'>",
+      "answers": {
+        "a": "9",
+        "b": "10",
+        "c": "11",
+        "d": "12",
+        "e": "13"
+      },
+      "correctAnswer": "e",
+      "difficulty": "intermediate",
+      "explanations": {
+        "a": "Incorrect. The recursive addition does not result in 9 for these inputs.",
+        "b": "Incorrect. The recursive addition does not result in 10 for these inputs.",
+        "c": "Incorrect. The recursive addition does not result in 11 for these inputs.",
+        "d": "Incorrect. The recursive addition does not result in 12 for these inputs.",
+        "e": "Correct. The recursive function accumulates values to reach 13 for fun(4, 3)."
+      }
+    }
+  ]
+}
