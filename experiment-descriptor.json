@@ -2,6 +2,7 @@
   "unit-type": "lu",
   "label": "Recursion - Computer Programming",
   "basedir": ".",
+  "LaTeXinMD": "true",
   "units": [
     {
       "unit-type": "aim"
@@ -51,9 +52,9 @@
     {
       "target": "assignment.html",
       "source": "assignment.md",
-      "label": "Assignment",      
+      "label": "Assignment",
       "unit-type": "task",
-      "content-type": "text"      
+      "content-type": "text"
     },
     {
       "target": "posttest.html",
@@ -71,4 +72,3 @@
     }
   ]
 }
-

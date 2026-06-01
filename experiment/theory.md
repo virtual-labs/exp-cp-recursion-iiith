@@ -9,6 +9,7 @@ Imagine you have a set of nesting dolls, each placed inside a larger doll. The s
 To calculate the sum of numbers from 1 to n:
 
 ```
+
 sum(n):
     if n <= 0:
         return 0
