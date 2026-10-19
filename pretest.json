@@ -1,0 +1,175 @@
+{
+  "version": 2.0,
+  "questions": [
+    {
+      "question": "1. What is recursion in computer science?",
+      "answers": {
+        "a": "A programming error",
+        "b": "A loop construct",
+        "c": "A function calling itself",
+        "d": "A data structure"
+      },
+      "correctAnswer": "c",
+      "explanations": {
+        "a": "Incorrect. Recursion is not a programming error; it is a legitimate technique in computer science.",
+        "b": "Incorrect. Recursion and loops are different; recursion involves a function calling itself.",
+        "c": "Correct. Recursion is when a function calls itself to solve a problem.",
+        "d": "Incorrect. Recursion is not a data structure."
+      },
+      "difficulty": "beginner"
+    },
+    {
+      "question": "2. What is the purpose of a base case in a recursive function?",
+      "answers": {
+        "a": "To provide a starting point for the recursive calls",
+        "b": "To handle the edge cases",
+        "c": "To optimize the function for better performance",
+        "d": "To make the function more readable"
+      },
+      "correctAnswer": "b",
+      "explanations": {
+        "a": "Incorrect. The base case is not for starting recursion, but for stopping it.",
+        "b": "Correct. The base case provides a stopping condition for recursion.",
+        "c": "Incorrect. The base case is not primarily for optimization.",
+        "d": "Incorrect. Readability is not the main purpose of a base case."
+      },
+      "difficulty": "beginner"
+    },
+    {
+      "question": "3. What is the main difference between recursive and iterative solutions?",
+      "answers": {
+        "a": "Recursive solutions use loops, while iterative solutions use function calls",
+        "b": "Recursive solutions use function calls, while iterative solutions use loops",
+        "c": "Recursive solutions are faster, while iterative solutions are slower",
+        "d": "Recursive solutions are less efficient, while iterative solutions are more efficient"
+      },
+      "correctAnswer": "b",
+      "explanations": {
+        "a": "Incorrect. Recursive solutions use function calls, not loops.",
+        "b": "Correct. Recursion uses function calls; iteration uses loops.",
+        "c": "Incorrect. Speed depends on implementation, not recursion vs iteration.",
+        "d": "Incorrect. Efficiency varies by problem and implementation."
+      },
+      "difficulty": "beginner"
+    },
+    {
+      "question": "4. Which of the following is NOT a characteristic of recursion?",
+      "answers": {
+        "a": "A function calling itself repeatedly",
+        "b": "A function solving a problem by breaking it down into smaller sub-problems",
+        "c": "A function having a fixed number of iterations",
+        "d": "A function with a terminating condition"
+      },
+      "correctAnswer": "c",
+      "explanations": {
+        "a": "Incorrect. Recursion involves a function calling itself.",
+        "b": "Incorrect. Recursion often breaks problems into sub-problems.",
+        "c": "Correct. Recursion does not always have a fixed number of iterations.",
+        "d": "Incorrect. Recursion requires a terminating condition."
+      },
+      "difficulty": "intermediate"
+    },
+    {
+      "question": "5. In a recursive function, what happens when the base case is not reached?",
+      "answers": {
+        "a": "The function will continue to call itself infinitely",
+        "b": "The function will throw an error",
+        "c": "The function will return a default value",
+        "d": "The function will terminate immediately"
+      },
+      "correctAnswer": "a",
+      "explanations": {
+        "a": "Correct. Without a base case, recursion continues infinitely.",
+        "b": "Incorrect. An error occurs only after stack overflow.",
+        "c": "Incorrect. No default value is returned automatically.",
+        "d": "Incorrect. The function does not terminate without a base case."
+      },
+      "difficulty": "intermediate"
+    },
+    {
+      "question": "6. How can we avoid a stack overflow error in a recursive function?",
+      "answers": {
+        "a": "By ensuring that the function has a base case",
+        "b": "By limiting the number of recursive calls",
+        "c": "By using iteration instead of recursion",
+        "d": "By increasing the size of the stack"
+      },
+      "correctAnswer": "a",
+      "explanations": {
+        "a": "Correct. A base case ensures recursion terminates.",
+        "b": "Incorrect. Limiting calls is done by a base case.",
+        "c": "Incorrect. Iteration avoids recursion but is not always suitable.",
+        "d": "Incorrect. Increasing stack size is not a recommended solution."
+      },
+      "difficulty": "intermediate"
+    },
+    {
+      "question": "7. Can recursion be used to solve dynamic programming problems?",
+      "answers": {
+        "a": "Yes, recursion is well suited for dynamic programming problems",
+        "b": "No, recursion is not suitable for dynamic programming problems",
+        "c": "Sometimes, depending on the specific problem",
+        "d": "Only if the problem has a small number of inputs"
+      },
+      "correctAnswer": "c",
+      "explanations": {
+        "a": "Incorrect. Recursion can be used, but often needs memoization.",
+        "b": "Incorrect. Recursion can be suitable for DP problems.",
+        "c": "Correct. Suitability depends on the problem and approach.",
+        "d": "Incorrect. Input size is not the only factor."
+      },
+      "difficulty": "intermediate"
+    },
+    {
+      "question": "8. In recursive algorithms, what is meant by 'tail recursion'?",
+      "answers": {
+        "a": "A type of recursion that is slower than regular recursion",
+        "b": "A recursive call that appears at the end of a function and doesn't require any further computation after the recursive call returns",
+        "c": "A recursive call that occurs within a loop",
+        "d": "A type of recursion that uses a tail data structure"
+      },
+      "correctAnswer": "b",
+      "explanations": {
+        "a": "Incorrect. Tail recursion is not necessarily slower.",
+        "b": "Correct. Tail recursion is when the recursive call is the last operation in the function.",
+        "c": "Incorrect. Recursion within a loop is not tail recursion.",
+        "d": "Incorrect. Tail recursion is not about data structures."
+      },
+      "difficulty": "advanced"
+    },
+    {
+      "question": "9. How can you optimize a recursive function to reduce the overhead of function calls?",
+      "answers": {
+        "a": "By making the recursive calls non-tail recursive",
+        "b": "By using global variables instead of local variables",
+        "c": "By using memoization or dynamic programming techniques",
+        "d": "By removing the base case"
+      },
+      "correctAnswer": "c",
+      "explanations": {
+        "a": "Incorrect. Non-tail recursion is harder to optimize.",
+        "b": "Incorrect. Global variables are not recommended for optimization.",
+        "c": "Correct. Memoization and DP reduce redundant calls.",
+        "d": "Incorrect. Removing the base case causes infinite recursion."
+      },
+      "difficulty": "advanced"
+    },
+    {
+      "question": "10. What is the time complexity of a recursive function that makes n recursive calls, assuming each recursive call takes O(1) time?",
+      "answers": {
+        "a": "O(2^n)",
+        "b": "O(log n)",
+        "c": "O(n^2)",
+        "d": "O(n)"
+      },
+      "correctAnswer": "d",
+      "explanations": {
+        "a": "Incorrect. O(2^n) is exponential, not linear.",
+        "b": "Incorrect. O(log n) is logarithmic, not linear.",
+        "c": "Incorrect. O(n^2) is quadratic, not linear.",
+        "d": "Correct. n calls with O(1) work each is O(n)."
+      },
+      "difficulty": "advanced"
+    }
+  ]
+}
