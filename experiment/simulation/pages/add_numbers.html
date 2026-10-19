@@ -9,6 +9,10 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/gh/virtual-labs/virtual-style@0.0.8-b/css/style.min.css"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/material-design-lite/1.3.0/material.min.css"
+    />
     <link rel="stylesheet" type="text/css" href="../css/main.css" />
   </head>
 
@@ -78,7 +82,7 @@
               <div class="container">
                 <div id="container-py" style="display: none">
                   <div id="line1" class="line">def sum_numbers(n):</div>
-                  <div id="line2" class="line">
+                  <div id="line2" class="line indent-1">
                     if n
                     <select id="basecase-operator-py">
                       <option value="eq" selected>==</option>
@@ -93,15 +97,15 @@
                       <option value="-1">-1</option></select
                     >:
                   </div>
-                  <div id="line3" class="line">
+                  <div id="line3" class="line indent-2">
                     return
                     <select id="basecase-return-py">
                       <option value="0" selected>0</option>
                       <option value="1">1</option>
                     </select>
                   </div>
-                  <div id="line4" class="line">else:</div>
-                  <div id="line5" class="line">
+                  <div id="line4" class="line indent-1">else:</div>
+                  <div id="line5" class="line indent-2">
                     subsol = sum_numbers(<select id="recursecase-py">
                       <option value="-1" selected>-1</option>
                       <option value="0">0</option>
@@ -111,7 +115,7 @@
                       <option value="n+1">n + 1</option></select
                     >)
                   </div>
-                  <div id="line6" class="line">
+                  <div id="line6" class="line indent-2">
                     sol =
                     <select id="variable-py">
                       <option value="-1" selected>-1</option>
@@ -128,7 +132,7 @@
                     </select>
                     subsol
                   </div>
-                  <div id="line7" class="line">return sol</div>
+                  <div id="line7" class="line indent-2">return sol</div>
                   <div class="line">&nbsp;</div>
                   <div id="line8" class="line">
                     print(sum_numbers(<select id="n-py">
@@ -142,7 +146,7 @@
                 <div id="container-c" style="display: none">
                   <div id="line1" class="line">#include &lt;stdio.h&gt;</div>
                   <div id="line2" class="line">int sum_numbers(int n) {</div>
-                  <div id="line3" class="line">
+                  <div id="line3" class="line indent-1">
                     if (n
                     <select id="basecase-operator-c">
                       <option value="eq" selected>==</option>
@@ -157,15 +161,15 @@
                       <option value="-1">-1</option></select
                     >) {
                   </div>
-                  <div id="line4" class="line">
+                  <div id="line4" class="line indent-2">
                     return
                     <select id="basecase-return-c">
                       <option value="0" selected>0</option>
                       <option value="1">1</option></select
                     >;
                   </div>
-                  <div id="line5" class="line">} else {</div>
-                  <div id="line6" class="line">
+                  <div id="line5" class="line indent-1">} else {</div>
+                  <div id="line6" class="line indent-2">
                     int subsol = sum_numbers(<select id="recursecase-c">
                       <option value="-1" selected>-1</option>
                       <option value="0">0</option>
@@ -175,7 +179,7 @@
                       <option value="n+1">n + 1</option></select
                     >);
                   </div>
-                  <div id="line7" class="line">
+                  <div id="line7" class="line indent-2">
                     int sol =
                     <select id="variable-c">
                       <option value="-1" selected>-1</option>
@@ -192,12 +196,12 @@
                     </select>
                     subsol;
                   </div>
-                  <div id="line8" class="line">return sol;</div>
-                  <div id="line9" class="line">}</div>
+                  <div id="line8" class="line indent-2">return sol;</div>
+                  <div id="line9" class="line indent-1">}</div>
                   <div id="line10" class="line">}</div>
                   <div class="line">&nbsp;</div>
                   <div id="line11" class="line">int main() {</div>
-                  <div id="line12" class="line">
+                  <div id="line12" class="line indent-1">
                     int n =
                     <select id="n-c">
                       <option value="5" selected>5</option>
@@ -205,19 +209,19 @@
                       <option value="3">3</option></select
                     >;
                   </div>
-                  <div id="line13" class="line">
+                  <div id="line13" class="line indent-1">
                     int result = sum_numbers(n);
                   </div>
-                  <div id="line14" class="line">
+                  <div id="line14" class="line indent-1">
                     printf("Result: %d\n", result);
                   </div>
-                  <div id="line15" class="line">return 0;</div>
+                  <div id="line15" class="line indent-1">return 0;</div>
                   <div id="line16" class="line">}</div>
                 </div>
 
                 <div id="container-js" style="display: none">
                   <div id="line1" class="line">function sum_numbers(n) {</div>
-                  <div id="line2" class="line">
+                  <div id="line2" class="line indent-1">
                     if (n
                     <select id="basecase-operator-js">
                       <option value="eq" selected>==</option>
@@ -232,15 +236,15 @@
                       <option value="-1">-1</option></select
                     >) {
                   </div>
-                  <div id="line3" class="line">
+                  <div id="line3" class="line indent-2">
                     return
                     <select id="basecase-return-js">
                       <option value="0" selected>0</option>
                       <option value="1">1</option></select
                     >;
                   </div>
-                  <div id="line4" class="line">} else {</div>
-                  <div id="line5" class="line">
+                  <div id="line4" class="line indent-1">} else {</div>
+                  <div id="line5" class="line indent-2">
                     var subsol = sum_numbers(<select id="recursecase-js">
                       <option value="-1" selected>-1</option>
                       <option value="0">0</option>
@@ -250,7 +254,7 @@
                       <option value="n+1">n + 1</option></select
                     >);
                   </div>
-                  <div id="line6" class="line">
+                  <div id="line6" class="line indent-2">
                     var sol =
                     <select id="variable-js">
                       <option value="-1" selected>-1</option>
@@ -267,17 +271,18 @@
                     </select>
                     subsol;
                   </div>
-                  <div id="line7" class="line">return sol;</div>
+                  <div id="line7" class="line indent-2">return sol;</div>
+                  <div id="line8" class="line indent-1">}</div>
+                  <div id="line9" class="line">}</div>
                   <div class="line">&nbsp;</div>
-                  <div id="line8" class="line">}</div>
-                  <div id="line9" class="line">
+                  <div id="line10" class="line">
                     var result = sum_numbers(<select id="n-js">
                       <option value="5" selected>5</option>
                       <option value="4">4</option>
                       <option value="3">3</option></select
                     >);
                   </div>
-                  <div id="line10" class="line">console.log(result);</div>
+                  <div id="line11" class="line">console.log(result);</div>
                 </div>
               </div>
               <!--noformat-->
@@ -329,7 +334,7 @@
       rel="stylesheet"
       href="https://fonts.googleapis.com/icon?family=Material+Icons"
     />
-    <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/material-design-lite/1.3.0/material.min.js"></script>
 
     <script
       type="module"

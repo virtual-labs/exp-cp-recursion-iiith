@@ -1,25 +1,3 @@
-// Set dropdowns to correct Fibonacci values on page load
-window.addEventListener("DOMContentLoaded", function () {
-  languages.forEach((language) => {
-    document.getElementById(`basecase-operator-${language}`).value = "le"; // <=
-    document.getElementById(`basecase-${language}`).value = "1";
-    document.getElementById(`basecase-return-${language}`).value = "n";
-    document.getElementById(`recursecase1-${language}`).value = "n-1";
-    document.getElementById(`recursecase2-${language}`).value = "n-2";
-    document.getElementById(`operator-${language}`).value = "+";
-    document.getElementById(`n-${language}`).value = "5";
-  });
-  // Update local variables
-  basecaseOperator = changeOperator("le");
-  basecase = 1;
-  basecaseReturn = "n";
-  recursecase1 = "n-1";
-  recursecase2 = "n-2";
-  operator = "+";
-  maxStackDepth = 5;
-  stackText.textContent = maxStackDepth;
-  reset();
-});
 import {
   step,
   changeOperator,
@@ -94,7 +72,7 @@ languages.forEach((language) => {
     `basecase-return-${language}`,
   );
   basecaseReturnSelect.addEventListener("change", function () {
-    basecaseReturn = parseInt(basecaseReturnSelect.value);
+    basecaseReturn = basecaseReturnSelect.value;
     reset();
 
     languages.forEach((language1) => {
@@ -116,7 +94,7 @@ languages.forEach((language) => {
 
   let recursecase2Select = document.getElementById(`recursecase2-${language}`);
   recursecase2Select.addEventListener("change", function () {
-    recursecase1 = recursecase2Select.value;
+    recursecase2 = recursecase2Select.value;
     reset();
 
     languages.forEach((language1) => {
@@ -191,23 +169,9 @@ function step_fibonacci(n, stackDepth) {
 
   if (eval(`"use strict";n ${basecaseOperator} ${basecase}`)) {
     stackHTML = stackHTML.replace(newHTML, "");
-    // Ensure basecaseReturn is a number
-    let returnValue = basecaseReturn;
-    if (typeof returnValue === "string") {
-      if (returnValue === "n") return n;
-      if (returnValue === "n-1") return n - 1;
-      if (returnValue === "n+1") return n + 1;
-      if (returnValue === "0") return 0;
-      if (returnValue === "1") return 1;
-      if (returnValue === "-1") return -1;
-      // fallback
-      return parseInt(returnValue) || 0;
-    }
-    return returnValue;
+    return eval(`"use strict";${basecaseReturn}`);
   } else {
-    // Evaluate subsol1 and subsol2 as numbers
-    // Parse recursive cases using n as integer
-    let subsol1Val = eval(`"use strict";${recursecase1.replace(/n/g, n)}`);
+    let subsol1Val = eval(`"use strict";${recursecase1}`);
     let subsol1 = step_fibonacci(subsol1Val, stackDepth + 1);
     if (subsol1 === "Stack Overflow") return "Stack Overflow";
     if (typeof subsol1 === "string" && subsol1.startsWith("<")) return subsol1;
@@ -217,7 +181,7 @@ function step_fibonacci(n, stackDepth) {
     resultElement.textContent = resultContent;
     if (!step(executedsteps, stepstoexecute)) return stackHTML;
 
-    let subsol2Val = eval(`"use strict";${recursecase2.replace(/n/g, n)}`);
+    let subsol2Val = eval(`"use strict";${recursecase2}`);
     let subsol2 = step_fibonacci(subsol2Val, stackDepth + 1);
     if (subsol2 === "Stack Overflow") return "Stack Overflow";
     if (typeof subsol2 === "string" && subsol2.startsWith("<")) return subsol2;
@@ -255,6 +219,11 @@ function step_fibonacci(n, stackDepth) {
 }
 
 function check_result(result) {
+  if (result === "Stack Overflow") {
+    resultElement.style.color = "red";
+    resultElement.textContent = "Stack Overflow: the recursion went deeper than the max stack size.";
+    return;
+  }
   if (result === fibonnaci(maxStackDepth)) {
     resultElement.style.color = "green";
     resultElement.textContent = "Correct Answer: " + result.toString();
