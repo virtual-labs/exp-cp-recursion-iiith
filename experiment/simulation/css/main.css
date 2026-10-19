@@ -50,12 +50,30 @@
 
 .line {
     text-align: left;
-    font: 18px Arial, sans-serif;
+    font: 16px Consolas, "Courier New", monospace;
+    line-height: 2;
     color: #333;
-    word-wrap: break-word;
-    white-space: pre;
-    tab-size: 4;
-    margin-left: 10px;
+    white-space: nowrap;
+    margin-left: 16px;
+}
+
+.indent-1 {
+    padding-left: 2em;
+}
+
+.indent-2 {
+    padding-left: 4em;
+}
+
+.line select {
+    font: inherit;
+    color: #176696;
+    background-color: #fff;
+    border: 1px solid #176696;
+    border-radius: 4px;
+    padding: 1px 2px;
+    margin: 0 2px;
+    cursor: pointer;
 }
 
 .container {
@@ -63,10 +81,11 @@
     width: 100%;
     border-bottom: transparent;
     border-radius: 1rem;
+    overflow-x: auto;
 }
 
-.container #line1 {
-    margin-top: 10px;
+.container > div {
+    padding: 10px 0;
 }
 
 #container-py, #container-c {
@@ -98,6 +117,18 @@
 
 .container-buttons button:last-child {
     border-right: none;
+}
+
+.container-buttons button:disabled {
+    color: #aaa;
+    cursor: not-allowed;
+}
+
+#container-stack {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 5px 10px;
 }
 
 .stack{
