@@ -383,3 +383,14 @@ body {
 .a {
 	float: right;
 }
+.printOutput {
+	position: absolute;
+	top: 8%;
+	left: 0%;
+	width: 100%;
+	text-align: center;
+	font-family: monospace;
+	font-size: 110%;
+	font-weight: bold;
+	color: #3072b3;
+}

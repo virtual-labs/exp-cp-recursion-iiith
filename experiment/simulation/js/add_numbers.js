@@ -187,6 +187,11 @@ function step_sumOfNNaturalNumbers(n, stackDepth) {
 }
 
 function check_result(result) {
+    if (result === 'Stack Overflow') {
+        resultElement.style.color = 'red';
+        resultElement.textContent = 'Stack Overflow: the recursion went deeper than the max stack size.';
+        return;
+    }
     if (result === sumOfNNaturalNumbers(maxStackDepth)) {
         resultElement.style.color = 'green';
         resultElement.textContent = "Correct Answer: " + result.toString();
